@@ -3,10 +3,10 @@ import { Dictionary, type Word } from './dictionary.js';
 import { BAG, VALUES, rackString, subtract, tileCount, type Rack } from './letters.js';
 import { Planner, type Plan } from './planner.js';
 import { predictOpponentBid, type OpponentProfile } from './opponents.js';
-export const POLICY_VERSION = 'fit-v7';
-export const BASE_REVISION = 'fit-v7';
+export const POLICY_VERSION = 'fit-v7b';
+export const BASE_REVISION = 'fit-v7b';
 const COMMON = 'SRNTLEDC', MIDDLE = 'AIOMGP', RARE = 'JQXZ';
-const LIQUIDATION = 16, BUILD_RACK = 10, BIG_WORD = 25, RICH_WORD = 40, TARGET_MS = 120;
+const LIQUIDATION = 16, BUILD_RACK = 10, BIG_WORD = 25, RICH_WORD = 30, TARGET_MS = 120;
 export interface Policy {
   rewardWeight: number; investmentBase: number; investmentFace: number;
   holdMinLength: number; holdRackSize: number; cashoutBalance: number; opponentWeight: number;
@@ -227,7 +227,8 @@ export class Strategy {
         .sort((a, b) => b.total - a.total)[0].w;
       // Cheap sevens wait for a richer one while we can still afford to grow the rack.
       // ponytail: 30 points is a guess from the 27-vs-53 gap; tune with live games.
-      if (best.score < RICH_WORD && ctx.remaining > 34 && tileCount(ctx.rack) < this.policy.holdRackSize && ctx.balance >= 10) {
+      // Only hold while the builder tier is still bidding (tiles < BUILD_RACK); holding with bids off froze fit-v7 for 17 auctions.
+      if (best.score < RICH_WORD && ctx.remaining > 34 && tileCount(ctx.rack) < BUILD_RACK && ctx.balance >= 10) {
         return { word: null, reason: `hold cheap ${best.text} (${best.score}) for a richer word`, planScore: plan.score };
       }
       return { word: best.text, reason: 'seven-letter or big word', planScore: plan.score };

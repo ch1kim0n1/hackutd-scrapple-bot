@@ -128,6 +128,14 @@ test('target bidding never bids below the letter ceiling logic and never exceeds
   assert(strategy.bid('S', context('CAT', { remaining: 45 })).amount > 0);
   assert(strategy.bid('N', context('OXYGE', { remaining: 45, balance: 3 })).amount <= 3);
 });
+test('never holds a word while bidding is switched off (fit-v7 freeze)', () => {
+  const strategy = new Strategy(new Dictionary(['ORIENTS', 'AT']));
+  // 7 letters worth 21 points, early game: held with room to bid, played once the rack reaches the builder limit.
+  assert.equal(strategy.word(context('ORIENTS', { remaining: 50 })).word, null);
+  assert.equal(strategy.word(context('ORIENTSBDF', { remaining: 50 })).word, 'ORIENTS');
+  // any rack the bot holds a word on must still produce builder bids
+  assert(strategy.bid('S', context('ORIENTS', { remaining: 50 })).amount > 0);
+});
 test('small-rack planner matches an independent exhaustive allocation oracle', () => {
   const words = ['AT', 'BAT', 'TAB', 'BATH', 'HAT', 'AB', 'AH', 'TA'];
   const dictionary = new Dictionary(words);
