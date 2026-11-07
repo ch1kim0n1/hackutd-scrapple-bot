@@ -2,10 +2,10 @@ import { Dictionary, type Word } from './dictionary.js';
 import { BAG, VALUES, rackString, subtract, tileCount, type Rack } from './letters.js';
 import { Planner, type Plan } from './planner.js';
 import { predictOpponentBid, type OpponentProfile } from './opponents.js';
-export const POLICY_VERSION = 'fit-v6b';
-export const BASE_REVISION = 'fit-v6b';
+export const POLICY_VERSION = 'fit-v6c';
+export const BASE_REVISION = 'fit-v6c';
 const COMMON = 'SRNTLEDC', MIDDLE = 'AIOMGP', RARE = 'JQXZ';
-const LIQUIDATION = 16, BUILD_RACK = 10, BIG_WORD = 25;
+const LIQUIDATION = 16, BUILD_RACK = 10, BIG_WORD = 25, RICH_WORD = 30;
 export interface Policy {
   rewardWeight: number; investmentBase: number; investmentFace: number;
   holdMinLength: number; holdRackSize: number; cashoutBalance: number; opponentWeight: number;
@@ -138,7 +138,10 @@ export class Strategy {
     // Rival bids climb late (about 19 in the last 16 auctions); a flat ceiling stopped us buying after auction ~35.
     // ponytail: linear +3..+5 ramp, fit properly once more live games exist.
     const late = ctx.remaining >= 34 ? 0 : 3 + 2 * (1 - ctx.remaining / 34);
-    return Math.max(4, base + late + 1.7 * ((ctx.activePlayers ?? ctx.players) - 4.5));
+    // A 7+ letter word pays 3x tile values, so tiles worth more points are worth more.
+    // Our 7+ words averaged 27 points against 53 for winners: mostly 1-point letters.
+    const heavy = 1.5 * Math.max(0, VALUES[letter.charCodeAt(0) - 65] - 1);
+    return Math.max(4, base + heavy + late + 1.7 * ((ctx.activePlayers ?? ctx.players) - 4.5));
   }
 
   bid(letter: string, ctx: GameContext): BidDecision {
@@ -194,6 +197,11 @@ export class Strategy {
       // Best big word plus whatever the leftover tiles can still earn.
       const best = big.slice(0, 40).map(w => ({ w, total: w.score + this.planner.plan(subtract(ctx.rack, w.counts)).score }))
         .sort((a, b) => b.total - a.total)[0].w;
+      // Cheap sevens wait for a richer one while we can still afford to grow the rack.
+      // ponytail: 30 points is a guess from the 27-vs-53 gap; tune with live games.
+      if (best.score < RICH_WORD && ctx.remaining > 34 && tileCount(ctx.rack) < this.policy.holdRackSize && ctx.balance >= 10) {
+        return { word: null, reason: `hold cheap ${best.text} (${best.score}) for a richer word`, planScore: plan.score };
+      }
       return { word: best.text, reason: 'seven-letter or big word', planScore: plan.score };
     }
     if (tileCount(ctx.rack) >= this.policy.holdRackSize) return { word: first, reason: 'rack full without a seven', planScore: plan.score };

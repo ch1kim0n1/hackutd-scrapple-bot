@@ -70,7 +70,7 @@ test('a seven-letter completion can be funded while protecting later rounds', ()
 test('six-letter words wait for the full bonus while funds and time permit', () => {
   const strategy = new Strategy(new Dictionary(['ORIENT', 'ORIENTS']));
   assert.equal(strategy.word(context('ORIENT', { balance: 60, remaining: 35 })).word, null);
-  assert.equal(strategy.word(context('ORIENTS', { balance: 60, remaining: 35 })).word, 'ORIENTS');
+  assert.equal(strategy.word(context('ORIENTS', { balance: 60, remaining: 30 })).word, 'ORIENTS');
 });
 test('a big completion outbids unrelated letters', () => {
   const strategy = new Strategy(new Dictionary(['QUIZ', 'QI', 'IT', 'TIZ']));
@@ -106,6 +106,14 @@ test('late builder ceilings rise and small racks spend spare cash late', () => {
   assert.equal(strategy.bid('S', context('CA', { remaining: 10, balance: 40 })).amount, 8);
   assert.equal(strategy.bid('S', context('CA', { remaining: 10, balance: 7 })).amount, 2);
   assert.equal(strategy.bid('J', context('CA', { remaining: 10, balance: 40 })).amount, 0);
+});
+test('higher-value letters get higher builder ceilings; cheap sevens wait early, rich ones go', () => {
+  const strategy = new Strategy(new Dictionary(['ORIENTS', 'OXYGENS', 'AT']));
+  assert(strategy.bid('H', context('CAT')).amount > strategy.bid('U', context('CAT')).amount);
+  assert.equal(strategy.word(context('ORIENTS', { remaining: 50 })).word, null);
+  assert.equal(strategy.word(context('ORIENTS', { remaining: 20 })).word, 'ORIENTS');
+  assert.equal(strategy.word(context('OXYGENS', { remaining: 50 })).word, 'OXYGENS');
+  assert.equal(strategy.word(context('ORIENTS', { remaining: 50, balance: 5 })).word, 'ORIENTS');
 });
 test('small-rack planner matches an independent exhaustive allocation oracle', () => {
   const words = ['AT', 'BAT', 'TAB', 'BATH', 'HAT', 'AB', 'AH', 'TA'];
