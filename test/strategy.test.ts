@@ -115,6 +115,19 @@ test('higher-value letters get higher builder ceilings; cheap sevens wait early,
   assert.equal(strategy.word(context('OXYGENS', { remaining: 50 })).word, 'OXYGENS');
   assert.equal(strategy.word(context('ORIENTS', { remaining: 50, balance: 5 })).word, 'ORIENTS');
 });
+test('builder bids toward a rich 7-letter target more than toward a cheap one', () => {
+  // N completes OXYGEN-S toward a 54-point word; T completes ORIEN-S toward a 21-point word.
+  const strategy = new Strategy(new Dictionary(['OXYGENS', 'ORIENTS', 'AT']));
+  const rich = strategy.bid('N', context('OXYGE', { remaining: 45 }));
+  const cheap = strategy.bid('T', context('ORIEN', { remaining: 45 }));
+  assert(rich.reason.includes('OXYGENS'), rich.reason);
+  assert(rich.amount > cheap.amount, `${rich.amount} vs ${cheap.amount}`);
+});
+test('target bidding never bids below the letter ceiling logic and never exceeds balance', () => {
+  const strategy = new Strategy(new Dictionary(['OXYGENS', 'AT']));
+  assert(strategy.bid('S', context('CAT', { remaining: 45 })).amount > 0);
+  assert(strategy.bid('N', context('OXYGE', { remaining: 45, balance: 3 })).amount <= 3);
+});
 test('small-rack planner matches an independent exhaustive allocation oracle', () => {
   const words = ['AT', 'BAT', 'TAB', 'BATH', 'HAT', 'AB', 'AH', 'TA'];
   const dictionary = new Dictionary(words);

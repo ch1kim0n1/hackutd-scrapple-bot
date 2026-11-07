@@ -1,11 +1,12 @@
+import { performance } from 'node:perf_hooks';
 import { Dictionary, type Word } from './dictionary.js';
 import { BAG, VALUES, rackString, subtract, tileCount, type Rack } from './letters.js';
 import { Planner, type Plan } from './planner.js';
 import { predictOpponentBid, type OpponentProfile } from './opponents.js';
-export const POLICY_VERSION = 'fit-v6c';
-export const BASE_REVISION = 'fit-v6c';
+export const POLICY_VERSION = 'fit-v7';
+export const BASE_REVISION = 'fit-v7';
 const COMMON = 'SRNTLEDC', MIDDLE = 'AIOMGP', RARE = 'JQXZ';
-const LIQUIDATION = 16, BUILD_RACK = 10, BIG_WORD = 25, RICH_WORD = 30;
+const LIQUIDATION = 16, BUILD_RACK = 10, BIG_WORD = 25, RICH_WORD = 40, TARGET_MS = 120;
 export interface Policy {
   rewardWeight: number; investmentBase: number; investmentFace: number;
   holdMinLength: number; holdRackSize: number; cashoutBalance: number; opponentWeight: number;
@@ -124,6 +125,21 @@ export class Strategy {
     return { value, target };
   }
 
+  // Expected reward of the best 7+ letter word within two missing tiles.
+  // ponytail: best single target only; a mixture over targets is the upgrade if this proves useful.
+  targetEV(rack: Rack, ctx: GameContext): { ev: number; target?: Word } {
+    let ev = 0, target: Word | undefined;
+    for (const c of this.dictionary.candidates(rack, 2)) {
+      if (c.word.text.length < 7) continue;
+      const p = c.missing.length ? this.completionProbability(c.missing, ctx) : 1;
+      if (p < 0.02) continue;
+      const cost = c.missing.reduce((n, slot) => n + this.market.price(slot) * 0.65, 0);
+      const v = p * (c.word.score - cost);
+      if (v > ev) { ev = v; target = c.word; }
+    }
+    return { ev, target };
+  }
+
   // Points one coin is worth now. Money has no value at the end.
   // ponytail: step schedule from the research report; fit an alpha(money, time) grid offline later.
   private alpha(remaining: number): number {
@@ -156,7 +172,7 @@ export class Strategy {
     const alpha = this.alpha(ctx.remaining);
     const tiles = tileCount(ctx.rack);
     const big = (rack: Rack) => this.dictionary.playable(rack).some(w => w.text.length >= 7 || w.score >= BIG_WORD);
-    let value = 0, tier = 'filler';
+    let value = 0, tier = 'filler', target: string | undefined, dEV = 0;
     if (ctx.remaining <= LIQUIDATION) {
       // Only tiles that pay before the end are worth money now.
       if (cashGain > 0) { value = ctx.remaining <= 4 ? ctx.balance : cashGain / alpha; tier = 'endgame'; }
@@ -176,7 +192,19 @@ export class Strategy {
       const balance = tiles < 3 ? 1 : vowel ? (ratio >= 0.5 ? 0.5 : 1) : (ratio < 0.2 ? 0.6 : 1);
       const duplicate = have === 0 ? 1 : have === 1 ? 0.6 : 0.2;
       const quFix = letter === 'U' && ctx.rack[16] ? 1.5 : 1;
-      value = this.ceiling(letter, ctx) * balance * duplicate * quFix; tier = 'builder';
+      const base = this.ceiling(letter, ctx) * balance * duplicate * quFix;
+      value = base; tier = 'builder';
+      // Value the tile by how much it raises the best 7+ target; time-boxed, else letter ceilings alone.
+      const t0 = performance.now();
+      const now = this.targetEV(ctx.rack, ctx);
+      if (performance.now() - t0 < TARGET_MS / 2) {
+        const next = this.targetEV(after, ctx);
+        if (performance.now() - t0 < TARGET_MS) {
+          const gain = next.ev - now.ev;
+          value = base + Math.min(10, 0.4 * Math.max(0, gain) / alpha); tier = 'builder-target';
+          target = next.target?.text; dEV = gain;
+        }
+      }
     } else if (COMMON.includes(letter) && (ctx.activePlayers ?? ctx.players) <= 3) {
       value = 7; tier = 'filler';
     }
@@ -184,7 +212,7 @@ export class Strategy {
       value = Math.min(value * 0.82, this.market.price(slot) + Math.max(1, value * 0.25));
     }
     const amount = Math.floor(Math.min(ctx.balance, Math.max(0, value)));
-    return { amount, value, cashGain, reason: `${tier}; cash +${cashGain}; rack ${rackString(ctx.rack)}` };
+    return { amount, value, cashGain, reason: `${tier}; cash +${cashGain}; target ${target ?? '-'} dEV ${dEV.toFixed(1)}; rack ${rackString(ctx.rack)}` };
   }
 
   word(ctx: GameContext): WordDecision {
