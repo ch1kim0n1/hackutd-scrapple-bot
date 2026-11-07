@@ -1,25 +1,30 @@
-import { performance } from 'node:perf_hooks';
 import { Dictionary, type Word } from './dictionary.js';
-import { BAG, VALUES, rackString, subtract, tileCount, type Rack } from './letters.js';
+import { BAG, VALUES, faceValue, rackString, subtract, tileCount, type Rack } from './letters.js';
 import { Planner, type Plan } from './planner.js';
 import { predictOpponentBid, type OpponentProfile } from './opponents.js';
-export const POLICY_VERSION = 'fit-v8';
-export const BASE_REVISION = 'fit-v8';
-const COMMON = 'SRNTLEDC', RARE = 'JQXZ';
-const LIQUIDATION = 16, BUILD_RACK = 10, BIG_WORD = 25, RICH_WORD = 30, TARGET_MS = 120;
+// sustainable-v6 = sustainable-v5 + two upgrades (see DEFAULT_POLICY). V5_POLICY reproduces v5 exactly for A/B tests.
+export const POLICY_VERSION = 'sustainable-v6';
+export const BASE_REVISION = 'sustainable-v6';
 export interface Policy {
   rewardWeight: number; investmentBase: number; investmentFace: number;
   holdMinLength: number; holdRackSize: number; cashoutBalance: number; opponentWeight: number;
   endgameBudget: number; balanceSmoothing: number;
   sustainability: number; reserveFraction: number;
+  spendDown: number;
 }
-export const DEFAULT_POLICY: Policy = { rewardWeight: 1.55, investmentBase: 6, investmentFace: 3,
+export const V5_POLICY: Policy = { rewardWeight: 1.55, investmentBase: 6, investmentFace: 3,
   holdMinLength: 7, holdRackSize: 12, cashoutBalance: 18, opponentWeight: 0, endgameBudget: 1, balanceSmoothing: 1,
-  sustainability: 1, reserveFraction: 0.55 };
+  sustainability: 1, reserveFraction: 0.55, spendDown: 0 };
+// v6 upgrades, both from live data:
+// 1. reserveFraction 0.55 -> 0.30. In 15 v5 games the reserve capped 198 bids below our own valuation, and we then
+//    lost 134 auctions that cleared at or under that valuation (about 9 tiles per game; leaders buy 3-4 more than us).
+// 2. spendDown: v5 ended with 22.8 coins unused on average and bought 1.7 tiles in the last 17 auctions; leftover
+//    cash is worth nothing, so a small rack buys common letters late.
+export const DEFAULT_POLICY: Policy = { ...V5_POLICY, reserveFraction: 0.3, spendDown: 1 };
 export function validatePolicy(value: Partial<Policy>): Policy {
   const limits: Record<keyof Policy, [number, number]> = { rewardWeight: [1, 2.5], investmentBase: [2, 12], investmentFace: [1, 5],
     holdMinLength: [4, 7], holdRackSize: [8, 15], cashoutBalance: [10, 40], opponentWeight: [0, 0.8], endgameBudget: [0, 1], balanceSmoothing: [0, 1],
-    sustainability: [0, 1], reserveFraction: [0.2, 0.8] };
+    sustainability: [0, 1], reserveFraction: [0.2, 0.8], spendDown: [0, 1] };
   const policy = { ...DEFAULT_POLICY, ...value };
   for (const key of Object.keys(limits) as (keyof Policy)[]) {
     const [low, high] = limits[key];
@@ -82,6 +87,26 @@ export class Strategy {
   setPolicy(policy: Partial<Policy>) { this.policy = validatePolicy(policy); }
   setProfiles(profiles: OpponentProfile[]) { this.profiles = new Map(profiles.map(p => [p.botId, p])); }
 
+  capitalReserve(ctx: GameContext): number {
+    const total = ctx.totalAuctions ?? Math.max(68, ctx.remaining + 1);
+    return 100 * this.policy.reserveFraction * Math.pow(Math.min(1, ctx.remaining / total), 0.9);
+  }
+
+  private leaveValue(rack: Rack): number {
+    let value = faceValue(rack) * 0.7, vowels = 0;
+    for (let i = 0; i < 26; i++) {
+      if (!rack[i]) continue;
+      const letter = String.fromCharCode(65 + i);
+      if ('AEIOU'.includes(letter)) vowels += rack[i];
+      if ('AEINORST'.includes(letter)) value += 1.8;
+      if (rack[i] > 1) value -= (rack[i] - 1) * 1.5;
+    }
+    const tiles = tileCount(rack);
+    if (tiles >= 3 && (!vowels || vowels === tiles)) value -= 3;
+    if (rack[16] && !rack[20]) value -= 5;
+    return Math.max(0, value);
+  }
+
   private completionProbability(missing: number[], ctx: GameContext): number {
     const frequencies = ctx.frequencies ?? BAG.map(n => n / 98);
     const counts = new Map<number, number>();
@@ -125,41 +150,6 @@ export class Strategy {
     return { value, target };
   }
 
-  // Expected reward of the best 7+ letter word within two missing tiles.
-  // ponytail: best single target only; a mixture over targets is the upgrade if this proves useful.
-  targetEV(rack: Rack, ctx: GameContext): { ev: number; target?: Word } {
-    let ev = 0, target: Word | undefined;
-    for (const c of this.dictionary.candidates(rack, 2)) {
-      if (c.word.text.length < 7) continue;
-      const p = c.missing.length ? this.completionProbability(c.missing, ctx) : 1;
-      if (p < 0.02) continue;
-      const cost = c.missing.reduce((n, slot) => n + this.market.price(slot) * 0.65, 0);
-      const v = p * (c.word.score - cost);
-      if (v > ev) { ev = v; target = c.word; }
-    }
-    return { ev, target };
-  }
-
-  // Points one coin is worth now. Money has no value at the end.
-  // ponytail: step schedule from the research report; fit an alpha(money, time) grid offline later.
-  private alpha(remaining: number): number {
-    return remaining >= 34 ? 1.3 : remaining >= 17 ? 1 : remaining >= 5 ? 0.5 : 0.1;
-  }
-
-  // Builder price ceiling from medians of the bid to beat at our tables, shifted
-  // by about 1.7 per active bidder away from 4.5.
-  ceiling(letter: string, ctx: GameContext): number {
-    if (RARE.includes(letter)) return 0;
-    // Heavy letters track their market price (winning bids ~17 for B/C/M/P, ~20 for F/H/V/W/Y, ~24 for K);
-    // a low flat ceiling meant we never won them: only 7% of our tiles were worth 4+ points vs 19% for winners.
-    const points = VALUES[letter.charCodeAt(0) - 65];
-    const base = (COMMON.includes(letter) ? 13.5 : 12) + 2 * Math.max(0, points - 1);
-    // Rival bids climb late (about 19 in the last 16 auctions); a flat ceiling stopped us buying after auction ~35.
-    // ponytail: linear +3..+5 ramp, fit properly once more live games exist.
-    const late = ctx.remaining >= 34 ? 0 : 3 + 2 * (1 - ctx.remaining / 34);
-    return Math.max(4, base + late + 1.7 * ((ctx.activePlayers ?? ctx.players) - 4.5));
-  }
-
   bid(letter: string, ctx: GameContext): BidDecision {
     if (ctx.balance < 1) return { amount: 0, value: 0, reason: 'no funds' };
     // The server resolves the last auction and ends the match atomically.
@@ -167,77 +157,106 @@ export class Strategy {
     const slot = letter.charCodeAt(0) - 65;
     const after = ctx.rack.slice(); after[slot]++;
     const beforePlan = this.planner.plan(ctx.rack);
+    const afterContext = { ...ctx, rack: after };
     const afterPlan = this.planner.plan(after);
+    const beforeValue = this.potential(ctx, beforePlan).value;
+    const afterPotential = this.potential(afterContext, afterPlan);
     const cashGain = afterPlan.score - beforePlan.score;
-    const alpha = this.alpha(ctx.remaining);
+    const gain = Math.max(cashGain, afterPotential.value - beforeValue);
+    const early = Math.min(1, ctx.remaining / 12);
+    const have = ctx.rack[slot];
+    const vowelCount = [...'AEIOU'].reduce((n, c) => n + ctx.rack[c.charCodeAt(0) - 65], 0);
     const tiles = tileCount(ctx.rack);
-    const big = (rack: Rack) => this.dictionary.playable(rack).some(w => w.text.length >= 7 || w.score >= BIG_WORD);
-    let value = 0, tier = 'filler', target: string | undefined, dEV = 0;
-    if (ctx.remaining <= LIQUIDATION) {
-      // Only tiles that pay before the end are worth money now.
-      if (cashGain > 0) { value = ctx.remaining <= 4 ? ctx.balance : cashGain / alpha; tier = 'endgame'; }
-      // Spend-down: leftover cash is worthless, so a small rack buys common letters for short words.
-      else if (ctx.remaining >= 3 && tiles < 8 && COMMON.includes(letter)) { value = Math.min(8, Math.max(0, ctx.balance - 5)); tier = 'spend-down'; }
-    } else if (cashGain > 0 && !big(ctx.rack) && big(after)) {
-      // Completer: b* = R + (R - V_wait) / alpha.
-      const wait = Math.max(0, this.potential(ctx, beforePlan).value - beforePlan.score);
-      value = cashGain + Math.max(0, cashGain - wait) / alpha; tier = 'completer';
-    } else if (tiles < BUILD_RACK) {
-      // Builder: volume wins (rack size drives P(7-letter word)), so bid up to the
-      // letter's ceiling, scaled by fit with the rack.
-      const have = ctx.rack[slot];
-      const vowels = [...'AEIOU'].reduce((n, c) => n + ctx.rack[c.charCodeAt(0) - 65], 0);
-      const ratio = tiles ? vowels / tiles : 0.4;
-      const vowel = 'AEIOU'.includes(letter);
-      const balance = tiles < 3 ? 1 : vowel ? (ratio >= 0.5 ? 0.5 : 1) : (ratio < 0.2 ? 0.6 : 1);
-      const duplicate = have === 0 ? 1 : have === 1 ? 0.6 : 0.2;
-      const quFix = letter === 'U' && ctx.rack[16] ? 1.5 : 1;
-      const base = this.ceiling(letter, ctx) * balance * duplicate * quFix;
-      value = base; tier = 'builder';
-      // Value the tile by how much it raises the best 7+ target; time-boxed, else letter ceilings alone.
-      const t0 = performance.now();
-      const now = this.targetEV(ctx.rack, ctx);
-      if (performance.now() - t0 < TARGET_MS / 2) {
-        const next = this.targetEV(after, ctx);
-        if (performance.now() - t0 < TARGET_MS) {
-          const gain = next.ev - now.ev;
-          value = base + Math.min(10, 0.4 * Math.max(0, gain) / alpha); tier = 'builder-target';
-          // J/Q/X/Z are 8-10 points: bid only when a real target uses them.
-          if (RARE.includes(letter) && gain >= 8) value = Math.min(28, 0.6 * gain / alpha);
-          target = next.target?.text; dEV = gain;
-        }
-      }
-    } else if (COMMON.includes(letter) && (ctx.activePlayers ?? ctx.players) <= 3) {
-      value = 7; tier = 'filler';
+    const vowel = 'AEIOU'.includes(letter);
+    let flexibility = early * (have === 0 ? 2.0 : have === 1 ? 0.8 : 0.1);
+    if (vowel && vowelCount < Math.max(1, tiles * 0.3)) flexibility += 1.5 * early;
+    if (letter === 'S' && have < 2) flexibility += 1.2 * early;
+    if (letter === 'Q' && !ctx.rack[20] && cashGain === 0) flexibility *= 0.15;
+    const scarcity = ctx.balance < 12 ? 0.68 : ctx.balance < 25 ? 0.82 : 1;
+    // Small racks need investment before a complete word exists. A pure
+    // immediate-score marginal bid otherwise loses every common tile and stalls.
+    // Empty racks have no vowel imbalance. The old 0/1 fallback treated an
+    // empty rack as consonant-heavy and discounted every new consonant.
+    const vowelRatio = tiles ? vowelCount / tiles : 0.4;
+    const imbalanceDiscount = 0.55 + 0.25 * this.policy.balanceSmoothing;
+    const desiredVowel = vowel ? (vowelRatio < 0.5 ? 1 : imbalanceDiscount)
+      : (vowelRatio > 0.2 ? 1 : imbalanceDiscount);
+    const duplicates = have === 0 ? 1 : have === 1 ? 0.65 : 0.2;
+    const forecasts = (ctx.opponents ?? []).flatMap(opponent => {
+      const profile = this.profiles.get(opponent.botId);
+      return profile ? [predictOpponentBid(profile, letter, ctx.remaining, opponent.balance, opponent.rackSize)] : [];
+    });
+    const opposition = forecasts.length ? Math.max(...forecasts) : 0;
+    const investment = Math.max(this.market.price(slot) + 2, this.policy.investmentBase + this.policy.investmentFace * VALUES[slot]);
+    const learnedFloor = investment + this.policy.opponentWeight * Math.max(0, opposition + 1 - investment);
+    const flexibilityFloor = early * learnedFloor * desiredVowel * duplicates
+      * (letter === 'Q' && !ctx.rack[20] ? 0.1 : 1);
+    // A word earns both score and spendable currency. Treating its reward
+    // solely as future cash undervalues it in a finite score-maximizing game.
+    let value = Math.max(0, gain * this.policy.rewardWeight + flexibility, flexibilityFloor * (ctx.balance > 70 ? 1.15 : 1)) * scarcity;
+    if (cashGain > 0 && ctx.remaining < 20) {
+      const expectedPurchases = Math.max(1, ctx.remaining / Math.max(2, ctx.players / 2));
+      const surplus = Math.min(5, Math.max(1, ctx.balance / Math.max(1, expectedPurchases * this.market.price(slot))));
+      value *= 1 + this.policy.endgameBudget * Math.min(1, (20 - ctx.remaining) / 12) * (surplus - 1);
+    }
+    if (ctx.remaining === 1 && cashGain > 0) value = ctx.balance;
+    // There is no value in unspent money after the match. Avoid burning the
+    // bankroll on speculative tiles, but fund an immediately profitable play.
+    const oldReserve = Math.min(10, Math.floor(ctx.remaining / 5));
+    const reserve = oldReserve * (1 - this.policy.sustainability) + this.capitalReserve(ctx) * this.policy.sustainability;
+    const freeCash = Math.max(0, ctx.balance - reserve);
+    // Short-word gains must not bypass the entire reserve. A seven-letter
+    // completion can finance its own purchase through its immediate payout.
+    const beforeLong = this.dictionary.playable(ctx.rack).some(w => w.text.length >= 7);
+    const completedLong = !beforeLong ? this.dictionary.playable(after).filter(w => w.text.length >= 7)[0] : undefined;
+    const recyclingBudget = completedLong ? completedLong.score * 0.7 : Math.max(0, cashGain) * 0.9;
+    const sustainableBudget = Math.min(ctx.balance, Math.max(freeCash, recyclingBudget));
+    const oldBudget = cashGain > 0 ? ctx.balance : Math.max(0, ctx.balance - oldReserve);
+    let budget = oldBudget * (1 - this.policy.sustainability) + sustainableBudget * this.policy.sustainability;
+    // At the end, money has no later use. Keep the final unplayable tile guard.
+    if (ctx.remaining <= 4 && cashGain > 0) budget = ctx.balance;
+    // v6: leftover cash is worthless, so a small rack buys common letters in the last 16 auctions.
+    let spendDown = false;
+    if (this.policy.spendDown && ctx.remaining >= 3 && ctx.remaining <= 16 && cashGain <= 0 && tiles < 8 && 'SRNTLEDC'.includes(letter)) {
+      const spare = Math.max(0, ctx.balance - 5);
+      value = Math.max(value, Math.min(8, spare)); budget = Math.max(budget, spare); spendDown = spare > 0;
     }
     if (ctx.auctionType === 'FirstPrice') {
       value = Math.min(value * 0.82, this.market.price(slot) + Math.max(1, value * 0.25));
     }
-    const amount = Math.floor(Math.min(ctx.balance, Math.max(0, value)));
-    return { amount, value, cashGain, reason: `${tier}; cash +${cashGain}; target ${target ?? '-'} dEV ${dEV.toFixed(1)}; rack ${rackString(ctx.rack)}` };
+    const amount = Math.floor(Math.min(budget, Math.max(0, value)));
+    return { amount, value, cashGain, reason: `${spendDown ? 'spend-down; ' : ''}cash +${cashGain}; reserve ${Math.round(reserve)}; target ${afterPotential.target?.text ?? '-'}; rack ${rackString(ctx.rack)}` };
   }
 
   word(ctx: GameContext): WordDecision {
     const plan = this.planner.plan(ctx.rack);
     if (!plan.words.length) return { word: null, reason: 'no playable word', planScore: 0 };
-    const first = plan.words[0].text;
-    if (ctx.remaining <= LIQUIDATION) return { word: first, reason: 'endgame liquidation', planScore: plan.score };
-    const big = this.dictionary.playable(ctx.rack).filter(w => w.text.length >= 7 || w.score >= BIG_WORD);
-    if (big.length) {
-      // Best big word plus whatever the leftover tiles can still earn.
-      const best = big.slice(0, 40).map(w => ({ w, total: w.score + this.planner.plan(subtract(ctx.rack, w.counts)).score }))
-        .sort((a, b) => b.total - a.total)[0].w;
-      // Cheap sevens wait for a richer one while we can still afford to grow the rack.
-      // ponytail: 30 points is a guess from the 27-vs-53 gap; tune with live games.
-      // Only hold while the builder tier is still bidding (tiles < BUILD_RACK); holding with bids off froze fit-v7 for 17 auctions.
-      if (best.score < RICH_WORD && ctx.remaining > 34 && tileCount(ctx.rack) < BUILD_RACK && ctx.balance >= 10) {
-        return { word: null, reason: `hold cheap ${best.text} (${best.score}) for a richer word`, planScore: plan.score };
-      }
-      return { word: best.text, reason: 'seven-letter or big word', planScore: plan.score };
+    const playable = this.dictionary.playable(ctx.rack);
+    const long = playable.filter(w => w.text.length >= 7);
+    // Sell one word at a time. Among equivalent liquidation choices, preserve
+    // a useful leave for the next word rather than repeatedly emptying the rack.
+    const choices = (long.length ? long : playable).slice(0, 40);
+    const future = ctx.balance <= this.policy.cashoutBalance || ctx.remaining <= 5 ? 0 : Math.min(1, ctx.remaining / 20) * this.policy.sustainability;
+    const first = future ? choices.map(word => {
+      const rest = subtract(ctx.rack, word.counts);
+      return { word, utility: word.score + Math.max(this.planner.plan(rest).score, this.leaveValue(rest) * 1.8 * future) };
+    }).sort((a, b) => b.utility - a.utility || b.word.score - a.word.score)[0].word : plan.words[0];
+    if (ctx.remaining <= 5) return { word: first.text, reason: 'endgame liquidation', planScore: plan.score };
+    if (ctx.balance <= this.policy.cashoutBalance) return { word: first.text, reason: 'replenish bidding funds', planScore: plan.score };
+    if (first.text.length >= 7) return { word: first.text, reason: 'maximum length multiplier', planScore: plan.score };
+    if (first.text.length < this.policy.holdMinLength && ctx.remaining > 12 && tileCount(ctx.rack) < this.policy.holdRackSize && ctx.balance > 30) {
+      return { word: null, reason: 'build a rack for the length bonus', planScore: plan.score };
     }
-    if (tileCount(ctx.rack) >= this.policy.holdRackSize) return { word: first, reason: 'rack full without a seven', planScore: plan.score };
-    // ponytail: a broke bot cannot grow its rack; sell one word rather than stall.
-    if (ctx.balance < 3) return { word: first, reason: 'out of funds', planScore: plan.score };
-    return { word: null, reason: 'hold for a seven-letter word', planScore: plan.score };
+    const now = this.potential(ctx, plan);
+    const after = { ...ctx, rack: subtract(ctx.rack, first.counts), balance: ctx.balance + first.score };
+    const rest = this.planner.plan(after.rack);
+    const playValue = first.score + this.potential(after, rest).value;
+    // Waiting has a cost: fewer future auctions and money locked in the rack.
+    const waitingAdvantage = now.value - playValue;
+    const patience = first.text.length <= 3 ? 1.8 : 3;
+    if (waitingAdvantage > patience && tileCount(ctx.rack) < 17) {
+      return { word: null, reason: `hold for ${now.target?.text ?? 'completion'} (+${waitingAdvantage.toFixed(1)} expected)`, planScore: plan.score };
+    }
+    return { word: first.text, reason: 'best word combination', planScore: plan.score };
   }
 }

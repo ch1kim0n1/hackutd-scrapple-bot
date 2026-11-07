@@ -5,7 +5,7 @@ import type { Auction, Match } from './module_bindings/types.js';
 import { BOT_ID, DATABASE, HOST, loadToken, saveToken } from './config.js';
 import { loadDictionary } from './dictionary.js';
 import { BAG, VALUES, rackString, type Rack } from './letters.js';
-import { BASE_REVISION, POLICY_VERSION, Strategy, type GameContext } from './strategy.js';
+import { BASE_REVISION, DEFAULT_POLICY, POLICY_VERSION, Strategy, V5_POLICY, type GameContext } from './strategy.js';
 import type { HistoricalMatch } from './history.js';
 import { validateMatch } from './history.js';
 import { maybeStartRequestedVersion } from './versioning.js';
@@ -15,6 +15,10 @@ mkdirSync('logs', { recursive: true });
 mkdirSync('.run', { recursive: true });
 mkdirSync('data/learning/self', { recursive: true });
 let activeRevision = BASE_REVISION;
+// A/B: alternate sustainable-v6 and the sustainable-v5 baseline by match id, so both face the same table mix.
+// Set AB=0 to play v6 only.
+const ARMS = process.env.AB === '0' ? [{ revision: 'sustainable-v6', policy: DEFAULT_POLICY }]
+  : [{ revision: 'sustainable-v6', policy: DEFAULT_POLICY }, { revision: 'sustainable-v5', policy: V5_POLICY }];
 const bootAt = Date.now();
 const policyLineage = new Map<bigint, Set<string>>();
 const log = (event: string, details: Record<string, unknown> = {}) => {
@@ -47,7 +51,7 @@ function refreshLearning() {
     modelReadAt = Date.now();
     try {
       if (existsSync('data/learning/profiles.json')) strategy.setProfiles(JSON.parse(readFileSync('data/learning/profiles.json', 'utf8')).profiles.filter((p: { matches: number }) => p.matches >= 8));
-      if (existsSync('.run/champion.json')) {
+      if (ARMS.length === 1 && existsSync('.run/champion.json')) {
         const champion = JSON.parse(readFileSync('.run/champion.json', 'utf8'));
         if (champion.revision !== activeRevision) pendingChampion = champion;
       }
@@ -216,10 +220,15 @@ async function play(match: Match, game: GameContext) {
     lastWord.delete(match.id); log('word_error', { match: String(match.id), word: decision.word, error: String(error) });
   } finally { wordInFlight.delete(match.id); schedulePump(); }
 }
+function useArm(matchId: bigint) {
+  const arm = ARMS[Number(matchId % BigInt(ARMS.length))];
+  if (activeRevision !== arm.revision) { strategy.setPolicy(arm.policy); activeRevision = arm.revision; log('arm_selected', { match: String(matchId), revision: arm.revision }); }
+}
 function pump() {
   if (!ready || !conn || stopping) return;
   refreshLearning();
   for (const match of runningMatches()) {
+    useArm(match.id);
     const lineage = policyLineage.get(match.id) ?? new Set<string>(); lineage.add(activeRevision); policyLineage.set(match.id, lineage);
     subscribeMatch(match.id);
     if (!matchesReady.has(match.id)) continue;
