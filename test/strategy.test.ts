@@ -136,6 +136,14 @@ test('never holds a word while bidding is switched off (fit-v7 freeze)', () => {
   // any rack the bot holds a word on must still produce builder bids
   assert(strategy.bid('S', context('ORIENTS', { remaining: 50 })).amount > 0);
 });
+test('heavy letters get ceilings near their market price; J/Q/X/Z only bid for a real target', () => {
+  const strategy = new Strategy(new Dictionary(['OXYGENS', 'AT']));
+  const c = context('CAT', { remaining: 45, activePlayers: 4.5 });
+  assert(strategy.ceiling('K', c) >= 20 && strategy.ceiling('H', c) >= 18 && strategy.ceiling('U', c) < 14);
+  assert.equal(strategy.ceiling('X', c), 0);
+  assert.equal(strategy.bid('X', context('CAT', { remaining: 45 })).amount, 0);
+  assert(strategy.bid('X', context('OGENS', { remaining: 45 })).amount > 0);
+});
 test('small-rack planner matches an independent exhaustive allocation oracle', () => {
   const words = ['AT', 'BAT', 'TAB', 'BATH', 'HAT', 'AB', 'AH', 'TA'];
   const dictionary = new Dictionary(words);

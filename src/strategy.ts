@@ -3,9 +3,9 @@ import { Dictionary, type Word } from './dictionary.js';
 import { BAG, VALUES, rackString, subtract, tileCount, type Rack } from './letters.js';
 import { Planner, type Plan } from './planner.js';
 import { predictOpponentBid, type OpponentProfile } from './opponents.js';
-export const POLICY_VERSION = 'fit-v7b';
-export const BASE_REVISION = 'fit-v7b';
-const COMMON = 'SRNTLEDC', MIDDLE = 'AIOMGP', RARE = 'JQXZ';
+export const POLICY_VERSION = 'fit-v8';
+export const BASE_REVISION = 'fit-v8';
+const COMMON = 'SRNTLEDC', RARE = 'JQXZ';
 const LIQUIDATION = 16, BUILD_RACK = 10, BIG_WORD = 25, RICH_WORD = 30, TARGET_MS = 120;
 export interface Policy {
   rewardWeight: number; investmentBase: number; investmentFace: number;
@@ -150,14 +150,14 @@ export class Strategy {
   // by about 1.7 per active bidder away from 4.5.
   ceiling(letter: string, ctx: GameContext): number {
     if (RARE.includes(letter)) return 0;
-    const base = COMMON.includes(letter) ? 13.5 : MIDDLE.includes(letter) ? 11 : 8;
+    // Heavy letters track their market price (winning bids ~17 for B/C/M/P, ~20 for F/H/V/W/Y, ~24 for K);
+    // a low flat ceiling meant we never won them: only 7% of our tiles were worth 4+ points vs 19% for winners.
+    const points = VALUES[letter.charCodeAt(0) - 65];
+    const base = (COMMON.includes(letter) ? 13.5 : 12) + 2 * Math.max(0, points - 1);
     // Rival bids climb late (about 19 in the last 16 auctions); a flat ceiling stopped us buying after auction ~35.
     // ponytail: linear +3..+5 ramp, fit properly once more live games exist.
     const late = ctx.remaining >= 34 ? 0 : 3 + 2 * (1 - ctx.remaining / 34);
-    // A 7+ letter word pays 3x tile values, so tiles worth more points are worth more.
-    // Our 7+ words averaged 27 points against 53 for winners: mostly 1-point letters.
-    const heavy = 1.5 * Math.max(0, VALUES[letter.charCodeAt(0) - 65] - 1);
-    return Math.max(4, base + heavy + late + 1.7 * ((ctx.activePlayers ?? ctx.players) - 4.5));
+    return Math.max(4, base + late + 1.7 * ((ctx.activePlayers ?? ctx.players) - 4.5));
   }
 
   bid(letter: string, ctx: GameContext): BidDecision {
@@ -202,6 +202,8 @@ export class Strategy {
         if (performance.now() - t0 < TARGET_MS) {
           const gain = next.ev - now.ev;
           value = base + Math.min(10, 0.4 * Math.max(0, gain) / alpha); tier = 'builder-target';
+          // J/Q/X/Z are 8-10 points: bid only when a real target uses them.
+          if (RARE.includes(letter) && gain >= 8) value = Math.min(28, 0.6 * gain / alpha);
           target = next.target?.text; dEV = gain;
         }
       }

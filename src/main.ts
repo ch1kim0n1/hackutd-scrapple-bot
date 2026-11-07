@@ -4,7 +4,7 @@ import { DbConnection, type SubscriptionHandle } from './module_bindings/index.j
 import type { Auction, Match } from './module_bindings/types.js';
 import { BOT_ID, DATABASE, HOST, loadToken, saveToken } from './config.js';
 import { loadDictionary } from './dictionary.js';
-import { BAG, rackString, type Rack } from './letters.js';
+import { BAG, VALUES, rackString, type Rack } from './letters.js';
 import { BASE_REVISION, POLICY_VERSION, Strategy, type GameContext } from './strategy.js';
 import type { HistoricalMatch } from './history.js';
 import { validateMatch } from './history.js';
@@ -88,7 +88,7 @@ function archiveMatch(match: Match) {
   const qualityErrors = validateMatch(record);
   writeFileSync(`data/learning/self/${match.id}.json`, JSON.stringify({ ...record, botId: Number(BOT_ID), policy: activeRevision,
     mixedPolicy: record.createdAt < bootAt || (policyLineage.get(match.id)?.size ?? 0) > 1,
-    rank, score: mine.score, endingBalance: mine.balance, tilesBought, leftoverRack: rackString(leftover), leftoverScore, flags, qualityErrors,
+    rank, score: mine.score, endingBalance: mine.balance, tilesBought, tilePoints: record.auctions.filter(a => a.winner === Number(BOT_ID)).reduce((n, a) => n + (VALUES[a.letter.charCodeAt(0) - 65] ?? 0), 0), leftoverRack: rackString(leftover), leftoverScore, flags, qualityErrors,
     bidTrace: [...(bidTraces.get(match.id)?.values() ?? [])] }));
   bidTraces.delete(match.id); policyLineage.delete(match.id);
   writeFileSync('.run/market.json.tmp', JSON.stringify(strategy.market.snapshot())); renameSync('.run/market.json.tmp', '.run/market.json');
