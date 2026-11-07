@@ -1,0 +1,9 @@
+node_modules/
+.secrets/
+logs/
+.run/
+.env
+.token-*
+*.tsbuildinfo
+data/learning/
+data/training/

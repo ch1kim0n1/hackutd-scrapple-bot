@@ -1,0 +1,28 @@
+{
+  "name": "soapconsumers",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "start:background": "tsx scripts/background.ts",
+    "stop": "tsx scripts/stop.ts",
+    "provision": "tsx scripts/provision.ts",
+    "check": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "benchmark": "tsx scripts/benchmark.ts",
+    "simulate": "tsx scripts/simulate.ts",
+    "learn": "tsx scripts/evolve.ts",
+    "learn:once": "tsx scripts/evolve.ts --once",
+    "learn:background": "tsx scripts/background.ts --learner",
+    "learn:stop": "tsx scripts/stop.ts --learner",
+    "research": "tsx scripts/collect-opponents.ts && tsx scripts/profile-opponents.ts",
+    "status": "tsx scripts/status.ts",
+    "dataset:once": "tsx scripts/collect-training.ts --once",
+    "dataset:background": "tsx scripts/background.ts --dataset",
+    "dataset:stop": "tsx scripts/stop.ts --dataset",
+    "dataset:export": "tsx scripts/export-training.ts"
+  },
+  "dependencies": { "spacetimedb": "2.12.0", "ws": "^8.18.0" },
+  "devDependencies": { "@types/node": "^25.0.0", "tsx": "^4.20.0", "typescript": "^5.9.0" }
+}

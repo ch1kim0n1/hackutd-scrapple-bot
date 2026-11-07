@@ -1,0 +1,3609 @@
+{
+  "summary": {
+    "mode": "observed",
+    "games": 24,
+    "policy": {
+      "rewardWeight": 1.55,
+      "investmentBase": 6,
+      "investmentFace": 3,
+      "holdMinLength": 7,
+      "holdRackSize": 12,
+      "cashoutBalance": 18,
+      "opponentWeight": 0,
+      "endgameBudget": 1,
+      "balanceSmoothing": 1,
+      "sustainability": 1,
+      "reserveFraction": 0.55
+    },
+    "before": {
+      "score": 72.29166666666667,
+      "rank": 2.375,
+      "wins": 8
+    },
+    "after": {
+      "score": 82.33333333333333,
+      "rank": 1.875,
+      "wins": 10
+    },
+    "lateScoreGainBefore": 7.583333333333333,
+    "lateScoreGainAfter": 27.833333333333332
+  },
+  "cases": [
+    {
+      "seed": 90000,
+      "before": {
+        "seed": 90000,
+        "scores": [
+          66,
+          51,
+          60,
+          73,
+          115,
+          12
+        ],
+        "hero": 66,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          51,
+          0,
+          43,
+          2,
+          12,
+          112
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 39,
+            "balance": 99,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 39,
+            "balance": 91,
+            "tiles": 2,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 39,
+            "balance": 76,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 64,
+            "balance": 63,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 64,
+            "balance": 63,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 64,
+            "balance": 63,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 68,
+            "score": 66,
+            "balance": 51,
+            "tiles": 0,
+            "rank": 3
+          }
+        ]
+      },
+      "after": {
+        "seed": 90000,
+        "scores": [
+          81,
+          51,
+          93,
+          73,
+          90,
+          12
+        ],
+        "hero": 81,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          15,
+          6,
+          52,
+          1,
+          60,
+          112
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 36,
+            "balance": 96,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 36,
+            "balance": 88,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 36,
+            "balance": 64,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 69,
+            "balance": 67,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 69,
+            "balance": 67,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 81,
+            "balance": 15,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 81,
+            "balance": 15,
+            "tiles": 1,
+            "rank": 3
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90001,
+      "before": {
+        "seed": 90001,
+        "scores": [
+          66,
+          49,
+          49,
+          69,
+          67,
+          10
+        ],
+        "hero": 66,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          64,
+          5,
+          3,
+          3,
+          14,
+          89
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 39,
+            "balance": 107,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 39,
+            "balance": 107,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 39,
+            "balance": 98,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 40,
+            "score": 66,
+            "balance": 64,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 66,
+            "balance": 64,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 66,
+            "balance": 64,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 68,
+            "score": 66,
+            "balance": 64,
+            "tiles": 1,
+            "rank": 3
+          }
+        ]
+      },
+      "after": {
+        "seed": 90001,
+        "scores": [
+          78,
+          49,
+          41,
+          69,
+          67,
+          10
+        ],
+        "hero": 78,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          32,
+          2,
+          5,
+          2,
+          23,
+          101
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 39,
+            "balance": 107,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 39,
+            "balance": 107,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 39,
+            "balance": 98,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 40,
+            "score": 66,
+            "balance": 64,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 66,
+            "balance": 52,
+            "tiles": 2,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 78,
+            "balance": 32,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 78,
+            "balance": 32,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90002,
+      "before": {
+        "seed": 90002,
+        "scores": [
+          41,
+          47,
+          96,
+          71,
+          83,
+          12
+        ],
+        "hero": 41,
+        "win": false,
+        "rank": 5,
+        "balances": [
+          20,
+          4,
+          7,
+          2,
+          27,
+          112
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 22,
+            "balance": 102,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 22,
+            "balance": 92,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 22,
+            "balance": 73,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 41,
+            "balance": 20,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 41,
+            "balance": 20,
+            "tiles": 0,
+            "rank": 4
+          },
+          {
+            "round": 60,
+            "score": 41,
+            "balance": 20,
+            "tiles": 0,
+            "rank": 5
+          },
+          {
+            "round": 68,
+            "score": 41,
+            "balance": 20,
+            "tiles": 0,
+            "rank": 5
+          }
+        ]
+      },
+      "after": {
+        "seed": 90002,
+        "scores": [
+          73,
+          46,
+          64,
+          71,
+          71,
+          12
+        ],
+        "hero": 73,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          16,
+          4,
+          3,
+          3,
+          22,
+          112
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 30,
+            "balance": 99,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 30,
+            "balance": 89,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 30,
+            "balance": 70,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 30,
+            "balance": 29,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 67,
+            "balance": 45,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 69,
+            "balance": 24,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 68,
+            "score": 73,
+            "balance": 16,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90003,
+      "before": {
+        "seed": 90003,
+        "scores": [
+          92,
+          58,
+          63,
+          44,
+          67,
+          16
+        ],
+        "hero": 92,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          21,
+          6,
+          35,
+          3,
+          11,
+          116
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 56,
+            "tiles": 9,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 54,
+            "balance": 99,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 54,
+            "balance": 69,
+            "tiles": 5,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 87,
+            "balance": 69,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 92,
+            "balance": 30,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 92,
+            "balance": 21,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 92,
+            "balance": 21,
+            "tiles": 2,
+            "rank": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 90003,
+        "scores": [
+          115,
+          68,
+          58,
+          44,
+          57,
+          16
+        ],
+        "hero": 115,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          18,
+          7,
+          45,
+          0,
+          12,
+          116
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 56,
+            "tiles": 9,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 54,
+            "balance": 91,
+            "tiles": 4,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 54,
+            "balance": 61,
+            "tiles": 6,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 93,
+            "balance": 36,
+            "tiles": 5,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 113,
+            "balance": 40,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 115,
+            "balance": 18,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 115,
+            "balance": 18,
+            "tiles": 1,
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90004,
+      "before": {
+        "seed": 90004,
+        "scores": [
+          69,
+          90,
+          76,
+          58,
+          54,
+          6
+        ],
+        "hero": 69,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          16,
+          9,
+          21,
+          1,
+          16,
+          106
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 20,
+            "balance": 81,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 20,
+            "balance": 71,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 20,
+            "balance": 35,
+            "tiles": 6,
+            "rank": 4
+          },
+          {
+            "round": 40,
+            "score": 69,
+            "balance": 16,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 69,
+            "balance": 16,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 69,
+            "balance": 16,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 69,
+            "balance": 16,
+            "tiles": 1,
+            "rank": 3
+          }
+        ]
+      },
+      "after": {
+        "seed": 90004,
+        "scores": [
+          72,
+          113,
+          79,
+          58,
+          49,
+          6
+        ],
+        "hero": 72,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          47,
+          2,
+          40,
+          1,
+          10,
+          106
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 36,
+            "balance": 97,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 36,
+            "balance": 87,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 36,
+            "balance": 51,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 72,
+            "balance": 47,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 72,
+            "balance": 47,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 72,
+            "balance": 47,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 72,
+            "balance": 47,
+            "tiles": 1,
+            "rank": 3
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90005,
+      "before": {
+        "seed": 90005,
+        "scores": [
+          86,
+          77,
+          45,
+          55,
+          68,
+          7
+        ],
+        "hero": 86,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          12,
+          0,
+          8,
+          5,
+          7,
+          107
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 32,
+            "balance": 112,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 74,
+            "balance": 54,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 74,
+            "balance": 45,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 84,
+            "balance": 23,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 84,
+            "balance": 23,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 84,
+            "balance": 23,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 86,
+            "balance": 12,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 90005,
+        "scores": [
+          86,
+          89,
+          46,
+          62,
+          65,
+          7
+        ],
+        "hero": 86,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          54,
+          5,
+          11,
+          1,
+          19,
+          107
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 42,
+            "balance": 102,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 42,
+            "balance": 41,
+            "tiles": 5,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 42,
+            "balance": 41,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 42,
+            "balance": 29,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 42,
+            "balance": 21,
+            "tiles": 7,
+            "rank": 4
+          },
+          {
+            "round": 60,
+            "score": 86,
+            "balance": 54,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 86,
+            "balance": 54,
+            "tiles": 0,
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90006,
+      "before": {
+        "seed": 90006,
+        "scores": [
+          55,
+          116,
+          45,
+          65,
+          84,
+          9
+        ],
+        "hero": 55,
+        "win": false,
+        "rank": 4,
+        "balances": [
+          50,
+          4,
+          58,
+          1,
+          5,
+          109
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 22,
+            "balance": 102,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 22,
+            "balance": 102,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 22,
+            "balance": 87,
+            "tiles": 2,
+            "rank": 4
+          },
+          {
+            "round": 40,
+            "score": 22,
+            "balance": 26,
+            "tiles": 7,
+            "rank": 4
+          },
+          {
+            "round": 50,
+            "score": 55,
+            "balance": 50,
+            "tiles": 1,
+            "rank": 4
+          },
+          {
+            "round": 60,
+            "score": 55,
+            "balance": 50,
+            "tiles": 1,
+            "rank": 4
+          },
+          {
+            "round": 68,
+            "score": 55,
+            "balance": 50,
+            "tiles": 1,
+            "rank": 4
+          }
+        ]
+      },
+      "after": {
+        "seed": 90006,
+        "scores": [
+          72,
+          96,
+          64,
+          64,
+          74,
+          9
+        ],
+        "hero": 72,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          46,
+          1,
+          46,
+          5,
+          20,
+          109
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 33,
+            "balance": 98,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 33,
+            "balance": 98,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 33,
+            "balance": 76,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 33,
+            "balance": 28,
+            "tiles": 7,
+            "rank": 4
+          },
+          {
+            "round": 50,
+            "score": 69,
+            "balance": 55,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 72,
+            "balance": 46,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 72,
+            "balance": 46,
+            "tiles": 0,
+            "rank": 3
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90007,
+      "before": {
+        "seed": 90007,
+        "scores": [
+          62,
+          39,
+          80,
+          79,
+          59,
+          21
+        ],
+        "hero": 62,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          21,
+          6,
+          9,
+          0,
+          52,
+          121
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 15,
+            "balance": 95,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 15,
+            "balance": 78,
+            "tiles": 2,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 15,
+            "balance": 33,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 57,
+            "balance": 33,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 62,
+            "balance": 21,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 62,
+            "balance": 21,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 62,
+            "balance": 21,
+            "tiles": 1,
+            "rank": 3
+          }
+        ]
+      },
+      "after": {
+        "seed": 90007,
+        "scores": [
+          53,
+          86,
+          51,
+          61,
+          80,
+          21
+        ],
+        "hero": 53,
+        "win": false,
+        "rank": 4,
+        "balances": [
+          17,
+          8,
+          41,
+          7,
+          24,
+          121
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 21,
+            "balance": 101,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 21,
+            "balance": 75,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 21,
+            "balance": 33,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 21,
+            "balance": 33,
+            "tiles": 6,
+            "rank": 4
+          },
+          {
+            "round": 50,
+            "score": 51,
+            "balance": 33,
+            "tiles": 1,
+            "rank": 4
+          },
+          {
+            "round": 60,
+            "score": 53,
+            "balance": 17,
+            "tiles": 1,
+            "rank": 4
+          },
+          {
+            "round": 68,
+            "score": 53,
+            "balance": 17,
+            "tiles": 1,
+            "rank": 4
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90008,
+      "before": {
+        "seed": 90008,
+        "scores": [
+          67,
+          29,
+          65,
+          52,
+          49,
+          19
+        ],
+        "hero": 67,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          19,
+          3,
+          2,
+          3,
+          9,
+          99
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 24,
+            "balance": 94,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 24,
+            "balance": 34,
+            "tiles": 5,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 63,
+            "balance": 54,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 67,
+            "balance": 19,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 67,
+            "balance": 19,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 67,
+            "balance": 19,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 67,
+            "balance": 19,
+            "tiles": 1,
+            "rank": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 90008,
+        "scores": [
+          58,
+          27,
+          75,
+          50,
+          56,
+          19
+        ],
+        "hero": 58,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          28,
+          3,
+          5,
+          1,
+          4,
+          90
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 24,
+            "balance": 94,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 24,
+            "balance": 44,
+            "tiles": 5,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 24,
+            "balance": 44,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 24,
+            "balance": 34,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 49,
+            "balance": 19,
+            "tiles": 4,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 58,
+            "balance": 28,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 58,
+            "balance": 28,
+            "tiles": 0,
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90009,
+      "before": {
+        "seed": 90009,
+        "scores": [
+          46,
+          19,
+          107,
+          61,
+          75,
+          10
+        ],
+        "hero": 46,
+        "win": false,
+        "rank": 4,
+        "balances": [
+          23,
+          7,
+          14,
+          0,
+          18,
+          110
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 22,
+            "balance": 67,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 22,
+            "balance": 67,
+            "tiles": 2,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 22,
+            "balance": 38,
+            "tiles": 4,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 46,
+            "balance": 23,
+            "tiles": 0,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 46,
+            "balance": 23,
+            "tiles": 0,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 46,
+            "balance": 23,
+            "tiles": 0,
+            "rank": 4
+          },
+          {
+            "round": 68,
+            "score": 46,
+            "balance": 23,
+            "tiles": 0,
+            "rank": 4
+          }
+        ]
+      },
+      "after": {
+        "seed": 90009,
+        "scores": [
+          67,
+          74,
+          95,
+          52,
+          63,
+          10
+        ],
+        "hero": 67,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          30,
+          3,
+          65,
+          2,
+          10,
+          110
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 56,
+            "tiles": 7,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 21,
+            "balance": 48,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 21,
+            "balance": 40,
+            "tiles": 4,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 21,
+            "balance": 32,
+            "tiles": 5,
+            "rank": 4
+          },
+          {
+            "round": 50,
+            "score": 61,
+            "balance": 55,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 67,
+            "balance": 30,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 67,
+            "balance": 30,
+            "tiles": 0,
+            "rank": 3
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90010,
+      "before": {
+        "seed": 90010,
+        "scores": [
+          108,
+          66,
+          41,
+          50,
+          81,
+          9
+        ],
+        "hero": 108,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          38,
+          7,
+          10,
+          4,
+          18,
+          109
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 92,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 70,
+            "tiles": 8,
+            "rank": 4
+          },
+          {
+            "round": 30,
+            "score": 32,
+            "balance": 57,
+            "tiles": 4,
+            "rank": 4
+          },
+          {
+            "round": 40,
+            "score": 83,
+            "balance": 51,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 108,
+            "balance": 38,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 108,
+            "balance": 38,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 108,
+            "balance": 38,
+            "tiles": 1,
+            "rank": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 90010,
+        "scores": [
+          124,
+          69,
+          30,
+          50,
+          86,
+          9
+        ],
+        "hero": 124,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          25,
+          6,
+          34,
+          4,
+          14,
+          109
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 92,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 70,
+            "tiles": 8,
+            "rank": 4
+          },
+          {
+            "round": 30,
+            "score": 63,
+            "balance": 61,
+            "tiles": 5,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 63,
+            "balance": 36,
+            "tiles": 8,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 122,
+            "balance": 36,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 122,
+            "balance": 36,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 124,
+            "balance": 25,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90011,
+      "before": {
+        "seed": 90011,
+        "scores": [
+          108,
+          96,
+          61,
+          18,
+          62,
+          14
+        ],
+        "hero": 108,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          3,
+          2,
+          50,
+          0,
+          21,
+          114
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 74,
+            "tiles": 7,
+            "rank": 4
+          },
+          {
+            "round": 20,
+            "score": 60,
+            "balance": 73,
+            "tiles": 4,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 60,
+            "balance": 27,
+            "tiles": 8,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 92,
+            "balance": 50,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 92,
+            "balance": 26,
+            "tiles": 5,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 106,
+            "balance": 22,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 108,
+            "balance": 3,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 90011,
+        "scores": [
+          123,
+          30,
+          76,
+          18,
+          54,
+          14
+        ],
+        "hero": 123,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          40,
+          4,
+          4,
+          0,
+          18,
+          114
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 74,
+            "tiles": 7,
+            "rank": 4
+          },
+          {
+            "round": 20,
+            "score": 57,
+            "balance": 61,
+            "tiles": 6,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 99,
+            "balance": 68,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 99,
+            "balance": 59,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 99,
+            "balance": 32,
+            "tiles": 6,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 123,
+            "balance": 40,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 123,
+            "balance": 40,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90012,
+      "before": {
+        "seed": 90012,
+        "scores": [
+          61,
+          72,
+          73,
+          14,
+          71,
+          14
+        ],
+        "hero": 61,
+        "win": false,
+        "rank": 4,
+        "balances": [
+          22,
+          0,
+          13,
+          0,
+          13,
+          102
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 17,
+            "balance": 108,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 17,
+            "balance": 62,
+            "tiles": 3,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 49,
+            "balance": 56,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 40,
+            "score": 58,
+            "balance": 38,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 61,
+            "balance": 22,
+            "tiles": 0,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 61,
+            "balance": 22,
+            "tiles": 0,
+            "rank": 3
+          },
+          {
+            "round": 68,
+            "score": 61,
+            "balance": 22,
+            "tiles": 0,
+            "rank": 4
+          }
+        ]
+      },
+      "after": {
+        "seed": 90012,
+        "scores": [
+          79,
+          71,
+          51,
+          46,
+          108,
+          14
+        ],
+        "hero": 79,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          26,
+          0,
+          2,
+          4,
+          21,
+          114
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 91,
+            "tiles": 6,
+            "rank": 4
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 54,
+            "tiles": 8,
+            "rank": 4
+          },
+          {
+            "round": 30,
+            "score": 33,
+            "balance": 55,
+            "tiles": 4,
+            "rank": 2
+          },
+          {
+            "round": 40,
+            "score": 33,
+            "balance": 35,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 72,
+            "balance": 47,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 79,
+            "balance": 26,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 79,
+            "balance": 26,
+            "tiles": 0,
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90013,
+      "before": {
+        "seed": 90013,
+        "scores": [
+          56,
+          28,
+          75,
+          51,
+          24,
+          15
+        ],
+        "hero": 56,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          19,
+          1,
+          3,
+          3,
+          17,
+          90
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 30,
+            "balance": 111,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 30,
+            "balance": 71,
+            "tiles": 4,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 56,
+            "balance": 27,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 56,
+            "balance": 19,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 56,
+            "balance": 19,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 56,
+            "balance": 19,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 56,
+            "balance": 19,
+            "tiles": 1,
+            "rank": 2
+          }
+        ]
+      },
+      "after": {
+        "seed": 90013,
+        "scores": [
+          78,
+          30,
+          81,
+          51,
+          37,
+          12
+        ],
+        "hero": 78,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          20,
+          3,
+          3,
+          3,
+          23,
+          103
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 30,
+            "balance": 111,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 30,
+            "balance": 71,
+            "tiles": 4,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 60,
+            "balance": 40,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 60,
+            "balance": 30,
+            "tiles": 4,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 76,
+            "balance": 29,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 78,
+            "balance": 20,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 78,
+            "balance": 20,
+            "tiles": 0,
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90014,
+      "before": {
+        "seed": 90014,
+        "scores": [
+          71,
+          42,
+          45,
+          59,
+          91,
+          3
+        ],
+        "hero": 71,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          17,
+          4,
+          2,
+          1,
+          24,
+          99
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 27,
+            "balance": 56,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 27,
+            "balance": 20,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 57,
+            "balance": 43,
+            "tiles": 2,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 71,
+            "balance": 17,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 71,
+            "balance": 17,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 71,
+            "balance": 17,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 71,
+            "balance": 17,
+            "tiles": 1,
+            "rank": 2
+          }
+        ]
+      },
+      "after": {
+        "seed": 90014,
+        "scores": [
+          79,
+          26,
+          75,
+          69,
+          87,
+          3
+        ],
+        "hero": 79,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          37,
+          3,
+          1,
+          0,
+          27,
+          103
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 36,
+            "balance": 65,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 36,
+            "balance": 51,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 36,
+            "balance": 35,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 36,
+            "balance": 35,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 73,
+            "balance": 46,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 79,
+            "balance": 37,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 79,
+            "balance": 37,
+            "tiles": 0,
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90015,
+      "before": {
+        "seed": 90015,
+        "scores": [
+          61,
+          43,
+          50,
+          53,
+          80,
+          20
+        ],
+        "hero": 61,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          24,
+          2,
+          4,
+          3,
+          16,
+          113
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 27,
+            "balance": 84,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 27,
+            "balance": 65,
+            "tiles": 3,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 27,
+            "balance": 46,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 49,
+            "balance": 32,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 61,
+            "balance": 24,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 61,
+            "balance": 24,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 61,
+            "balance": 24,
+            "tiles": 0,
+            "rank": 2
+          }
+        ]
+      },
+      "after": {
+        "seed": 90015,
+        "scores": [
+          61,
+          54,
+          44,
+          53,
+          80,
+          20
+        ],
+        "hero": 61,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          32,
+          1,
+          4,
+          3,
+          16,
+          104
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 27,
+            "balance": 84,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 27,
+            "balance": 65,
+            "tiles": 3,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 27,
+            "balance": 46,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 57,
+            "balance": 49,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 57,
+            "balance": 40,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 61,
+            "balance": 32,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 61,
+            "balance": 32,
+            "tiles": 1,
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90016,
+      "before": {
+        "seed": 90016,
+        "scores": [
+          75,
+          55,
+          71,
+          46,
+          89,
+          12
+        ],
+        "hero": 75,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          11,
+          3,
+          26,
+          8,
+          9,
+          112
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 59,
+            "tiles": 7,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 66,
+            "balance": 51,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 66,
+            "balance": 36,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 66,
+            "balance": 36,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 75,
+            "balance": 11,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 75,
+            "balance": 11,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 75,
+            "balance": 11,
+            "tiles": 0,
+            "rank": 2
+          }
+        ]
+      },
+      "after": {
+        "seed": 90016,
+        "scores": [
+          71,
+          31,
+          60,
+          63,
+          83,
+          12
+        ],
+        "hero": 71,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          20,
+          6,
+          16,
+          0,
+          12,
+          112
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 59,
+            "tiles": 7,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 36,
+            "balance": 43,
+            "tiles": 4,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 36,
+            "balance": 43,
+            "tiles": 4,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 36,
+            "balance": 34,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 71,
+            "balance": 20,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 71,
+            "balance": 20,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 71,
+            "balance": 20,
+            "tiles": 1,
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90017,
+      "before": {
+        "seed": 90017,
+        "scores": [
+          64,
+          34,
+          102,
+          53,
+          68,
+          12
+        ],
+        "hero": 64,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          13,
+          3,
+          7,
+          4,
+          18,
+          112
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 33,
+            "balance": 48,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 57,
+            "balance": 36,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 59,
+            "balance": 22,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 59,
+            "balance": 22,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 64,
+            "balance": 13,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 64,
+            "balance": 13,
+            "tiles": 0,
+            "rank": 3
+          },
+          {
+            "round": 68,
+            "score": 64,
+            "balance": 13,
+            "tiles": 0,
+            "rank": 3
+          }
+        ]
+      },
+      "after": {
+        "seed": 90017,
+        "scores": [
+          84,
+          59,
+          78,
+          64,
+          60,
+          12
+        ],
+        "hero": 84,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          4,
+          5,
+          36,
+          5,
+          13,
+          112
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 33,
+            "balance": 48,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 33,
+            "balance": 48,
+            "tiles": 3,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 33,
+            "balance": 41,
+            "tiles": 4,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 33,
+            "balance": 32,
+            "tiles": 5,
+            "rank": 4
+          },
+          {
+            "round": 50,
+            "score": 75,
+            "balance": 20,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 81,
+            "balance": 14,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 84,
+            "balance": 4,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90018,
+      "before": {
+        "seed": 90018,
+        "scores": [
+          49,
+          62,
+          76,
+          55,
+          57,
+          10
+        ],
+        "hero": 49,
+        "win": false,
+        "rank": 5,
+        "balances": [
+          24,
+          0,
+          6,
+          1,
+          20,
+          100
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 15,
+            "balance": 71,
+            "tiles": 2,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 15,
+            "balance": 51,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 15,
+            "balance": 26,
+            "tiles": 6,
+            "rank": 4
+          },
+          {
+            "round": 40,
+            "score": 49,
+            "balance": 24,
+            "tiles": 0,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 49,
+            "balance": 24,
+            "tiles": 0,
+            "rank": 4
+          },
+          {
+            "round": 60,
+            "score": 49,
+            "balance": 24,
+            "tiles": 0,
+            "rank": 5
+          },
+          {
+            "round": 68,
+            "score": 49,
+            "balance": 24,
+            "tiles": 0,
+            "rank": 5
+          }
+        ]
+      },
+      "after": {
+        "seed": 90018,
+        "scores": [
+          68,
+          76,
+          60,
+          55,
+          74,
+          10
+        ],
+        "hero": 68,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          26,
+          8,
+          5,
+          3,
+          11,
+          110
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 33,
+            "balance": 78,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 20,
+            "score": 33,
+            "balance": 58,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 30,
+            "score": 33,
+            "balance": 34,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 33,
+            "balance": 34,
+            "tiles": 6,
+            "rank": 4
+          },
+          {
+            "round": 50,
+            "score": 63,
+            "balance": 36,
+            "tiles": 2,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 68,
+            "balance": 26,
+            "tiles": 0,
+            "rank": 3
+          },
+          {
+            "round": 68,
+            "score": 68,
+            "balance": 26,
+            "tiles": 0,
+            "rank": 3
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90019,
+      "before": {
+        "seed": 90019,
+        "scores": [
+          72,
+          70,
+          65,
+          45,
+          69,
+          7
+        ],
+        "hero": 72,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          22,
+          7,
+          31,
+          1,
+          13,
+          107
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 22,
+            "balance": 100,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 22,
+            "balance": 100,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 22,
+            "balance": 45,
+            "tiles": 5,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 72,
+            "balance": 22,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 72,
+            "balance": 22,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 72,
+            "balance": 22,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 72,
+            "balance": 22,
+            "tiles": 1,
+            "rank": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 90019,
+        "scores": [
+          86,
+          37,
+          66,
+          43,
+          46,
+          13
+        ],
+        "hero": 86,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          28,
+          2,
+          4,
+          2,
+          21,
+          95
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 30,
+            "balance": 97,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 30,
+            "balance": 97,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 30,
+            "balance": 69,
+            "tiles": 3,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 72,
+            "balance": 65,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 72,
+            "balance": 50,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 86,
+            "balance": 28,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 86,
+            "balance": 28,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90020,
+      "before": {
+        "seed": 90020,
+        "scores": [
+          83,
+          42,
+          32,
+          46,
+          152,
+          9
+        ],
+        "hero": 83,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          32,
+          5,
+          3,
+          6,
+          34,
+          103
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 54,
+            "balance": 84,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 54,
+            "balance": 67,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 54,
+            "balance": 52,
+            "tiles": 4,
+            "rank": 2
+          },
+          {
+            "round": 40,
+            "score": 54,
+            "balance": 24,
+            "tiles": 6,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 81,
+            "balance": 39,
+            "tiles": 1,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 83,
+            "balance": 32,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 83,
+            "balance": 32,
+            "tiles": 0,
+            "rank": 2
+          }
+        ]
+      },
+      "after": {
+        "seed": 90020,
+        "scores": [
+          81,
+          58,
+          46,
+          78,
+          115,
+          9
+        ],
+        "hero": 81,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          31,
+          7,
+          18,
+          6,
+          6,
+          109
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 63,
+            "tiles": 7,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 48,
+            "balance": 86,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 48,
+            "balance": 86,
+            "tiles": 2,
+            "rank": 3
+          },
+          {
+            "round": 40,
+            "score": 75,
+            "balance": 52,
+            "tiles": 1,
+            "rank": 3
+          },
+          {
+            "round": 50,
+            "score": 75,
+            "balance": 43,
+            "tiles": 2,
+            "rank": 3
+          },
+          {
+            "round": 60,
+            "score": 81,
+            "balance": 31,
+            "tiles": 0,
+            "rank": 2
+          },
+          {
+            "round": 68,
+            "score": 81,
+            "balance": 31,
+            "tiles": 0,
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90021,
+      "before": {
+        "seed": 90021,
+        "scores": [
+          80,
+          40,
+          84,
+          41,
+          49,
+          8
+        ],
+        "hero": 80,
+        "win": false,
+        "rank": 2,
+        "balances": [
+          23,
+          4,
+          1,
+          3,
+          19,
+          102
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 81,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 42,
+            "balance": 83,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 64,
+            "balance": 55,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 80,
+            "balance": 31,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 80,
+            "balance": 23,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 80,
+            "balance": 23,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 80,
+            "balance": 23,
+            "tiles": 1,
+            "rank": 2
+          }
+        ]
+      },
+      "after": {
+        "seed": 90021,
+        "scores": [
+          82,
+          81,
+          59,
+          41,
+          49,
+          6
+        ],
+        "hero": 82,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          15,
+          2,
+          6,
+          3,
+          19,
+          106
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 81,
+            "tiles": 6,
+            "rank": 3
+          },
+          {
+            "round": 20,
+            "score": 42,
+            "balance": 83,
+            "tiles": 2,
+            "rank": 2
+          },
+          {
+            "round": 30,
+            "score": 42,
+            "balance": 35,
+            "tiles": 7,
+            "rank": 2
+          },
+          {
+            "round": 40,
+            "score": 72,
+            "balance": 29,
+            "tiles": 4,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 72,
+            "balance": 29,
+            "tiles": 4,
+            "rank": 2
+          },
+          {
+            "round": 60,
+            "score": 82,
+            "balance": 15,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 82,
+            "balance": 15,
+            "tiles": 1,
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90022,
+      "before": {
+        "seed": 90022,
+        "scores": [
+          94,
+          43,
+          54,
+          51,
+          84,
+          6
+        ],
+        "hero": 94,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          21,
+          1,
+          24,
+          6,
+          8,
+          106
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 57,
+            "balance": 114,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 57,
+            "balance": 114,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 74,
+            "balance": 71,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 74,
+            "balance": 39,
+            "tiles": 4,
+            "rank": 2
+          },
+          {
+            "round": 50,
+            "score": 90,
+            "balance": 32,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 94,
+            "balance": 21,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 94,
+            "balance": 21,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 90022,
+        "scores": [
+          91,
+          73,
+          74,
+          51,
+          67,
+          6
+        ],
+        "hero": 91,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          18,
+          5,
+          48,
+          6,
+          19,
+          106
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 57,
+            "balance": 114,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 57,
+            "balance": 114,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 57,
+            "balance": 63,
+            "tiles": 6,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 81,
+            "balance": 53,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 81,
+            "balance": 32,
+            "tiles": 4,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 91,
+            "balance": 18,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 91,
+            "balance": 18,
+            "tiles": 1,
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "seed": 90023,
+      "before": {
+        "seed": 90023,
+        "scores": [
+          103,
+          74,
+          40,
+          38,
+          69,
+          4
+        ],
+        "hero": 103,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          23,
+          9,
+          4,
+          6,
+          15,
+          104
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 54,
+            "balance": 106,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 54,
+            "balance": 96,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 87,
+            "balance": 67,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 87,
+            "balance": 49,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 99,
+            "balance": 28,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 103,
+            "balance": 23,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 103,
+            "balance": 23,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      },
+      "after": {
+        "seed": 90023,
+        "scores": [
+          114,
+          77,
+          35,
+          38,
+          65,
+          4
+        ],
+        "hero": 114,
+        "win": true,
+        "rank": 1,
+        "balances": [
+          37,
+          6,
+          29,
+          6,
+          10,
+          104
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 54,
+            "balance": 106,
+            "tiles": 2,
+            "rank": 1
+          },
+          {
+            "round": 20,
+            "score": 54,
+            "balance": 96,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 30,
+            "score": 87,
+            "balance": 67,
+            "tiles": 1,
+            "rank": 1
+          },
+          {
+            "round": 40,
+            "score": 87,
+            "balance": 49,
+            "tiles": 3,
+            "rank": 1
+          },
+          {
+            "round": 50,
+            "score": 87,
+            "balance": 34,
+            "tiles": 4,
+            "rank": 1
+          },
+          {
+            "round": 60,
+            "score": 114,
+            "balance": 37,
+            "tiles": 0,
+            "rank": 1
+          },
+          {
+            "round": 68,
+            "score": 114,
+            "balance": 37,
+            "tiles": 0,
+            "rank": 1
+          }
+        ]
+      }
+    }
+  ]
+}

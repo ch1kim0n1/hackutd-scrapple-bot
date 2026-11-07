@@ -1,0 +1,50 @@
+{"event":"dictionary","multisets":156473,"startupMs":470}
+{"rack":"AEIRT","letter":"A","bid":3,"ms":51,"reason":"cash +0; target ARIETTA; rack AEIRT"}
+{"rack":"AEIRT","letter":"E","bid":3,"ms":105,"reason":"cash +0; target ARENITE; rack AEIRT"}
+{"rack":"AEIRT","letter":"S","bid":11,"ms":53,"reason":"cash +5; target AERIEST; rack AEIRT"}
+{"rack":"AEIRT","letter":"T","bid":9,"ms":25,"reason":"cash +5; target ARIETTE; rack AEIRT"}
+{"rack":"AEIRT","letter":"Z","bid":41,"ms":24,"reason":"cash +18; target AZURITE; rack AEIRT"}
+{"rack":"AEIRT","plan":["IRATE"],"score":10,"bounded":false,"planMs":14,"play":{"word":null,"reason":"build a rack for the length bonus","planScore":10}}
+{"rack":"ACENRST","letter":"A","bid":6,"ms":35,"reason":"cash +3; target ASCERTAIN; rack ACENRST"}
+{"rack":"ACENRST","letter":"E","bid":6,"ms":36,"reason":"cash +3; target CENTIARES; rack ACENRST"}
+{"rack":"ACENRST","letter":"S","bid":6,"ms":40,"reason":"cash +0; target REASCENTS; rack ACENRST"}
+{"rack":"ACENRST","letter":"T","bid":6,"ms":36,"reason":"cash +3; target INTERACTS; rack ACENRST"}
+{"rack":"ACENRST","letter":"Z","bid":41,"ms":37,"reason":"cash +15; target CRAZIEST; rack ACENRST"}
+{"rack":"ACENRST","plan":["CANTERS"],"score":27,"bounded":false,"planMs":0,"play":{"word":"CANTERS","reason":"maximum length multiplier","planScore":27}}
+{"rack":"QUI","letter":"A","bid":31,"ms":3,"reason":"cash +19; target QUINOA; rack IQU"}
+{"rack":"QUI","letter":"E","bid":5,"ms":2,"reason":"cash +0; target QUIET; rack IQU"}
+{"rack":"QUI","letter":"S","bid":21,"ms":1,"reason":"cash +12; target QUAIS; rack IQU"}
+{"rack":"QUI","letter":"T","bid":31,"ms":1,"reason":"cash +19; target QUIET; rack IQU"}
+{"rack":"QUI","letter":"Z","bid":53,"ms":0,"reason":"cash +33; target -; rack IQU"}
+{"rack":"QUI","plan":[],"score":0,"bounded":false,"planMs":0,"play":{"word":null,"reason":"no playable word","planScore":0}}
+{"rack":"AEILNORST","letter":"A","bid":6,"ms":113,"reason":"cash +3; target RATIONALISE; rack AEILNORST"}
+{"rack":"AEILNORST","letter":"E","bid":6,"ms":92,"reason":"cash +3; target -; rack AEILNORST"}
+{"rack":"AEILNORST","letter":"S","bid":6,"ms":100,"reason":"cash +0; target NEOREALISTS; rack AEILNORST"}
+{"rack":"AEILNORST","letter":"T","bid":6,"ms":92,"reason":"cash +3; target ALTERATIONS; rack AEILNORST"}
+{"rack":"AEILNORST","letter":"Z","bid":43,"ms":115,"reason":"cash +27; target ZEALOTRIES; rack AEILNORST"}
+{"rack":"AEILNORST","plan":["ORIENTALS"],"score":27,"bounded":true,"planMs":1,"play":{"word":"ORIENTALS","reason":"maximum length multiplier","planScore":27}}
+{"rack":"BCDFGHJKLMNPQRSTVWXZ","letter":"A","bid":60,"ms":116,"reason":"cash +37; target FLAPJACKS; rack BCDFGHJKLMNPQRSTVWXZ"}
+{"rack":"BCDFGHJKLMNPQRSTVWXZ","letter":"E","bid":54,"ms":129,"reason":"cash +33; target SCHMALTZ; rack BCDFGHJKLMNPQRSTVWXZ"}
+{"rack":"BCDFGHJKLMNPQRSTVWXZ","letter":"S","bid":11,"ms":70,"reason":"cash +0; target FJELDS; rack BCDFGHJKLMNPQRSTVWXZ"}
+{"rack":"BCDFGHJKLMNPQRSTVWXZ","letter":"T","bid":3,"ms":91,"reason":"cash +0; target FJELDS; rack BCDFGHJKLMNPQRSTVWXZ"}
+{"rack":"BCDFGHJKLMNPQRSTVWXZ","letter":"Z","bid":24,"ms":118,"reason":"cash +0; target JAZZMEN; rack BCDFGHJKLMNPQRSTVWXZ"}
+{"rack":"BCDFGHJKLMNPQRSTVWXZ","plan":["CRWTHS"],"score":35,"bounded":false,"planMs":0,"play":{"word":"CRWTHS","reason":"best word combination","planScore":35}}
+{"rack":"AAEEIINORRST","letter":"A","bid":9,"ms":172,"reason":"cash +6; target REITERATIONS; rack AAEEIINORRST"}
+{"rack":"AAEEIINORRST","letter":"E","bid":9,"ms":127,"reason":"cash +6; target REITERATIONS; rack AAEEIINORRST"}
+{"rack":"AAEEIINORRST","letter":"S","bid":7,"ms":126,"reason":"cash +3; target EATERIES; rack AAEEIINORRST"}
+{"rack":"AAEEIINORRST","letter":"T","bid":10,"ms":131,"reason":"cash +6; target -; rack AAEEIINORRST"}
+{"rack":"AAEEIINORRST","letter":"Z","bid":47,"ms":161,"reason":"cash +28; target OZONATES; rack AAEEIINORRST"}
+{"rack":"AAEEIINORRST","plan":["AERATIONS","IRE"],"score":30,"bounded":true,"planMs":9,"play":{"word":"AERATIONS","reason":"maximum length multiplier","planScore":30}}
+{"rack":"ADEEIMSTUU","letter":"A","bid":3,"ms":92,"reason":"cash +0; target DEUTERIUMS; rack ADEEIMSTUU"}
+{"rack":"ADEEIMSTUU","letter":"E","bid":4,"ms":92,"reason":"cash +3; target DEUTERIUMS; rack ADEEIMSTUU"}
+{"rack":"ADEEIMSTUU","letter":"S","bid":6,"ms":65,"reason":"cash +3; target MANSUETUDES; rack ADEEIMSTUU"}
+{"rack":"ADEEIMSTUU","letter":"T","bid":6,"ms":62,"reason":"cash +3; target DEUTERIUMS; rack ADEEIMSTUU"}
+{"rack":"ADEEIMSTUU","letter":"Z","bid":43,"ms":73,"reason":"cash +27; target ITEMIZED; rack ADEEIMSTUU"}
+{"rack":"ADEEIMSTUU","plan":["TEDIUMS","EAU"],"score":33,"bounded":true,"planMs":15,"play":{"word":"TEDIUMS","reason":"maximum length multiplier","planScore":33}}
+{"rack":"ABCDEEFGHIJKLMNO","letter":"A","bid":14,"ms":348,"reason":"cash +9; target HIJACKING; rack ABCDEEFGHIJKLMNO"}
+{"rack":"ABCDEEFGHIJKLMNO","letter":"E","bid":14,"ms":184,"reason":"cash +9; target -; rack ABCDEEFGHIJKLMNO"}
+{"rack":"ABCDEEFGHIJKLMNO","letter":"S","bid":12,"ms":221,"reason":"cash +6; target BEFLECKED; rack ABCDEEFGHIJKLMNO"}
+{"rack":"ABCDEEFGHIJKLMNO","letter":"T","bid":10,"ms":261,"reason":"cash +0; target BEFLECKED; rack ABCDEEFGHIJKLMNO"}
+{"rack":"ABCDEEFGHIJKLMNO","letter":"Z","bid":41,"ms":141,"reason":"cash +11; target ZOMBIFIED; rack ABCDEEFGHIJKLMNO"}
+{"rack":"ABCDEEFGHIJKLMNO","plan":["MAHJONG","BEFLECK"],"score":114,"bounded":true,"planMs":10,"play":{"word":"MAHJONG","reason":"maximum length multiplier","planScore":114}}
+{"event":"latency","policy":"v3","medianMs":91.91891699999996,"p95Ms":261.1403330000003,"maxMs":347.66754200000014}
