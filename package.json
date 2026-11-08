@@ -12,6 +12,7 @@
     "test": "node --import tsx --test test/*.test.ts",
     "benchmark": "tsx scripts/benchmark.ts",
     "simulate": "tsx scripts/simulate.ts",
+    "replay": "tsx scripts/replay-policy.ts",
     "learn": "tsx scripts/evolve.ts",
     "learn:once": "tsx scripts/evolve.ts --once",
     "learn:background": "tsx scripts/background.ts --learner",

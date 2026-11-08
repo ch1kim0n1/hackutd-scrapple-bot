@@ -28,7 +28,8 @@ The bot runs on this computer and needs it awake and online. It reconnects with 
 - Search the full ENABLE dictionary through a trie; retain one spelling per anagram multiset.
 - Compare combinations of words, including shorter plays that earn more together. Search is bounded on large racks to keep auctions responsive.
 - Value a new letter by its immediate liquidation gain and likely one- or two-letter completions. Account for repeat letters, vowel balance, the remaining bag, opponents, auction type, and observed prices.
-- Preserve a declining cash reserve across the match instead of spending the starting bankroll for an early lead. A short-word completion cannot bypass that reserve; a seven-letter payout can fund its own purchase.
+- Read public bot metadata for simulated rivals. When the whole opposing table is simulated, cap bids at one above their source-derived maximum; mixed or unknown tables keep normal valuation.
+- Preserve a declining cash reserve across the match instead of spending the starting bankroll for an early lead. Bank seven-letter word rewards until the late buying window, then release cash inside the final 16 auctions with archive-calibrated vowel/consonant floors. A short-word completion cannot bypass that reserve; a seven-letter payout can fund its own purchase.
 - Build toward the full seven-letter multiplier while funds and time permit. Choose word sales with the remaining rack's usefulness in mind, sell earlier when funds run low, and liquidate before the match ends.
 - Stop word-allocation search when its shared state budget is exhausted. Returning a legal bounded plan keeps large-rack searches within the auction window.
 - Do not bid on the final tile: in the inspected game code, its auction and match end happen in the same transaction, leaving external bots no time to use it.
@@ -44,13 +45,17 @@ npm test
 npm run benchmark
 GAMES=24 npm run simulate
 GAMES=24 OPPONENTS=patient npm run simulate
+GAMES=24 OPPONENTS=server npm run simulate
 GAMES=24 OPPONENTS=aggressive npm run simulate
 GAMES=12 OPPONENTS=strategic npm run simulate
+GAMES=20 POLICIES=v8,v9 PROFILE_OBS=200 npm run replay
 GAMES=32 SEED_OFFSET=102000 node --import tsx scripts/upgrade-benchmark.ts
 GAMES=16 SEED_OFFSET=105000 OPPONENTS=aggressive node --import tsx scripts/upgrade-benchmark.ts
 ```
 
-The simulator implements six external clients, five starting tiles each, the standard bag, random auction ties, Vickrey payments, integer word rewards, unsold tiles discarded, and no final-tile grace period. It is an approximation for strategy development, not a replacement for the server test harness or live results. The starter comparison uses longest-word play and face-value bidding; the patient comparison holds short words. Aggressive opponents also bid more, roughly twice face value plus four. Strategic opponents use the frozen pre-v5 strategy. The observed mode combines three historical leader models, the frozen strategy, and an aggressive bidder. These models do not reproduce the leaders' private racks or actual code.
+The simulator implements six clients, five starting tiles each, the standard bag, random auction ties, Vickrey payments, integer word rewards, unsold tiles discarded, and no final-tile grace period for external clients. It is an approximation for strategy development, not a replacement for the server test harness or live results. Server mode also reproduces the public simulated-bot pool, bid jitter, and sim-only word play after auction wins. The starter comparison uses longest-word play and face-value bidding; the patient comparison holds short words. Aggressive opponents also bid more, roughly twice face value plus four. Strategic opponents use the frozen pre-v5 strategy. The observed mode combines three historical leader models, the frozen strategy, and an aggressive bidder. These models do not reproduce the leaders' private racks or actual code.
+
+The replay command replays policies through our own archived live matches using recorded starting racks, public top bids, actual opponent outcomes, and tie-loss/tie-win bounds. It is slower than synthetic simulation but better measures counterfactual live behavior.
 
 The upgrade benchmark compares the frozen pre-v5 strategy (`src/legacy-strategy.ts`) and the current strategy on the same deals with unchanged opponent policies. It retains final score, placement, wins, and score gained after round 40 in `data/upgrade-*.json`. Older `data/simulation-*.json` records describe earlier policies and easier opponents; their win rates are not estimates of live strength.
 
@@ -95,6 +100,6 @@ See [TRAINING_DATA.md](TRAINING_DATA.md) for the schema, loader, and coverage li
 
 ## Sources
 
-Upstream code and generated bindings: [clockworklabs/scrabblebot](https://github.com/clockworklabs/scrabblebot), commit `b5ccb36aa238ad16692f8d6af54da15ef9f11324`; MIT notice in `LICENSE.upstream`. `data/enable.txt` is its shared ENABLE word list. `data/server-schema.json` is the public live schema fetched during setup.
+Upstream code and generated bindings: [clockworklabs/scrabblebot](https://github.com/clockworklabs/scrabblebot), commit `b5ccb36aa238ad16692f8d6af54da15ef9f11324`; MIT notice in `LICENSE.upstream`. `data/enable.txt` is its shared ENABLE word list. `data/server-schema.json` is the public live schema fetched during setup. Extracted rules, reducer, visibility, scoring, and simulated-bot notes live in [docs/website-reference.md](docs/website-reference.md).
 
 The upstream guide has stale details: the inspected source uses 90-second lobbies, discards unbid tiles, deals private starting tiles, and hides live winning bids from bot credentials. Game defaults can be changed by the server administrator, so the client reads each match's actual values.

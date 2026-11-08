@@ -1,12 +1,12 @@
 {
   "summary": {
+    "policy": "sustainable-v10",
     "games": 24,
     "opposition": "aggressive",
-    "baselineMean": 56.708333333333336,
-    "meanScore": 155.70833333333334,
+    "baselineMean": 53.291666666666664,
+    "meanScore": 208.75,
     "wins": 24,
-    "meanRank": 1,
-    "policy": "v3"
+    "meanRank": 1
   },
   "results": [
     {
@@ -14,45 +14,241 @@
       "baseline": {
         "seed": 1,
         "scores": [
-          44,
-          48,
-          59,
-          74,
+          55,
+          39,
+          51,
           46,
-          54
+          36,
+          64
         ],
-        "hero": 44,
+        "hero": 55,
         "win": false,
-        "rank": 6,
+        "rank": 2,
         "balances": [
-          72,
-          74,
-          63,
-          34,
-          74,
-          62
+          89,
+          55,
+          65,
+          22,
+          46,
+          68
+        ],
+        "spent": [
+          66,
+          84,
+          86,
+          124,
+          90,
+          96
+        ],
+        "bought": [
+          10,
+          10,
+          11,
+          16,
+          10,
+          11
+        ],
+        "plays": [
+          3,
+          3,
+          4,
+          3,
+          2,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 94,
+            "tiles": 6,
+            "rank": 3,
+            "bought": 1,
+            "spent": 6
+          },
+          {
+            "round": 20,
+            "score": 33,
+            "balance": 113,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 3,
+            "spent": 20
+          },
+          {
+            "round": 30,
+            "score": 33,
+            "balance": 97,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 40,
+            "score": 33,
+            "balance": 85,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 7,
+            "spent": 48
+          },
+          {
+            "round": 50,
+            "score": 33,
+            "balance": 85,
+            "tiles": 5,
+            "rank": 2,
+            "bought": 7,
+            "spent": 48
+          },
+          {
+            "round": 52,
+            "score": 33,
+            "balance": 85,
+            "tiles": 5,
+            "rank": 2,
+            "bought": 7,
+            "spent": 48
+          },
+          {
+            "round": 60,
+            "score": 33,
+            "balance": 73,
+            "tiles": 7,
+            "rank": 4,
+            "bought": 9,
+            "spent": 60
+          },
+          {
+            "round": 68,
+            "score": 55,
+            "balance": 89,
+            "tiles": 1,
+            "rank": 2,
+            "bought": 10,
+            "spent": 66
+          }
         ]
       },
       "hero": {
         "seed": 1,
         "scores": [
-          171,
-          14,
-          37,
-          74,
-          30,
-          29
+          200,
+          39,
+          26,
+          33,
+          48,
+          18
         ],
-        "hero": 171,
+        "hero": 200,
         "win": true,
         "rank": 1,
         "balances": [
-          19,
-          98,
-          55,
-          56,
-          84,
-          97
+          2,
+          97,
+          82,
+          75,
+          70,
+          92
+        ],
+        "spent": [
+          298,
+          42,
+          44,
+          58,
+          78,
+          26
+        ],
+        "bought": [
+          40,
+          4,
+          4,
+          9,
+          9,
+          2
+        ],
+        "plays": [
+          8,
+          2,
+          2,
+          3,
+          2,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 38,
+            "tiles": 13,
+            "rank": 1,
+            "bought": 8,
+            "spent": 62
+          },
+          {
+            "round": 20,
+            "score": 57,
+            "balance": 45,
+            "tiles": 10,
+            "rank": 1,
+            "bought": 16,
+            "spent": 112
+          },
+          {
+            "round": 30,
+            "score": 135,
+            "balance": 59,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 24,
+            "spent": 176
+          },
+          {
+            "round": 40,
+            "score": 135,
+            "balance": 29,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 29,
+            "spent": 206
+          },
+          {
+            "round": 50,
+            "score": 165,
+            "balance": 31,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 32,
+            "spent": 234
+          },
+          {
+            "round": 52,
+            "score": 165,
+            "balance": 19,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 33,
+            "spent": 246
+          },
+          {
+            "round": 60,
+            "score": 200,
+            "balance": 12,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 39,
+            "spent": 288
+          },
+          {
+            "round": 68,
+            "score": 200,
+            "balance": 2,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 40,
+            "spent": 298
+          }
         ]
       }
     },
@@ -61,45 +257,241 @@
       "baseline": {
         "seed": 2,
         "scores": [
-          53,
-          60,
-          67,
-          37,
-          69,
-          60
+          39,
+          78,
+          108,
+          31,
+          93,
+          77
         ],
-        "hero": 53,
+        "hero": 39,
         "win": false,
         "rank": 5,
         "balances": [
-          81,
-          78,
-          101,
-          83,
           79,
-          34
+          104,
+          122,
+          89,
+          67,
+          75
+        ],
+        "spent": [
+          60,
+          74,
+          86,
+          42,
+          126,
+          102
+        ],
+        "bought": [
+          10,
+          11,
+          10,
+          6,
+          16,
+          15
+        ],
+        "plays": [
+          3,
+          2,
+          2,
+          3,
+          5,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 17,
+            "balance": 93,
+            "tiles": 3,
+            "rank": 2,
+            "bought": 4,
+            "spent": 24
+          },
+          {
+            "round": 20,
+            "score": 17,
+            "balance": 87,
+            "tiles": 4,
+            "rank": 3,
+            "bought": 5,
+            "spent": 30
+          },
+          {
+            "round": 30,
+            "score": 17,
+            "balance": 75,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 7,
+            "spent": 42
+          },
+          {
+            "round": 40,
+            "score": 17,
+            "balance": 75,
+            "tiles": 6,
+            "rank": 6,
+            "bought": 7,
+            "spent": 42
+          },
+          {
+            "round": 50,
+            "score": 17,
+            "balance": 69,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 8,
+            "spent": 48
+          },
+          {
+            "round": 52,
+            "score": 17,
+            "balance": 69,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 8,
+            "spent": 48
+          },
+          {
+            "round": 60,
+            "score": 37,
+            "balance": 77,
+            "tiles": 3,
+            "rank": 5,
+            "bought": 10,
+            "spent": 60
+          },
+          {
+            "round": 68,
+            "score": 39,
+            "balance": 79,
+            "tiles": 1,
+            "rank": 5,
+            "bought": 10,
+            "spent": 60
+          }
         ]
       },
       "hero": {
         "seed": 2,
         "scores": [
-          157,
-          0,
-          17,
-          30,
-          57,
-          39
+          192,
+          26,
+          10,
+          27,
+          58,
+          34
         ],
-        "hero": 157,
+        "hero": 192,
         "win": true,
         "rank": 1,
         "balances": [
-          5,
-          84,
-          81,
-          100,
-          85,
-          55
+          6,
+          88,
+          98,
+          101,
+          78,
+          86
+        ],
+        "spent": [
+          286,
+          38,
+          12,
+          26,
+          80,
+          48
+        ],
+        "bought": [
+          40,
+          6,
+          2,
+          4,
+          9,
+          7
+        ],
+        "plays": [
+          7,
+          2,
+          1,
+          2,
+          4,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 52,
+            "tiles": 12,
+            "rank": 1,
+            "bought": 7,
+            "spent": 48
+          },
+          {
+            "round": 20,
+            "score": 48,
+            "balance": 50,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 14,
+            "spent": 98
+          },
+          {
+            "round": 30,
+            "score": 99,
+            "balance": 53,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 21,
+            "spent": 146
+          },
+          {
+            "round": 40,
+            "score": 144,
+            "balance": 32,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 29,
+            "spent": 212
+          },
+          {
+            "round": 50,
+            "score": 171,
+            "balance": 35,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 33,
+            "spent": 236
+          },
+          {
+            "round": 52,
+            "score": 171,
+            "balance": 23,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 35,
+            "spent": 248
+          },
+          {
+            "round": 60,
+            "score": 189,
+            "balance": 9,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 39,
+            "spent": 280
+          },
+          {
+            "round": 68,
+            "score": 192,
+            "balance": 6,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 40,
+            "spent": 286
+          }
         ]
       }
     },
@@ -108,45 +500,241 @@
       "baseline": {
         "seed": 3,
         "scores": [
-          62,
-          45,
-          45,
-          46,
-          40,
-          54
+          61,
+          52,
+          47,
+          48,
+          65,
+          46
         ],
-        "hero": 62,
-        "win": true,
-        "rank": 1,
+        "hero": 61,
+        "win": false,
+        "rank": 2,
         "balances": [
-          28,
-          69,
-          51,
-          50,
-          58,
-          82
+          57,
+          42,
+          87,
+          56,
+          71,
+          52
+        ],
+        "spent": [
+          104,
+          110,
+          60,
+          92,
+          94,
+          94
+        ],
+        "bought": [
+          14,
+          12,
+          8,
+          14,
+          12,
+          8
+        ],
+        "plays": [
+          4,
+          2,
+          3,
+          3,
+          3,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 94,
+            "tiles": 6,
+            "rank": 3,
+            "bought": 1,
+            "spent": 6
+          },
+          {
+            "round": 20,
+            "score": 15,
+            "balance": 97,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 3,
+            "spent": 18
+          },
+          {
+            "round": 30,
+            "score": 15,
+            "balance": 71,
+            "tiles": 5,
+            "rank": 3,
+            "bought": 6,
+            "spent": 44
+          },
+          {
+            "round": 40,
+            "score": 15,
+            "balance": 59,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 8,
+            "spent": 56
+          },
+          {
+            "round": 50,
+            "score": 37,
+            "balance": 59,
+            "tiles": 4,
+            "rank": 3,
+            "bought": 11,
+            "spent": 78
+          },
+          {
+            "round": 52,
+            "score": 37,
+            "balance": 59,
+            "tiles": 4,
+            "rank": 4,
+            "bought": 11,
+            "spent": 78
+          },
+          {
+            "round": 60,
+            "score": 37,
+            "balance": 39,
+            "tiles": 6,
+            "rank": 4,
+            "bought": 13,
+            "spent": 98
+          },
+          {
+            "round": 68,
+            "score": 61,
+            "balance": 57,
+            "tiles": 0,
+            "rank": 2,
+            "bought": 14,
+            "spent": 104
+          }
         ]
       },
       "hero": {
         "seed": 3,
         "scores": [
-          142,
-          30,
-          46,
-          42,
-          44,
-          32
+          239,
+          27,
+          32,
+          26,
+          27,
+          30
         ],
-        "hero": 142,
+        "hero": 239,
         "win": true,
         "rank": 1,
         "balances": [
-          10,
-          82,
-          66,
-          56,
-          68,
-          100
+          5,
+          101,
+          94,
+          80,
+          77,
+          70
+        ],
+        "spent": [
+          334,
+          26,
+          38,
+          46,
+          50,
+          60
+        ],
+        "bought": [
+          39,
+          4,
+          5,
+          7,
+          7,
+          6
+        ],
+        "plays": [
+          7,
+          2,
+          2,
+          2,
+          3,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 34,
+            "tiles": 13,
+            "rank": 1,
+            "bought": 8,
+            "spent": 66
+          },
+          {
+            "round": 20,
+            "score": 81,
+            "balance": 53,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 16,
+            "spent": 128
+          },
+          {
+            "round": 30,
+            "score": 141,
+            "balance": 45,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 23,
+            "spent": 196
+          },
+          {
+            "round": 40,
+            "score": 192,
+            "balance": 56,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 28,
+            "spent": 236
+          },
+          {
+            "round": 50,
+            "score": 237,
+            "balance": 15,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 37,
+            "spent": 322
+          },
+          {
+            "round": 52,
+            "score": 239,
+            "balance": 11,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 38,
+            "spent": 328
+          },
+          {
+            "round": 60,
+            "score": 239,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 39,
+            "spent": 334
+          },
+          {
+            "round": 68,
+            "score": 239,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 39,
+            "spent": 334
+          }
         ]
       }
     },
@@ -155,45 +743,241 @@
       "baseline": {
         "seed": 4,
         "scores": [
-          75,
-          31,
-          54,
-          52,
-          47,
-          36
+          65,
+          40,
+          63,
+          51,
+          58,
+          37
         ],
-        "hero": 75,
+        "hero": 65,
         "win": true,
         "rank": 1,
         "balances": [
-          27,
-          85,
-          76,
-          66,
-          51,
-          68
+          59,
+          90,
+          63,
+          69,
+          44,
+          67
+        ],
+        "spent": [
+          106,
+          50,
+          100,
+          82,
+          114,
+          70
+        ],
+        "bought": [
+          13,
+          7,
+          11,
+          12,
+          14,
+          11
+        ],
+        "plays": [
+          3,
+          2,
+          2,
+          3,
+          4,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 88,
+            "tiles": 7,
+            "rank": 3,
+            "bought": 2,
+            "spent": 12
+          },
+          {
+            "round": 20,
+            "score": 25,
+            "balance": 89,
+            "tiles": 4,
+            "rank": 3,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 30,
+            "score": 52,
+            "balance": 94,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 8,
+            "spent": 58
+          },
+          {
+            "round": 40,
+            "score": 52,
+            "balance": 62,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 11,
+            "spent": 90
+          },
+          {
+            "round": 50,
+            "score": 52,
+            "balance": 52,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 12,
+            "spent": 100
+          },
+          {
+            "round": 52,
+            "score": 52,
+            "balance": 52,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 12,
+            "spent": 100
+          },
+          {
+            "round": 60,
+            "score": 52,
+            "balance": 46,
+            "tiles": 6,
+            "rank": 2,
+            "bought": 13,
+            "spent": 106
+          },
+          {
+            "round": 68,
+            "score": 65,
+            "balance": 59,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 13,
+            "spent": 106
+          }
         ]
       },
       "hero": {
         "seed": 4,
         "scores": [
-          187,
+          237,
+          35,
+          49,
           27,
-          40,
-          39,
-          24,
-          24
+          29,
+          12
         ],
-        "hero": 187,
+        "hero": 237,
         "win": true,
         "rank": 1,
         "balances": [
-          41,
-          55,
-          108,
-          51,
-          88,
-          76
+          3,
+          95,
+          103,
+          87,
+          85,
+          94
+        ],
+        "spent": [
+          334,
+          40,
+          46,
+          40,
+          44,
+          18
+        ],
+        "bought": [
+          45,
+          4,
+          5,
+          5,
+          6,
+          3
+        ],
+        "plays": [
+          8,
+          1,
+          2,
+          1,
+          3,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 48,
+            "tiles": 13,
+            "rank": 1,
+            "bought": 8,
+            "spent": 52
+          },
+          {
+            "round": 20,
+            "score": 60,
+            "balance": 22,
+            "tiles": 15,
+            "rank": 1,
+            "bought": 17,
+            "spent": 138
+          },
+          {
+            "round": 30,
+            "score": 114,
+            "balance": 20,
+            "tiles": 12,
+            "rank": 1,
+            "bought": 24,
+            "spent": 194
+          },
+          {
+            "round": 40,
+            "score": 159,
+            "balance": 27,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 29,
+            "spent": 232
+          },
+          {
+            "round": 50,
+            "score": 195,
+            "balance": 19,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 36,
+            "spent": 276
+          },
+          {
+            "round": 52,
+            "score": 195,
+            "balance": 19,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 36,
+            "spent": 276
+          },
+          {
+            "round": 60,
+            "score": 237,
+            "balance": 9,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 44,
+            "spent": 328
+          },
+          {
+            "round": 68,
+            "score": 237,
+            "balance": 3,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 45,
+            "spent": 334
+          }
         ]
       }
     },
@@ -202,45 +986,241 @@
       "baseline": {
         "seed": 5,
         "scores": [
-          30,
-          58,
-          32,
-          50,
+          24,
+          60,
+          47,
+          75,
           46,
-          79
+          68
         ],
-        "hero": 30,
+        "hero": 24,
         "win": false,
         "rank": 6,
         "balances": [
+          72,
+          24,
+          53,
+          83,
+          74,
+          46
+        ],
+        "spent": [
+          52,
+          136,
+          94,
           92,
-          28,
-          8,
-          80,
-          68,
-          51
+          72,
+          122
+        ],
+        "bought": [
+          5,
+          15,
+          11,
+          11,
+          11,
+          15
+        ],
+        "plays": [
+          2,
+          4,
+          4,
+          3,
+          3,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 76,
+            "tiles": 6,
+            "rank": 4,
+            "bought": 1,
+            "spent": 24
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 68,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 2,
+            "spent": 32
+          },
+          {
+            "round": 30,
+            "score": 0,
+            "balance": 68,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 2,
+            "spent": 32
+          },
+          {
+            "round": 40,
+            "score": 0,
+            "balance": 68,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 2,
+            "spent": 32
+          },
+          {
+            "round": 50,
+            "score": 20,
+            "balance": 80,
+            "tiles": 2,
+            "rank": 4,
+            "bought": 3,
+            "spent": 40
+          },
+          {
+            "round": 52,
+            "score": 20,
+            "balance": 80,
+            "tiles": 2,
+            "rank": 4,
+            "bought": 3,
+            "spent": 40
+          },
+          {
+            "round": 60,
+            "score": 20,
+            "balance": 74,
+            "tiles": 3,
+            "rank": 5,
+            "bought": 4,
+            "spent": 46
+          },
+          {
+            "round": 68,
+            "score": 24,
+            "balance": 72,
+            "tiles": 2,
+            "rank": 6,
+            "bought": 5,
+            "spent": 52
+          }
         ]
       },
       "hero": {
         "seed": 5,
         "scores": [
-          115,
-          46,
-          41,
-          29,
-          33,
-          57
+          281,
+          27,
+          34,
+          24,
+          17,
+          27
         ],
-        "hero": 115,
+        "hero": 281,
         "win": true,
         "rank": 1,
         "balances": [
+          1,
+          63,
+          100,
+          94,
+          99,
+          85
+        ],
+        "spent": [
+          380,
+          64,
+          34,
+          30,
+          18,
+          42
+        ],
+        "bought": [
+          44,
+          8,
+          4,
           5,
-          58,
-          57,
-          95,
-          79,
-          59
+          3,
+          4
+        ],
+        "plays": [
+          8,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 66,
+            "balance": 82,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 9,
+            "spent": 84
+          },
+          {
+            "round": 20,
+            "score": 117,
+            "balance": 47,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 17,
+            "spent": 170
+          },
+          {
+            "round": 30,
+            "score": 117,
+            "balance": 35,
+            "tiles": 9,
+            "rank": 1,
+            "bought": 19,
+            "spent": 182
+          },
+          {
+            "round": 40,
+            "score": 162,
+            "balance": 44,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 25,
+            "spent": 218
+          },
+          {
+            "round": 50,
+            "score": 216,
+            "balance": 32,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 31,
+            "spent": 284
+          },
+          {
+            "round": 52,
+            "score": 248,
+            "balance": 48,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 33,
+            "spent": 300
+          },
+          {
+            "round": 60,
+            "score": 275,
+            "balance": 25,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 40,
+            "spent": 350
+          },
+          {
+            "round": 68,
+            "score": 281,
+            "balance": 1,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 44,
+            "spent": 380
+          }
         ]
       }
     },
@@ -249,45 +1229,241 @@
       "baseline": {
         "seed": 6,
         "scores": [
-          80,
-          63,
-          72,
-          58,
-          60,
+          46,
+          34,
+          112,
+          49,
+          57,
           30
         ],
-        "hero": 80,
-        "win": true,
-        "rank": 1,
+        "hero": 46,
+        "win": false,
+        "rank": 4,
         "balances": [
-          36,
-          95,
-          36,
-          122,
-          66,
-          78
+          52,
+          78,
+          46,
+          109,
+          41,
+          72
+        ],
+        "spent": [
+          94,
+          56,
+          166,
+          40,
+          116,
+          58
+        ],
+        "bought": [
+          14,
+          6,
+          21,
+          6,
+          13,
+          8
+        ],
+        "plays": [
+          5,
+          2,
+          4,
+          2,
+          3,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 84,
+            "tiles": 7,
+            "rank": 2,
+            "bought": 2,
+            "spent": 16
+          },
+          {
+            "round": 20,
+            "score": 20,
+            "balance": 86,
+            "tiles": 4,
+            "rank": 3,
+            "bought": 5,
+            "spent": 34
+          },
+          {
+            "round": 30,
+            "score": 20,
+            "balance": 74,
+            "tiles": 6,
+            "rank": 4,
+            "bought": 7,
+            "spent": 46
+          },
+          {
+            "round": 40,
+            "score": 20,
+            "balance": 68,
+            "tiles": 7,
+            "rank": 4,
+            "bought": 8,
+            "spent": 52
+          },
+          {
+            "round": 50,
+            "score": 40,
+            "balance": 82,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 9,
+            "spent": 58
+          },
+          {
+            "round": 52,
+            "score": 40,
+            "balance": 76,
+            "tiles": 3,
+            "rank": 3,
+            "bought": 10,
+            "spent": 64
+          },
+          {
+            "round": 60,
+            "score": 40,
+            "balance": 70,
+            "tiles": 4,
+            "rank": 3,
+            "bought": 11,
+            "spent": 70
+          },
+          {
+            "round": 68,
+            "score": 46,
+            "balance": 52,
+            "tiles": 1,
+            "rank": 4,
+            "bought": 14,
+            "spent": 94
+          }
         ]
       },
       "hero": {
         "seed": 6,
         "scores": [
-          152,
-          47,
-          50,
-          29,
-          32,
-          20
+          166,
+          20,
+          72,
+          22,
+          28,
+          14
         ],
-        "hero": 152,
+        "hero": 166,
         "win": true,
         "rank": 1,
         "balances": [
+          2,
+          82,
+          70,
+          98,
+          60,
+          80
+        ],
+        "spent": [
+          264,
+          38,
+          102,
+          24,
+          68,
+          34
+        ],
+        "bought": [
+          37,
           4,
-          111,
-          50,
-          93,
-          66,
-          76
+          12,
+          4,
+          7,
+          4
+        ],
+        "plays": [
+          7,
+          2,
+          4,
+          2,
+          2,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 40,
+            "tiles": 12,
+            "rank": 2,
+            "bought": 7,
+            "spent": 60
+          },
+          {
+            "round": 20,
+            "score": 42,
+            "balance": 50,
+            "tiles": 9,
+            "rank": 1,
+            "bought": 12,
+            "spent": 92
+          },
+          {
+            "round": 30,
+            "score": 102,
+            "balance": 58,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 20,
+            "spent": 144
+          },
+          {
+            "round": 40,
+            "score": 102,
+            "balance": 38,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 23,
+            "spent": 164
+          },
+          {
+            "round": 50,
+            "score": 126,
+            "balance": 38,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 27,
+            "spent": 188
+          },
+          {
+            "round": 52,
+            "score": 126,
+            "balance": 22,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 29,
+            "spent": 204
+          },
+          {
+            "round": 60,
+            "score": 166,
+            "balance": 8,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 36,
+            "spent": 258
+          },
+          {
+            "round": 68,
+            "score": 166,
+            "balance": 2,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 37,
+            "spent": 264
+          }
         ]
       }
     },
@@ -296,45 +1472,241 @@
       "baseline": {
         "seed": 7,
         "scores": [
-          86,
-          49,
-          33,
-          58,
-          55,
-          41
+          104,
+          31,
+          43,
+          53,
+          52,
+          43
         ],
-        "hero": 86,
+        "hero": 104,
         "win": true,
         "rank": 1,
         "balances": [
-          32,
-          85,
-          61,
-          88,
-          61,
-          51
+          60,
+          93,
+          63,
+          79,
+          76,
+          11
+        ],
+        "spent": [
+          144,
+          38,
+          80,
+          74,
+          76,
+          132
+        ],
+        "bought": [
+          19,
+          6,
+          10,
+          9,
+          12,
+          12
+        ],
+        "plays": [
+          4,
+          2,
+          3,
+          3,
+          2,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 72,
+            "tiles": 8,
+            "rank": 3,
+            "bought": 3,
+            "spent": 28
+          },
+          {
+            "round": 20,
+            "score": 39,
+            "balance": 81,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 7,
+            "spent": 58
+          },
+          {
+            "round": 30,
+            "score": 66,
+            "balance": 78,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 11,
+            "spent": 88
+          },
+          {
+            "round": 40,
+            "score": 66,
+            "balance": 68,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 12,
+            "spent": 98
+          },
+          {
+            "round": 50,
+            "score": 98,
+            "balance": 78,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 15,
+            "spent": 120
+          },
+          {
+            "round": 52,
+            "score": 98,
+            "balance": 78,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 15,
+            "spent": 120
+          },
+          {
+            "round": 60,
+            "score": 98,
+            "balance": 60,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 18,
+            "spent": 138
+          },
+          {
+            "round": 68,
+            "score": 104,
+            "balance": 60,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 19,
+            "spent": 144
+          }
         ]
       },
       "hero": {
         "seed": 7,
         "scores": [
-          183,
-          42,
+          234,
+          26,
+          50,
           31,
-          35,
-          12,
-          43
+          29,
+          15
         ],
-        "hero": 183,
+        "hero": 234,
         "win": true,
         "rank": 1,
         "balances": [
-          9,
-          88,
-          83,
+          2,
+          90,
+          74,
+          93,
           99,
-          80,
-          43
+          83
+        ],
+        "spent": [
+          332,
+          36,
+          76,
+          38,
+          30,
+          32
+        ],
+        "bought": [
+          39,
+          6,
+          9,
+          4,
+          5,
+          5
+        ],
+        "plays": [
+          9,
+          2,
+          3,
+          2,
+          2,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 38,
+            "tiles": 13,
+            "rank": 2,
+            "bought": 8,
+            "spent": 62
+          },
+          {
+            "round": 20,
+            "score": 87,
+            "balance": 63,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 14,
+            "spent": 124
+          },
+          {
+            "round": 30,
+            "score": 124,
+            "balance": 26,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 22,
+            "spent": 198
+          },
+          {
+            "round": 40,
+            "score": 172,
+            "balance": 28,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 28,
+            "spent": 244
+          },
+          {
+            "round": 50,
+            "score": 228,
+            "balance": 30,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 34,
+            "spent": 298
+          },
+          {
+            "round": 52,
+            "score": 232,
+            "balance": 18,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 36,
+            "spent": 314
+          },
+          {
+            "round": 60,
+            "score": 234,
+            "balance": 2,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 39,
+            "spent": 332
+          },
+          {
+            "round": 68,
+            "score": 234,
+            "balance": 2,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 39,
+            "spent": 332
+          }
         ]
       }
     },
@@ -343,45 +1715,241 @@
       "baseline": {
         "seed": 8,
         "scores": [
-          51,
-          57,
-          57,
-          33,
-          52,
-          68
+          43,
+          70,
+          63,
+          26,
+          63,
+          57
         ],
-        "hero": 51,
+        "hero": 43,
         "win": false,
         "rank": 5,
         "balances": [
-          45,
-          85,
-          39,
-          69,
-          58,
-          72
+          67,
+          80,
+          49,
+          90,
+          65,
+          21
+        ],
+        "spent": [
+          76,
+          90,
+          114,
+          36,
+          98,
+          136
+        ],
+        "bought": [
+          12,
+          11,
+          13,
+          6,
+          13,
+          13
+        ],
+        "plays": [
+          3,
+          2,
+          4,
+          2,
+          4,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 88,
+            "tiles": 7,
+            "rank": 2,
+            "bought": 2,
+            "spent": 12
+          },
+          {
+            "round": 20,
+            "score": 17,
+            "balance": 93,
+            "tiles": 3,
+            "rank": 3,
+            "bought": 4,
+            "spent": 24
+          },
+          {
+            "round": 30,
+            "score": 17,
+            "balance": 71,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 7,
+            "spent": 46
+          },
+          {
+            "round": 40,
+            "score": 37,
+            "balance": 79,
+            "tiles": 2,
+            "rank": 2,
+            "bought": 9,
+            "spent": 58
+          },
+          {
+            "round": 50,
+            "score": 37,
+            "balance": 67,
+            "tiles": 4,
+            "rank": 2,
+            "bought": 11,
+            "spent": 70
+          },
+          {
+            "round": 52,
+            "score": 37,
+            "balance": 67,
+            "tiles": 4,
+            "rank": 3,
+            "bought": 11,
+            "spent": 70
+          },
+          {
+            "round": 60,
+            "score": 37,
+            "balance": 61,
+            "tiles": 5,
+            "rank": 4,
+            "bought": 12,
+            "spent": 76
+          },
+          {
+            "round": 68,
+            "score": 43,
+            "balance": 67,
+            "tiles": 1,
+            "rank": 5,
+            "bought": 12,
+            "spent": 76
+          }
         ]
       },
       "hero": {
         "seed": 8,
         "scores": [
-          135,
-          33,
-          45,
-          24,
-          55,
-          51
+          238,
+          15,
+          27,
+          16,
+          28,
+          33
         ],
-        "hero": 135,
+        "hero": 238,
         "win": true,
         "rank": 1,
         "balances": [
-          7,
-          97,
-          63,
+          2,
+          93,
+          77,
+          104,
           78,
-          73,
-          75
+          53
+        ],
+        "spent": [
+          336,
+          22,
+          50,
+          12,
+          50,
+          80
+        ],
+        "bought": [
+          41,
+          3,
+          7,
+          2,
+          7,
+          8
+        ],
+        "plays": [
+          9,
+          1,
+          3,
+          2,
+          3,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 47,
+            "balance": 57,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 9,
+            "spent": 90
+          },
+          {
+            "round": 20,
+            "score": 107,
+            "balance": 45,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 16,
+            "spent": 162
+          },
+          {
+            "round": 30,
+            "score": 164,
+            "balance": 72,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 20,
+            "spent": 192
+          },
+          {
+            "round": 40,
+            "score": 164,
+            "balance": 30,
+            "tiles": 9,
+            "rank": 1,
+            "bought": 26,
+            "spent": 234
+          },
+          {
+            "round": 50,
+            "score": 227,
+            "balance": 45,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 33,
+            "spent": 282
+          },
+          {
+            "round": 52,
+            "score": 232,
+            "balance": 32,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 35,
+            "spent": 300
+          },
+          {
+            "round": 60,
+            "score": 238,
+            "balance": 2,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 41,
+            "spent": 336
+          },
+          {
+            "round": 68,
+            "score": 238,
+            "balance": 2,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 41,
+            "spent": 336
+          }
         ]
       }
     },
@@ -390,45 +1958,241 @@
       "baseline": {
         "seed": 9,
         "scores": [
-          61,
-          90,
-          34,
+          47,
+          79,
+          33,
           63,
-          37,
-          58
+          30,
+          65
         ],
-        "hero": 61,
+        "hero": 47,
         "win": false,
-        "rank": 3,
+        "rank": 4,
         "balances": [
-          81,
-          32,
-          78,
-          87,
-          75,
-          52
+          47,
+          7,
+          91,
+          93,
+          94,
+          47
+        ],
+        "spent": [
+          100,
+          172,
+          42,
+          70,
+          36,
+          118
+        ],
+        "bought": [
+          12,
+          17,
+          6,
+          10,
+          6,
+          17
+        ],
+        "plays": [
+          3,
+          4,
+          2,
+          2,
+          2,
+          5
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 22,
+            "balance": 104,
+            "tiles": 2,
+            "rank": 2,
+            "bought": 3,
+            "spent": 18
+          },
+          {
+            "round": 20,
+            "score": 22,
+            "balance": 104,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 3,
+            "spent": 18
+          },
+          {
+            "round": 30,
+            "score": 22,
+            "balance": 86,
+            "tiles": 4,
+            "rank": 4,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 40,
+            "score": 44,
+            "balance": 96,
+            "tiles": 0,
+            "rank": 2,
+            "bought": 7,
+            "spent": 48
+          },
+          {
+            "round": 50,
+            "score": 44,
+            "balance": 76,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 9,
+            "spent": 68
+          },
+          {
+            "round": 52,
+            "score": 44,
+            "balance": 76,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 9,
+            "spent": 68
+          },
+          {
+            "round": 60,
+            "score": 44,
+            "balance": 44,
+            "tiles": 5,
+            "rank": 3,
+            "bought": 12,
+            "spent": 100
+          },
+          {
+            "round": 68,
+            "score": 47,
+            "balance": 47,
+            "tiles": 2,
+            "rank": 4,
+            "bought": 12,
+            "spent": 100
+          }
         ]
       },
       "hero": {
         "seed": 9,
         "scores": [
-          111,
-          59,
-          34,
-          25,
-          32,
-          46
+          224,
+          20,
+          27,
+          28,
+          30,
+          43
         ],
-        "hero": 111,
+        "hero": 224,
         "win": true,
         "rank": 1,
         "balances": [
-          13,
-          31,
+          2,
+          54,
+          101,
           90,
-          85,
-          84,
-          66
+          106,
+          81
+        ],
+        "spent": [
+          322,
+          66,
+          26,
+          38,
+          24,
+          62
+        ],
+        "bought": [
+          42,
+          5,
+          4,
+          5,
+          4,
+          8
+        ],
+        "plays": [
+          8,
+          1,
+          1,
+          2,
+          2,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 24,
+            "tiles": 14,
+            "rank": 1,
+            "bought": 9,
+            "spent": 76
+          },
+          {
+            "round": 20,
+            "score": 51,
+            "balance": 49,
+            "tiles": 11,
+            "rank": 1,
+            "bought": 13,
+            "spent": 102
+          },
+          {
+            "round": 30,
+            "score": 87,
+            "balance": 49,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 18,
+            "spent": 138
+          },
+          {
+            "round": 40,
+            "score": 129,
+            "balance": 43,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 25,
+            "spent": 186
+          },
+          {
+            "round": 50,
+            "score": 195,
+            "balance": 51,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 32,
+            "spent": 244
+          },
+          {
+            "round": 52,
+            "score": 195,
+            "balance": 45,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 33,
+            "spent": 250
+          },
+          {
+            "round": 60,
+            "score": 221,
+            "balance": 15,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 40,
+            "spent": 306
+          },
+          {
+            "round": 68,
+            "score": 224,
+            "balance": 2,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 42,
+            "spent": 322
+          }
         ]
       }
     },
@@ -437,45 +2201,241 @@
       "baseline": {
         "seed": 10,
         "scores": [
-          72,
-          52,
-          59,
-          74,
-          56,
-          60
+          42,
+          55,
+          69,
+          53,
+          60,
+          79
         ],
-        "hero": 72,
+        "hero": 42,
         "win": false,
-        "rank": 2,
+        "rank": 6,
         "balances": [
+          38,
+          81,
+          105,
+          51,
           76,
-          80,
-          89,
-          86,
-          36,
-          64
+          65
+        ],
+        "spent": [
+          104,
+          74,
+          64,
+          102,
+          84,
+          114
+        ],
+        "bought": [
+          12,
+          9,
+          9,
+          14,
+          12,
+          12
+        ],
+        "plays": [
+          3,
+          3,
+          2,
+          3,
+          3,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 84,
+            "tiles": 7,
+            "rank": 2,
+            "bought": 2,
+            "spent": 16
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 84,
+            "tiles": 7,
+            "rank": 5,
+            "bought": 2,
+            "spent": 16
+          },
+          {
+            "round": 30,
+            "score": 0,
+            "balance": 84,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 2,
+            "spent": 16
+          },
+          {
+            "round": 40,
+            "score": 27,
+            "balance": 99,
+            "tiles": 2,
+            "rank": 4,
+            "bought": 4,
+            "spent": 28
+          },
+          {
+            "round": 50,
+            "score": 27,
+            "balance": 69,
+            "tiles": 4,
+            "rank": 5,
+            "bought": 6,
+            "spent": 58
+          },
+          {
+            "round": 52,
+            "score": 27,
+            "balance": 69,
+            "tiles": 4,
+            "rank": 5,
+            "bought": 6,
+            "spent": 58
+          },
+          {
+            "round": 60,
+            "score": 27,
+            "balance": 51,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 8,
+            "spent": 76
+          },
+          {
+            "round": 68,
+            "score": 42,
+            "balance": 38,
+            "tiles": 3,
+            "rank": 6,
+            "bought": 12,
+            "spent": 104
+          }
         ]
       },
       "hero": {
         "seed": 10,
         "scores": [
-          127,
-          39,
-          34,
-          58,
-          52,
-          51
+          145,
+          12,
+          45,
+          65,
+          45,
+          55
         ],
-        "hero": 127,
+        "hero": 145,
         "win": true,
         "rank": 1,
         "balances": [
           5,
-          95,
-          94,
-          64,
+          86,
+          93,
+          85,
+          87,
+          69
+        ],
+        "spent": [
+          240,
+          26,
+          52,
           80,
-          81
+          58,
+          86
+        ],
+        "bought": [
+          30,
+          2,
+          8,
+          11,
+          8,
+          9
+        ],
+        "plays": [
+          5,
+          2,
+          2,
+          2,
+          3,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 52,
+            "tiles": 11,
+            "rank": 1,
+            "bought": 6,
+            "spent": 48
+          },
+          {
+            "round": 20,
+            "score": 51,
+            "balance": 41,
+            "tiles": 9,
+            "rank": 1,
+            "bought": 14,
+            "spent": 110
+          },
+          {
+            "round": 30,
+            "score": 84,
+            "balance": 38,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 19,
+            "spent": 146
+          },
+          {
+            "round": 40,
+            "score": 84,
+            "balance": 26,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 20,
+            "spent": 158
+          },
+          {
+            "round": 50,
+            "score": 120,
+            "balance": 26,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 23,
+            "spent": 194
+          },
+          {
+            "round": 52,
+            "score": 120,
+            "balance": 20,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 24,
+            "spent": 200
+          },
+          {
+            "round": 60,
+            "score": 145,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 30,
+            "spent": 240
+          },
+          {
+            "round": 68,
+            "score": 145,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 30,
+            "spent": 240
+          }
         ]
       }
     },
@@ -484,45 +2444,241 @@
       "baseline": {
         "seed": 11,
         "scores": [
-          47,
-          31,
-          69,
-          59,
-          64,
+          52,
+          61,
+          50,
+          57,
+          51,
           45
         ],
-        "hero": 47,
+        "hero": 52,
         "win": false,
-        "rank": 4,
+        "rank": 3,
         "balances": [
-          45,
-          77,
-          59,
-          73,
-          66,
-          81
+          50,
+          75,
+          68,
+          71,
+          75,
+          63
+        ],
+        "spent": [
+          102,
+          86,
+          82,
+          86,
+          76,
+          82
+        ],
+        "bought": [
+          13,
+          10,
+          12,
+          10,
+          12,
+          11
+        ],
+        "plays": [
+          3,
+          2,
+          2,
+          2,
+          4,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 76,
+            "tiles": 7,
+            "rank": 3,
+            "bought": 2,
+            "spent": 24
+          },
+          {
+            "round": 20,
+            "score": 22,
+            "balance": 80,
+            "tiles": 4,
+            "rank": 2,
+            "bought": 5,
+            "spent": 42
+          },
+          {
+            "round": 30,
+            "score": 22,
+            "balance": 74,
+            "tiles": 5,
+            "rank": 3,
+            "bought": 6,
+            "spent": 48
+          },
+          {
+            "round": 40,
+            "score": 22,
+            "balance": 62,
+            "tiles": 7,
+            "rank": 5,
+            "bought": 8,
+            "spent": 60
+          },
+          {
+            "round": 50,
+            "score": 37,
+            "balance": 49,
+            "tiles": 4,
+            "rank": 5,
+            "bought": 11,
+            "spent": 88
+          },
+          {
+            "round": 52,
+            "score": 37,
+            "balance": 49,
+            "tiles": 4,
+            "rank": 5,
+            "bought": 11,
+            "spent": 88
+          },
+          {
+            "round": 60,
+            "score": 37,
+            "balance": 35,
+            "tiles": 6,
+            "rank": 6,
+            "bought": 13,
+            "spent": 102
+          },
+          {
+            "round": 68,
+            "score": 52,
+            "balance": 50,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 13,
+            "spent": 102
+          }
         ]
       },
       "hero": {
         "seed": 11,
         "scores": [
-          157,
+          194,
+          6,
+          38,
           45,
-          52,
-          41,
-          62,
-          27
+          39,
+          21
         ],
-        "hero": 157,
+        "hero": 194,
         "win": true,
         "rank": 1,
         "balances": [
-          7,
-          115,
-          98,
-          83,
-          84,
-          83
+          2,
+          88,
+          102,
+          89,
+          69,
+          79
+        ],
+        "spent": [
+          292,
+          18,
+          36,
+          56,
+          70,
+          42
+        ],
+        "bought": [
+          38,
+          2,
+          5,
+          6,
+          11,
+          6
+        ],
+        "plays": [
+          8,
+          1,
+          2,
+          1,
+          4,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 32,
+            "tiles": 13,
+            "rank": 1,
+            "bought": 8,
+            "spent": 68
+          },
+          {
+            "round": 20,
+            "score": 51,
+            "balance": 43,
+            "tiles": 11,
+            "rank": 1,
+            "bought": 14,
+            "spent": 108
+          },
+          {
+            "round": 30,
+            "score": 51,
+            "balance": 29,
+            "tiles": 13,
+            "rank": 1,
+            "bought": 16,
+            "spent": 122
+          },
+          {
+            "round": 40,
+            "score": 132,
+            "balance": 48,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 23,
+            "spent": 184
+          },
+          {
+            "round": 50,
+            "score": 159,
+            "balance": 33,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 29,
+            "spent": 226
+          },
+          {
+            "round": 52,
+            "score": 185,
+            "balance": 41,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 31,
+            "spent": 244
+          },
+          {
+            "round": 60,
+            "score": 194,
+            "balance": 2,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 38,
+            "spent": 292
+          },
+          {
+            "round": 68,
+            "score": 194,
+            "balance": 2,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 38,
+            "spent": 292
+          }
         ]
       }
     },
@@ -531,45 +2687,241 @@
       "baseline": {
         "seed": 12,
         "scores": [
-          75,
-          33,
-          42,
-          63,
-          81,
-          44
+          58,
+          45,
+          56,
+          57,
+          62,
+          34
         ],
-        "hero": 75,
+        "hero": 58,
         "win": false,
         "rank": 2,
         "balances": [
+          58,
+          77,
+          100,
           55,
-          57,
-          82,
-          63,
-          59,
-          78
+          20,
+          58
+        ],
+        "spent": [
+          100,
+          68,
+          56,
+          102,
+          142,
+          76
+        ],
+        "bought": [
+          13,
+          8,
+          8,
+          14,
+          15,
+          10
+        ],
+        "plays": [
+          4,
+          2,
+          2,
+          4,
+          3,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 100,
+            "tiles": 5,
+            "rank": 4,
+            "bought": 0,
+            "spent": 0
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 88,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 2,
+            "spent": 12
+          },
+          {
+            "round": 30,
+            "score": 17,
+            "balance": 81,
+            "tiles": 4,
+            "rank": 5,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 40,
+            "score": 42,
+            "balance": 86,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 8,
+            "spent": 56
+          },
+          {
+            "round": 50,
+            "score": 42,
+            "balance": 68,
+            "tiles": 3,
+            "rank": 3,
+            "bought": 10,
+            "spent": 74
+          },
+          {
+            "round": 52,
+            "score": 42,
+            "balance": 68,
+            "tiles": 3,
+            "rank": 3,
+            "bought": 10,
+            "spent": 74
+          },
+          {
+            "round": 60,
+            "score": 42,
+            "balance": 62,
+            "tiles": 4,
+            "rank": 3,
+            "bought": 11,
+            "spent": 80
+          },
+          {
+            "round": 68,
+            "score": 58,
+            "balance": 58,
+            "tiles": 0,
+            "rank": 2,
+            "bought": 13,
+            "spent": 100
+          }
         ]
       },
       "hero": {
         "seed": 12,
         "scores": [
-          131,
-          24,
-          6,
-          32,
-          48,
-          40
+          177,
+          28,
+          19,
+          47,
+          61,
+          20
         ],
-        "hero": 131,
+        "hero": 177,
         "win": true,
         "rank": 1,
         "balances": [
+          3,
+          80,
+          79,
+          75,
+          93,
+          78
+        ],
+        "spent": [
+          274,
+          48,
+          40,
+          72,
+          68,
+          42
+        ],
+        "bought": [
+          35,
+          5,
+          6,
+          11,
+          6,
+          5
+        ],
+        "plays": [
           7,
-          82,
-          64,
-          54,
-          60,
-          70
+          3,
+          2,
+          3,
+          2,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 46,
+            "tiles": 12,
+            "rank": 2,
+            "bought": 7,
+            "spent": 54
+          },
+          {
+            "round": 20,
+            "score": 42,
+            "balance": 52,
+            "tiles": 9,
+            "rank": 1,
+            "bought": 12,
+            "spent": 90
+          },
+          {
+            "round": 30,
+            "score": 42,
+            "balance": 22,
+            "tiles": 13,
+            "rank": 2,
+            "bought": 16,
+            "spent": 120
+          },
+          {
+            "round": 40,
+            "score": 81,
+            "balance": 21,
+            "tiles": 11,
+            "rank": 1,
+            "bought": 21,
+            "spent": 160
+          },
+          {
+            "round": 50,
+            "score": 170,
+            "balance": 30,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 30,
+            "spent": 240
+          },
+          {
+            "round": 52,
+            "score": 170,
+            "balance": 22,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 31,
+            "spent": 248
+          },
+          {
+            "round": 60,
+            "score": 177,
+            "balance": 3,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 35,
+            "spent": 274
+          },
+          {
+            "round": 68,
+            "score": 177,
+            "balance": 3,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 35,
+            "spent": 274
+          }
         ]
       }
     },
@@ -578,45 +2930,241 @@
       "baseline": {
         "seed": 13,
         "scores": [
-          47,
-          50,
-          26,
+          40,
+          34,
+          31,
+          59,
           51,
-          46,
-          87
+          97
         ],
-        "hero": 47,
+        "hero": 40,
         "win": false,
         "rank": 4,
         "balances": [
-          55,
-          74,
-          58,
+          68,
+          38,
+          85,
           69,
-          86,
-          49
+          51,
+          85
+        ],
+        "spent": [
+          72,
+          96,
+          46,
+          90,
+          100,
+          112
+        ],
+        "bought": [
+          8,
+          11,
+          7,
+          12,
+          13,
+          17
+        ],
+        "plays": [
+          2,
+          2,
+          2,
+          2,
+          3,
+          4
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 100,
+            "tiles": 5,
+            "rank": 3,
+            "bought": 0,
+            "spent": 0
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 94,
+            "tiles": 6,
+            "rank": 4,
+            "bought": 1,
+            "spent": 6
+          },
+          {
+            "round": 30,
+            "score": 0,
+            "balance": 94,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 1,
+            "spent": 6
+          },
+          {
+            "round": 40,
+            "score": 0,
+            "balance": 82,
+            "tiles": 8,
+            "rank": 6,
+            "bought": 3,
+            "spent": 18
+          },
+          {
+            "round": 50,
+            "score": 30,
+            "balance": 106,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 4,
+            "spent": 24
+          },
+          {
+            "round": 52,
+            "score": 30,
+            "balance": 94,
+            "tiles": 3,
+            "rank": 3,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 60,
+            "score": 30,
+            "balance": 82,
+            "tiles": 5,
+            "rank": 5,
+            "bought": 7,
+            "spent": 48
+          },
+          {
+            "round": 68,
+            "score": 40,
+            "balance": 68,
+            "tiles": 2,
+            "rank": 4,
+            "bought": 8,
+            "spent": 72
+          }
         ]
       },
       "hero": {
         "seed": 13,
         "scores": [
-          168,
-          23,
-          22,
-          41,
-          79,
-          47
+          191,
+          24,
+          20,
+          14,
+          28,
+          36
         ],
-        "hero": 168,
+        "hero": 191,
         "win": true,
         "rank": 1,
         "balances": [
-          18,
-          81,
-          72,
-          105,
-          125,
-          63
+          5,
+          74,
+          84,
+          60,
+          74,
+          100
+        ],
+        "spent": [
+          286,
+          50,
+          36,
+          54,
+          54,
+          36
+        ],
+        "bought": [
+          38,
+          6,
+          6,
+          5,
+          7,
+          6
+        ],
+        "plays": [
+          7,
+          2,
+          2,
+          1,
+          2,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 56,
+            "tiles": 12,
+            "rank": 3,
+            "bought": 7,
+            "spent": 44
+          },
+          {
+            "round": 20,
+            "score": 60,
+            "balance": 40,
+            "tiles": 10,
+            "rank": 1,
+            "bought": 17,
+            "spent": 120
+          },
+          {
+            "round": 30,
+            "score": 90,
+            "balance": 36,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 22,
+            "spent": 154
+          },
+          {
+            "round": 40,
+            "score": 132,
+            "balance": 22,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 27,
+            "spent": 210
+          },
+          {
+            "round": 50,
+            "score": 169,
+            "balance": 29,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 32,
+            "spent": 240
+          },
+          {
+            "round": 52,
+            "score": 189,
+            "balance": 27,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 34,
+            "spent": 262
+          },
+          {
+            "round": 60,
+            "score": 191,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 38,
+            "spent": 286
+          },
+          {
+            "round": 68,
+            "score": 191,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 38,
+            "spent": 286
+          }
         ]
       }
     },
@@ -625,45 +3173,241 @@
       "baseline": {
         "seed": 14,
         "scores": [
-          75,
-          55,
-          35,
-          49,
+          68,
           64,
+          26,
+          54,
+          55,
           45
         ],
-        "hero": 75,
+        "hero": 68,
         "win": true,
         "rank": 1,
         "balances": [
+          56,
+          58,
+          90,
+          60,
           21,
-          37,
-          87,
-          85,
-          46,
-          93
+          73
+        ],
+        "spent": [
+          112,
+          106,
+          36,
+          94,
+          134,
+          72
+        ],
+        "bought": [
+          16,
+          14,
+          5,
+          11,
+          14,
+          8
+        ],
+        "plays": [
+          4,
+          4,
+          2,
+          2,
+          4,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 17,
+            "balance": 87,
+            "tiles": 3,
+            "rank": 2,
+            "bought": 4,
+            "spent": 30
+          },
+          {
+            "round": 20,
+            "score": 17,
+            "balance": 69,
+            "tiles": 6,
+            "rank": 4,
+            "bought": 7,
+            "spent": 48
+          },
+          {
+            "round": 30,
+            "score": 39,
+            "balance": 69,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 10,
+            "spent": 70
+          },
+          {
+            "round": 40,
+            "score": 39,
+            "balance": 59,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 11,
+            "spent": 80
+          },
+          {
+            "round": 50,
+            "score": 39,
+            "balance": 53,
+            "tiles": 5,
+            "rank": 2,
+            "bought": 12,
+            "spent": 86
+          },
+          {
+            "round": 52,
+            "score": 39,
+            "balance": 45,
+            "tiles": 6,
+            "rank": 2,
+            "bought": 13,
+            "spent": 94
+          },
+          {
+            "round": 60,
+            "score": 64,
+            "balance": 58,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 15,
+            "spent": 106
+          },
+          {
+            "round": 68,
+            "score": 68,
+            "balance": 56,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 16,
+            "spent": 112
+          }
         ]
       },
       "hero": {
         "seed": 14,
         "scores": [
-          146,
-          45,
+          181,
+          69,
+          20,
+          19,
           38,
-          36,
-          18,
-          32
+          34
         ],
-        "hero": 146,
+        "hero": 181,
         "win": true,
         "rank": 1,
         "balances": [
-          10,
-          39,
+          3,
+          71,
+          96,
+          99,
+          28,
+          110
+        ],
+        "spent": [
+          278,
           98,
-          76,
-          64,
-          74
+          24,
+          20,
+          110,
+          24
+        ],
+        "bought": [
+          36,
+          13,
+          4,
+          1,
+          11,
+          3
+        ],
+        "plays": [
+          6,
+          3,
+          1,
+          2,
+          4,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 34,
+            "tiles": 12,
+            "rank": 1,
+            "bought": 7,
+            "spent": 66
+          },
+          {
+            "round": 20,
+            "score": 48,
+            "balance": 30,
+            "tiles": 12,
+            "rank": 1,
+            "bought": 15,
+            "spent": 118
+          },
+          {
+            "round": 30,
+            "score": 99,
+            "balance": 35,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 21,
+            "spent": 164
+          },
+          {
+            "round": 40,
+            "score": 139,
+            "balance": 31,
+            "tiles": 7,
+            "rank": 1,
+            "bought": 26,
+            "spent": 208
+          },
+          {
+            "round": 50,
+            "score": 181,
+            "balance": 11,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 35,
+            "spent": 270
+          },
+          {
+            "round": 52,
+            "score": 181,
+            "balance": 3,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 36,
+            "spent": 278
+          },
+          {
+            "round": 60,
+            "score": 181,
+            "balance": 3,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 36,
+            "spent": 278
+          },
+          {
+            "round": 68,
+            "score": 181,
+            "balance": 3,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 36,
+            "spent": 278
+          }
         ]
       }
     },
@@ -672,45 +3416,241 @@
       "baseline": {
         "seed": 15,
         "scores": [
-          44,
-          72,
-          72,
-          73,
-          64,
-          43
+          40,
+          45,
+          67,
+          26,
+          66,
+          49
         ],
-        "hero": 44,
+        "hero": 40,
         "win": false,
         "rank": 5,
         "balances": [
-          58,
-          68,
+          52,
+          65,
+          37,
+          48,
           62,
-          53,
-          86,
-          91
+          79
+        ],
+        "spent": [
+          88,
+          80,
+          130,
+          78,
+          104,
+          70
+        ],
+        "bought": [
+          11,
+          11,
+          15,
+          10,
+          13,
+          8
+        ],
+        "plays": [
+          3,
+          3,
+          4,
+          2,
+          2,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 84,
+            "tiles": 7,
+            "rank": 4,
+            "bought": 2,
+            "spent": 16
+          },
+          {
+            "round": 20,
+            "score": 20,
+            "balance": 92,
+            "tiles": 3,
+            "rank": 4,
+            "bought": 4,
+            "spent": 28
+          },
+          {
+            "round": 30,
+            "score": 20,
+            "balance": 92,
+            "tiles": 3,
+            "rank": 4,
+            "bought": 4,
+            "spent": 28
+          },
+          {
+            "round": 40,
+            "score": 20,
+            "balance": 74,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 7,
+            "spent": 46
+          },
+          {
+            "round": 50,
+            "score": 37,
+            "balance": 77,
+            "tiles": 2,
+            "rank": 4,
+            "bought": 9,
+            "spent": 60
+          },
+          {
+            "round": 52,
+            "score": 37,
+            "balance": 77,
+            "tiles": 2,
+            "rank": 4,
+            "bought": 9,
+            "spent": 60
+          },
+          {
+            "round": 60,
+            "score": 37,
+            "balance": 77,
+            "tiles": 2,
+            "rank": 4,
+            "bought": 9,
+            "spent": 60
+          },
+          {
+            "round": 68,
+            "score": 40,
+            "balance": 52,
+            "tiles": 2,
+            "rank": 5,
+            "bought": 11,
+            "spent": 88
+          }
         ]
       },
       "hero": {
         "seed": 15,
         "scores": [
-          164,
-          38,
-          41,
-          32,
-          47,
-          32
+          254,
+          23,
+          50,
+          20,
+          16,
+          9
         ],
-        "hero": 164,
+        "hero": 254,
         "win": true,
         "rank": 1,
         "balances": [
+          4,
+          81,
+          78,
+          72,
+          104,
+          83
+        ],
+        "spent": [
+          350,
+          42,
+          72,
+          48,
+          12,
+          26
+        ],
+        "bought": [
+          43,
           6,
-          90,
-          73,
-          54,
-          97,
-          84
+          9,
+          6,
+          2,
+          2
+        ],
+        "plays": [
+          8,
+          2,
+          3,
+          1,
+          1,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 46,
+            "tiles": 10,
+            "rank": 3,
+            "bought": 5,
+            "spent": 54
+          },
+          {
+            "round": 20,
+            "score": 48,
+            "balance": 42,
+            "tiles": 10,
+            "rank": 1,
+            "bought": 12,
+            "spent": 106
+          },
+          {
+            "round": 30,
+            "score": 135,
+            "balance": 57,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 21,
+            "spent": 178
+          },
+          {
+            "round": 40,
+            "score": 195,
+            "balance": 63,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 27,
+            "spent": 232
+          },
+          {
+            "round": 50,
+            "score": 228,
+            "balance": 38,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 35,
+            "spent": 290
+          },
+          {
+            "round": 52,
+            "score": 228,
+            "balance": 20,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 37,
+            "spent": 308
+          },
+          {
+            "round": 60,
+            "score": 250,
+            "balance": 8,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 42,
+            "spent": 342
+          },
+          {
+            "round": 68,
+            "score": 254,
+            "balance": 4,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 43,
+            "spent": 350
+          }
         ]
       }
     },
@@ -719,45 +3659,241 @@
       "baseline": {
         "seed": 16,
         "scores": [
-          40,
-          72,
-          52,
           60,
-          50,
-          34
-        ],
-        "hero": 40,
-        "win": false,
-        "rank": 5,
-        "balances": [
-          86,
+          54,
           66,
           52,
-          54,
+          62,
+          20
+        ],
+        "hero": 60,
+        "win": false,
+        "rank": 3,
+        "balances": [
+          86,
+          56,
+          96,
+          38,
           40,
-          78
+          66
+        ],
+        "spent": [
+          74,
+          98,
+          70,
+          114,
+          122,
+          54
+        ],
+        "bought": [
+          10,
+          12,
+          9,
+          12,
+          17,
+          8
+        ],
+        "plays": [
+          2,
+          3,
+          2,
+          3,
+          4,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 84,
+            "tiles": 7,
+            "rank": 2,
+            "bought": 2,
+            "spent": 16
+          },
+          {
+            "round": 20,
+            "score": 27,
+            "balance": 95,
+            "tiles": 3,
+            "rank": 3,
+            "bought": 4,
+            "spent": 32
+          },
+          {
+            "round": 30,
+            "score": 27,
+            "balance": 77,
+            "tiles": 5,
+            "rank": 3,
+            "bought": 6,
+            "spent": 50
+          },
+          {
+            "round": 40,
+            "score": 27,
+            "balance": 71,
+            "tiles": 6,
+            "rank": 3,
+            "bought": 7,
+            "spent": 56
+          },
+          {
+            "round": 50,
+            "score": 27,
+            "balance": 71,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 7,
+            "spent": 56
+          },
+          {
+            "round": 52,
+            "score": 27,
+            "balance": 71,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 7,
+            "spent": 56
+          },
+          {
+            "round": 60,
+            "score": 27,
+            "balance": 65,
+            "tiles": 7,
+            "rank": 5,
+            "bought": 8,
+            "spent": 62
+          },
+          {
+            "round": 68,
+            "score": 60,
+            "balance": 86,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 10,
+            "spent": 74
+          }
         ]
       },
       "hero": {
         "seed": 16,
         "scores": [
-          139,
-          36,
-          32,
-          25,
-          41,
-          46
+          261,
+          19,
+          34,
+          22,
+          23,
+          25
         ],
-        "hero": 139,
+        "hero": 261,
         "win": true,
         "rank": 1,
         "balances": [
+          5,
+          81,
+          98,
+          104,
+          75,
+          89
+        ],
+        "spent": [
+          356,
+          38,
+          36,
+          18,
+          48,
+          36
+        ],
+        "bought": [
+          44,
+          4,
+          5,
+          3,
           7,
-          78,
-          54,
-          83,
-          61,
-          104
+          5
+        ],
+        "plays": [
+          8,
+          2,
+          2,
+          1,
+          3,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 36,
+            "tiles": 12,
+            "rank": 2,
+            "bought": 7,
+            "spent": 64
+          },
+          {
+            "round": 20,
+            "score": 92,
+            "balance": 64,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 13,
+            "spent": 128
+          },
+          {
+            "round": 30,
+            "score": 140,
+            "balance": 64,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 20,
+            "spent": 176
+          },
+          {
+            "round": 40,
+            "score": 188,
+            "balance": 46,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 27,
+            "spent": 242
+          },
+          {
+            "round": 50,
+            "score": 236,
+            "balance": 38,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 35,
+            "spent": 298
+          },
+          {
+            "round": 52,
+            "score": 236,
+            "balance": 26,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 37,
+            "spent": 310
+          },
+          {
+            "round": 60,
+            "score": 261,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 44,
+            "spent": 356
+          },
+          {
+            "round": 68,
+            "score": 261,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 44,
+            "spent": 356
+          }
         ]
       }
     },
@@ -766,45 +3902,241 @@
       "baseline": {
         "seed": 17,
         "scores": [
-          32,
-          47,
-          46,
-          71,
+          49,
           42,
-          44
+          57,
+          54,
+          48,
+          69
         ],
-        "hero": 32,
+        "hero": 49,
         "win": false,
-        "rank": 6,
+        "rank": 4,
         "balances": [
-          84,
-          61,
-          52,
-          45,
-          66,
-          26
+          67,
+          62,
+          49,
+          46,
+          94,
+          53
+        ],
+        "spent": [
+          82,
+          80,
+          108,
+          108,
+          54,
+          116
+        ],
+        "bought": [
+          9,
+          10,
+          11,
+          18,
+          8,
+          12
+        ],
+        "plays": [
+          2,
+          3,
+          4,
+          4,
+          2,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 94,
+            "tiles": 6,
+            "rank": 3,
+            "bought": 1,
+            "spent": 6
+          },
+          {
+            "round": 20,
+            "score": 27,
+            "balance": 111,
+            "tiles": 1,
+            "rank": 2,
+            "bought": 2,
+            "spent": 16
+          },
+          {
+            "round": 30,
+            "score": 27,
+            "balance": 105,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 3,
+            "spent": 22
+          },
+          {
+            "round": 40,
+            "score": 27,
+            "balance": 99,
+            "tiles": 3,
+            "rank": 4,
+            "bought": 4,
+            "spent": 28
+          },
+          {
+            "round": 50,
+            "score": 27,
+            "balance": 81,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 7,
+            "spent": 46
+          },
+          {
+            "round": 52,
+            "score": 27,
+            "balance": 81,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 7,
+            "spent": 46
+          },
+          {
+            "round": 60,
+            "score": 27,
+            "balance": 57,
+            "tiles": 7,
+            "rank": 5,
+            "bought": 8,
+            "spent": 70
+          },
+          {
+            "round": 68,
+            "score": 49,
+            "balance": 67,
+            "tiles": 2,
+            "rank": 4,
+            "bought": 9,
+            "spent": 82
+          }
         ]
       },
       "hero": {
         "seed": 17,
         "scores": [
-          181,
-          21,
-          21,
-          36,
-          23,
-          48
+          196,
+          8,
+          35,
+          33,
+          25,
+          31
         ],
-        "hero": 181,
+        "hero": 196,
         "win": true,
         "rank": 1,
         "balances": [
-          9,
-          73,
-          73,
-          64,
-          87,
-          76
+          6,
+          96,
+          53,
+          61,
+          99,
+          65
+        ],
+        "spent": [
+          290,
+          12,
+          82,
+          72,
+          26,
+          66
+        ],
+        "bought": [
+          38,
+          2,
+          7,
+          11,
+          4,
+          6
+        ],
+        "plays": [
+          7,
+          2,
+          2,
+          3,
+          1,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 36,
+            "tiles": 12,
+            "rank": 2,
+            "bought": 7,
+            "spent": 64
+          },
+          {
+            "round": 20,
+            "score": 88,
+            "balance": 54,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 16,
+            "spent": 134
+          },
+          {
+            "round": 30,
+            "score": 88,
+            "balance": 22,
+            "tiles": 12,
+            "rank": 1,
+            "bought": 20,
+            "spent": 166
+          },
+          {
+            "round": 40,
+            "score": 139,
+            "balance": 19,
+            "tiles": 9,
+            "rank": 1,
+            "bought": 28,
+            "spent": 220
+          },
+          {
+            "round": 50,
+            "score": 172,
+            "balance": 22,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 32,
+            "spent": 250
+          },
+          {
+            "round": 52,
+            "score": 190,
+            "balance": 32,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 33,
+            "spent": 258
+          },
+          {
+            "round": 60,
+            "score": 196,
+            "balance": 6,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 38,
+            "spent": 290
+          },
+          {
+            "round": 68,
+            "score": 196,
+            "balance": 6,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 38,
+            "spent": 290
+          }
         ]
       }
     },
@@ -813,45 +4145,241 @@
       "baseline": {
         "seed": 18,
         "scores": [
-          52,
-          45,
-          57,
-          47,
-          63,
-          59
+          76,
+          46,
+          54,
+          40,
+          76,
+          31
         ],
-        "hero": 52,
-        "win": false,
-        "rank": 4,
+        "hero": 76,
+        "win": true,
+        "rank": 1,
         "balances": [
-          36,
-          69,
-          47,
-          59,
-          97,
-          71
+          34,
+          54,
+          72,
+          64,
+          110,
+          45
+        ],
+        "spent": [
+          142,
+          92,
+          82,
+          76,
+          66,
+          86
+        ],
+        "bought": [
+          16,
+          10,
+          11,
+          11,
+          10,
+          10
+        ],
+        "plays": [
+          4,
+          3,
+          3,
+          3,
+          3,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 15,
+            "balance": 97,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 2,
+            "spent": 18
+          },
+          {
+            "round": 20,
+            "score": 15,
+            "balance": 85,
+            "tiles": 3,
+            "rank": 3,
+            "bought": 4,
+            "spent": 30
+          },
+          {
+            "round": 30,
+            "score": 15,
+            "balance": 41,
+            "tiles": 6,
+            "rank": 4,
+            "bought": 7,
+            "spent": 74
+          },
+          {
+            "round": 40,
+            "score": 15,
+            "balance": 35,
+            "tiles": 7,
+            "rank": 4,
+            "bought": 8,
+            "spent": 80
+          },
+          {
+            "round": 50,
+            "score": 47,
+            "balance": 59,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 9,
+            "spent": 88
+          },
+          {
+            "round": 52,
+            "score": 47,
+            "balance": 59,
+            "tiles": 2,
+            "rank": 3,
+            "bought": 9,
+            "spent": 88
+          },
+          {
+            "round": 60,
+            "score": 47,
+            "balance": 25,
+            "tiles": 6,
+            "rank": 3,
+            "bought": 13,
+            "spent": 122
+          },
+          {
+            "round": 68,
+            "score": 76,
+            "balance": 34,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 16,
+            "spent": 142
+          }
         ]
       },
       "hero": {
         "seed": 18,
         "scores": [
-          112,
-          53,
-          22,
-          33,
-          54,
-          27
+          217,
+          16,
+          51,
+          18,
+          34,
+          33
         ],
-        "hero": 112,
+        "hero": 217,
         "win": true,
         "rank": 1,
         "balances": [
-          10,
-          73,
-          50,
-          65,
-          82,
-          77
+          3,
+          80,
+          97,
+          76,
+          108,
+          61
+        ],
+        "spent": [
+          314,
+          36,
+          54,
+          42,
+          26,
+          72
+        ],
+        "bought": [
+          39,
+          3,
+          7,
+          7,
+          4,
+          8
+        ],
+        "plays": [
+          7,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 56,
+            "tiles": 11,
+            "rank": 2,
+            "bought": 6,
+            "spent": 44
+          },
+          {
+            "round": 20,
+            "score": 69,
+            "balance": 71,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 13,
+            "spent": 98
+          },
+          {
+            "round": 30,
+            "score": 126,
+            "balance": 48,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 21,
+            "spent": 178
+          },
+          {
+            "round": 40,
+            "score": 171,
+            "balance": 41,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 28,
+            "spent": 230
+          },
+          {
+            "round": 50,
+            "score": 198,
+            "balance": 32,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 33,
+            "spent": 266
+          },
+          {
+            "round": 52,
+            "score": 210,
+            "balance": 34,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 34,
+            "spent": 276
+          },
+          {
+            "round": 60,
+            "score": 217,
+            "balance": 3,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 39,
+            "spent": 314
+          },
+          {
+            "round": 68,
+            "score": 217,
+            "balance": 3,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 39,
+            "spent": 314
+          }
         ]
       }
     },
@@ -860,45 +4388,241 @@
       "baseline": {
         "seed": 19,
         "scores": [
-          51,
-          97,
-          62,
-          47,
-          64,
-          36
+          65,
+          59,
+          69,
+          45,
+          69,
+          57
         ],
-        "hero": 51,
+        "hero": 65,
         "win": false,
-        "rank": 4,
+        "rank": 3,
         "balances": [
-          43,
-          67,
-          70,
-          79,
+          77,
+          71,
+          87,
+          49,
+          93,
+          65
+        ],
+        "spent": [
           88,
-          88
+          88,
+          82,
+          96,
+          76,
+          92
+        ],
+        "bought": [
+          12,
+          13,
+          12,
+          11,
+          10,
+          10
+        ],
+        "plays": [
+          4,
+          3,
+          2,
+          3,
+          2,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 25,
+            "balance": 119,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 1,
+            "spent": 6
+          },
+          {
+            "round": 20,
+            "score": 25,
+            "balance": 93,
+            "tiles": 2,
+            "rank": 2,
+            "bought": 3,
+            "spent": 32
+          },
+          {
+            "round": 30,
+            "score": 25,
+            "balance": 73,
+            "tiles": 5,
+            "rank": 3,
+            "bought": 6,
+            "spent": 52
+          },
+          {
+            "round": 40,
+            "score": 25,
+            "balance": 61,
+            "tiles": 7,
+            "rank": 3,
+            "bought": 8,
+            "spent": 64
+          },
+          {
+            "round": 50,
+            "score": 25,
+            "balance": 61,
+            "tiles": 7,
+            "rank": 5,
+            "bought": 8,
+            "spent": 64
+          },
+          {
+            "round": 52,
+            "score": 25,
+            "balance": 61,
+            "tiles": 7,
+            "rank": 5,
+            "bought": 8,
+            "spent": 64
+          },
+          {
+            "round": 60,
+            "score": 60,
+            "balance": 78,
+            "tiles": 4,
+            "rank": 2,
+            "bought": 11,
+            "spent": 82
+          },
+          {
+            "round": 68,
+            "score": 65,
+            "balance": 77,
+            "tiles": 0,
+            "rank": 3,
+            "bought": 12,
+            "spent": 88
+          }
         ]
       },
       "hero": {
         "seed": 19,
         "scores": [
-          192,
-          24,
-          58,
-          25,
-          54,
-          27
+          194,
+          36,
+          42,
+          28,
+          9,
+          25
         ],
-        "hero": 192,
+        "hero": 194,
         "win": true,
         "rank": 1,
         "balances": [
-          10,
+          6,
+          76,
+          112,
+          82,
+          81,
+          55
+        ],
+        "spent": [
+          288,
           60,
-          102,
-          69,
-          124,
-          93
+          30,
+          46,
+          28,
+          70
+        ],
+        "bought": [
+          38,
+          9,
+          5,
+          6,
+          3,
+          7
+        ],
+        "plays": [
+          8,
+          3,
+          1,
+          3,
+          1,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 52,
+            "tiles": 12,
+            "rank": 1,
+            "bought": 7,
+            "spent": 48
+          },
+          {
+            "round": 20,
+            "score": 57,
+            "balance": 57,
+            "tiles": 10,
+            "rank": 1,
+            "bought": 13,
+            "spent": 100
+          },
+          {
+            "round": 30,
+            "score": 108,
+            "balance": 54,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 20,
+            "spent": 154
+          },
+          {
+            "round": 40,
+            "score": 108,
+            "balance": 26,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 24,
+            "spent": 182
+          },
+          {
+            "round": 50,
+            "score": 147,
+            "balance": 19,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 29,
+            "spent": 228
+          },
+          {
+            "round": 52,
+            "score": 147,
+            "balance": 19,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 29,
+            "spent": 228
+          },
+          {
+            "round": 60,
+            "score": 189,
+            "balance": 7,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 37,
+            "spent": 282
+          },
+          {
+            "round": 68,
+            "score": 194,
+            "balance": 6,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 38,
+            "spent": 288
+          }
         ]
       }
     },
@@ -907,45 +4631,241 @@
       "baseline": {
         "seed": 20,
         "scores": [
-          50,
-          49,
-          44,
-          42,
-          52,
-          72
+          39,
+          57,
+          67,
+          59,
+          45,
+          106
         ],
-        "hero": 50,
+        "hero": 39,
         "win": false,
-        "rank": 3,
+        "rank": 6,
         "balances": [
+          83,
+          83,
+          49,
+          61,
+          69,
+          90
+        ],
+        "spent": [
           56,
-          85,
-          54,
-          58,
-          48,
-          70
+          74,
+          118,
+          98,
+          76,
+          116
+        ],
+        "bought": [
+          8,
+          9,
+          15,
+          11,
+          12,
+          13
+        ],
+        "plays": [
+          2,
+          2,
+          3,
+          3,
+          4,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 94,
+            "tiles": 6,
+            "rank": 4,
+            "bought": 1,
+            "spent": 6
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 88,
+            "tiles": 7,
+            "rank": 5,
+            "bought": 2,
+            "spent": 12
+          },
+          {
+            "round": 30,
+            "score": 0,
+            "balance": 70,
+            "tiles": 9,
+            "rank": 6,
+            "bought": 4,
+            "spent": 30
+          },
+          {
+            "round": 40,
+            "score": 21,
+            "balance": 85,
+            "tiles": 3,
+            "rank": 6,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 50,
+            "score": 21,
+            "balance": 85,
+            "tiles": 3,
+            "rank": 6,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 52,
+            "score": 21,
+            "balance": 85,
+            "tiles": 3,
+            "rank": 6,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 60,
+            "score": 21,
+            "balance": 73,
+            "tiles": 5,
+            "rank": 6,
+            "bought": 7,
+            "spent": 48
+          },
+          {
+            "round": 68,
+            "score": 39,
+            "balance": 83,
+            "tiles": 1,
+            "rank": 6,
+            "bought": 8,
+            "spent": 56
+          }
         ]
       },
       "hero": {
         "seed": 20,
         "scores": [
-          166,
-          42,
-          27,
-          31,
-          20,
-          63
+          167,
+          32,
+          29,
+          38,
+          38,
+          49
         ],
-        "hero": 166,
+        "hero": 167,
         "win": true,
         "rank": 1,
         "balances": [
-          10,
-          90,
-          61,
-          65,
-          90,
-          95
+          5,
+          108,
+          81,
+          70,
+          80,
+          71
+        ],
+        "spent": [
+          262,
+          24,
+          48,
+          68,
+          58,
+          78
+        ],
+        "bought": [
+          31,
+          4,
+          6,
+          9,
+          9,
+          9
+        ],
+        "plays": [
+          6,
+          2,
+          2,
+          3,
+          3,
+          3
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 30,
+            "tiles": 13,
+            "rank": 2,
+            "bought": 8,
+            "spent": 70
+          },
+          {
+            "round": 20,
+            "score": 42,
+            "balance": 22,
+            "tiles": 11,
+            "rank": 1,
+            "bought": 14,
+            "spent": 120
+          },
+          {
+            "round": 30,
+            "score": 82,
+            "balance": 20,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 17,
+            "spent": 162
+          },
+          {
+            "round": 40,
+            "score": 142,
+            "balance": 38,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 23,
+            "spent": 204
+          },
+          {
+            "round": 50,
+            "score": 158,
+            "balance": 14,
+            "tiles": 3,
+            "rank": 1,
+            "bought": 28,
+            "spent": 244
+          },
+          {
+            "round": 52,
+            "score": 167,
+            "balance": 17,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 29,
+            "spent": 250
+          },
+          {
+            "round": 60,
+            "score": 167,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 31,
+            "spent": 262
+          },
+          {
+            "round": 68,
+            "score": 167,
+            "balance": 5,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 31,
+            "spent": 262
+          }
         ]
       }
     },
@@ -954,45 +4874,241 @@
       "baseline": {
         "seed": 21,
         "scores": [
-          65,
-          30,
-          49,
-          57,
-          64,
-          28
+          56,
+          18,
+          47,
+          58,
+          50,
+          35
         ],
-        "hero": 65,
-        "win": true,
-        "rank": 1,
+        "hero": 56,
+        "win": false,
+        "rank": 2,
         "balances": [
-          41,
+          26,
           94,
-          87,
-          69,
-          72,
+          85,
+          56,
+          54,
+          21
+        ],
+        "spent": [
+          130,
+          24,
+          62,
+          102,
+          96,
+          114
+        ],
+        "bought": [
+          16,
+          4,
+          9,
+          10,
+          14,
+          15
+        ],
+        "plays": [
+          3,
+          2,
+          2,
+          3,
+          3,
           2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 78,
+            "tiles": 8,
+            "rank": 3,
+            "bought": 3,
+            "spent": 22
+          },
+          {
+            "round": 20,
+            "score": 20,
+            "balance": 58,
+            "tiles": 7,
+            "rank": 3,
+            "bought": 8,
+            "spent": 62
+          },
+          {
+            "round": 30,
+            "score": 20,
+            "balance": 28,
+            "tiles": 9,
+            "rank": 4,
+            "bought": 10,
+            "spent": 92
+          },
+          {
+            "round": 40,
+            "score": 47,
+            "balance": 43,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 12,
+            "spent": 104
+          },
+          {
+            "round": 50,
+            "score": 47,
+            "balance": 37,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 13,
+            "spent": 110
+          },
+          {
+            "round": 52,
+            "score": 47,
+            "balance": 37,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 13,
+            "spent": 110
+          },
+          {
+            "round": 60,
+            "score": 47,
+            "balance": 31,
+            "tiles": 6,
+            "rank": 1,
+            "bought": 14,
+            "spent": 116
+          },
+          {
+            "round": 68,
+            "score": 56,
+            "balance": 26,
+            "tiles": 4,
+            "rank": 2,
+            "bought": 16,
+            "spent": 130
+          }
         ]
       },
       "hero": {
         "seed": 21,
         "scores": [
-          155,
-          20,
-          47,
-          33,
-          39,
-          15
+          199,
+          9,
+          32,
+          48,
+          30,
+          25
         ],
-        "hero": 155,
+        "hero": 199,
         "win": true,
         "rank": 1,
         "balances": [
-          9,
-          92,
-          79,
-          81,
-          85,
-          35
+          3,
+          97,
+          88,
+          88,
+          84,
+          55
+        ],
+        "spent": [
+          296,
+          12,
+          44,
+          60,
+          46,
+          70
+        ],
+        "bought": [
+          38,
+          2,
+          6,
+          6,
+          7,
+          9
+        ],
+        "plays": [
+          8,
+          2,
+          2,
+          2,
+          3,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 50,
+            "tiles": 11,
+            "rank": 1,
+            "bought": 6,
+            "spent": 50
+          },
+          {
+            "round": 20,
+            "score": 45,
+            "balance": 37,
+            "tiles": 11,
+            "rank": 1,
+            "bought": 13,
+            "spent": 108
+          },
+          {
+            "round": 30,
+            "score": 96,
+            "balance": 20,
+            "tiles": 11,
+            "rank": 1,
+            "bought": 20,
+            "spent": 176
+          },
+          {
+            "round": 40,
+            "score": 176,
+            "balance": 50,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 27,
+            "spent": 226
+          },
+          {
+            "round": 50,
+            "score": 197,
+            "balance": 13,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 36,
+            "spent": 284
+          },
+          {
+            "round": 52,
+            "score": 197,
+            "balance": 13,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 36,
+            "spent": 284
+          },
+          {
+            "round": 60,
+            "score": 199,
+            "balance": 3,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 38,
+            "spent": 296
+          },
+          {
+            "round": 68,
+            "score": 199,
+            "balance": 3,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 38,
+            "spent": 296
+          }
         ]
       }
     },
@@ -1001,45 +5117,241 @@
       "baseline": {
         "seed": 22,
         "scores": [
-          51,
-          52,
-          59,
+          61,
+          47,
           73,
-          26,
-          45
+          62,
+          29,
+          22
         ],
-        "hero": 51,
+        "hero": 61,
         "win": false,
-        "rank": 4,
+        "rank": 3,
         "balances": [
-          49,
-          58,
+          63,
           73,
-          71,
-          70,
-          69
+          63,
+          84,
+          73,
+          22
+        ],
+        "spent": [
+          98,
+          74,
+          110,
+          78,
+          56,
+          100
+        ],
+        "bought": [
+          10,
+          12,
+          16,
+          11,
+          8,
+          11
+        ],
+        "plays": [
+          4,
+          3,
+          4,
+          3,
+          3,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 74,
+            "tiles": 7,
+            "rank": 2,
+            "bought": 2,
+            "spent": 26
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 74,
+            "tiles": 7,
+            "rank": 5,
+            "bought": 2,
+            "spent": 26
+          },
+          {
+            "round": 30,
+            "score": 0,
+            "balance": 56,
+            "tiles": 9,
+            "rank": 6,
+            "bought": 4,
+            "spent": 44
+          },
+          {
+            "round": 40,
+            "score": 35,
+            "balance": 67,
+            "tiles": 5,
+            "rank": 3,
+            "bought": 6,
+            "spent": 68
+          },
+          {
+            "round": 50,
+            "score": 35,
+            "balance": 55,
+            "tiles": 6,
+            "rank": 3,
+            "bought": 7,
+            "spent": 80
+          },
+          {
+            "round": 52,
+            "score": 35,
+            "balance": 55,
+            "tiles": 6,
+            "rank": 3,
+            "bought": 7,
+            "spent": 80
+          },
+          {
+            "round": 60,
+            "score": 35,
+            "balance": 49,
+            "tiles": 7,
+            "rank": 4,
+            "bought": 8,
+            "spent": 86
+          },
+          {
+            "round": 68,
+            "score": 61,
+            "balance": 63,
+            "tiles": 0,
+            "rank": 3,
+            "bought": 10,
+            "spent": 98
+          }
         ]
       },
       "hero": {
         "seed": 22,
         "scores": [
-          203,
-          26,
+          204,
+          23,
           46,
-          27,
+          20,
           17,
-          25
+          23
         ],
-        "hero": 203,
+        "hero": 204,
         "win": true,
         "rank": 1,
         "balances": [
+          2,
+          99,
+          74,
+          98,
+          87,
+          57
+        ],
+        "spent": [
+          302,
+          24,
+          72,
+          22,
+          30,
+          66
+        ],
+        "bought": [
+          38,
+          4,
           11,
-          66,
-          96,
-          97,
-          81,
-          77
+          3,
+          5,
+          7
+        ],
+        "plays": [
+          9,
+          2,
+          3,
+          1,
+          1,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 22,
+            "tiles": 13,
+            "rank": 1,
+            "bought": 8,
+            "spent": 78
+          },
+          {
+            "round": 20,
+            "score": 66,
+            "balance": 42,
+            "tiles": 12,
+            "rank": 1,
+            "bought": 14,
+            "spent": 124
+          },
+          {
+            "round": 30,
+            "score": 114,
+            "balance": 48,
+            "tiles": 9,
+            "rank": 1,
+            "bought": 20,
+            "spent": 166
+          },
+          {
+            "round": 40,
+            "score": 139,
+            "balance": 29,
+            "tiles": 9,
+            "rank": 1,
+            "bought": 26,
+            "spent": 210
+          },
+          {
+            "round": 50,
+            "score": 190,
+            "balance": 36,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 31,
+            "spent": 254
+          },
+          {
+            "round": 52,
+            "score": 195,
+            "balance": 29,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 33,
+            "spent": 266
+          },
+          {
+            "round": 60,
+            "score": 204,
+            "balance": 2,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 38,
+            "spent": 302
+          },
+          {
+            "round": 68,
+            "score": 204,
+            "balance": 2,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 38,
+            "spent": 302
+          }
         ]
       }
     },
@@ -1048,45 +5360,241 @@
       "baseline": {
         "seed": 23,
         "scores": [
-          69,
-          83,
-          29,
-          58,
-          47,
-          44
-        ],
-        "hero": 69,
-        "win": false,
-        "rank": 2,
-        "balances": [
-          79,
+          54,
           61,
-          37,
-          82,
-          69,
-          56
+          39,
+          75,
+          45,
+          72
+        ],
+        "hero": 54,
+        "win": false,
+        "rank": 4,
+        "balances": [
+          80,
+          55,
+          49,
+          71,
+          47,
+          98
+        ],
+        "spent": [
+          74,
+          106,
+          90,
+          104,
+          98,
+          74
+        ],
+        "bought": [
+          10,
+          15,
+          11,
+          10,
+          11,
+          11
+        ],
+        "plays": [
+          3,
+          4,
+          3,
+          3,
+          3,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 100,
+            "tiles": 5,
+            "rank": 3,
+            "bought": 0,
+            "spent": 0
+          },
+          {
+            "round": 20,
+            "score": 0,
+            "balance": 84,
+            "tiles": 7,
+            "rank": 4,
+            "bought": 2,
+            "spent": 16
+          },
+          {
+            "round": 30,
+            "score": 0,
+            "balance": 84,
+            "tiles": 7,
+            "rank": 5,
+            "bought": 2,
+            "spent": 16
+          },
+          {
+            "round": 40,
+            "score": 0,
+            "balance": 66,
+            "tiles": 9,
+            "rank": 6,
+            "bought": 4,
+            "spent": 34
+          },
+          {
+            "round": 50,
+            "score": 0,
+            "balance": 66,
+            "tiles": 9,
+            "rank": 6,
+            "bought": 4,
+            "spent": 34
+          },
+          {
+            "round": 52,
+            "score": 35,
+            "balance": 95,
+            "tiles": 4,
+            "rank": 4,
+            "bought": 5,
+            "spent": 40
+          },
+          {
+            "round": 60,
+            "score": 35,
+            "balance": 79,
+            "tiles": 6,
+            "rank": 5,
+            "bought": 7,
+            "spent": 56
+          },
+          {
+            "round": 68,
+            "score": 54,
+            "balance": 80,
+            "tiles": 1,
+            "rank": 4,
+            "bought": 10,
+            "spent": 74
+          }
         ]
       },
       "hero": {
         "seed": 23,
         "scores": [
-          173,
-          52,
-          27,
-          19,
-          30,
-          31
+          203,
+          26,
+          21,
+          18,
+          41,
+          20
         ],
-        "hero": 173,
+        "hero": 203,
         "win": true,
         "rank": 1,
         "balances": [
-          7,
-          54,
-          71,
-          93,
-          82,
-          79
+          5,
+          92,
+          61,
+          80,
+          51,
+          94
+        ],
+        "spent": [
+          298,
+          34,
+          60,
+          38,
+          90,
+          26
+        ],
+        "bought": [
+          41,
+          5,
+          6,
+          3,
+          9,
+          4
+        ],
+        "plays": [
+          9,
+          2,
+          2,
+          2,
+          3,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 44,
+            "tiles": 12,
+            "rank": 2,
+            "bought": 7,
+            "spent": 56
+          },
+          {
+            "round": 20,
+            "score": 45,
+            "balance": 27,
+            "tiles": 14,
+            "rank": 1,
+            "bought": 16,
+            "spent": 118
+          },
+          {
+            "round": 30,
+            "score": 93,
+            "balance": 31,
+            "tiles": 11,
+            "rank": 1,
+            "bought": 23,
+            "spent": 162
+          },
+          {
+            "round": 40,
+            "score": 177,
+            "balance": 31,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 33,
+            "spent": 246
+          },
+          {
+            "round": 50,
+            "score": 196,
+            "balance": 16,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 38,
+            "spent": 280
+          },
+          {
+            "round": 52,
+            "score": 201,
+            "balance": 9,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 40,
+            "spent": 292
+          },
+          {
+            "round": 60,
+            "score": 203,
+            "balance": 5,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 41,
+            "spent": 298
+          },
+          {
+            "round": 68,
+            "score": 203,
+            "balance": 5,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 41,
+            "spent": 298
+          }
         ]
       }
     },
@@ -1095,45 +5603,241 @@
       "baseline": {
         "seed": 24,
         "scores": [
-          49,
-          55,
+          35,
           61,
-          44,
-          68,
-          46
+          47,
+          58,
+          65,
+          49
         ],
-        "hero": 49,
+        "hero": 35,
         "win": false,
-        "rank": 4,
+        "rank": 6,
         "balances": [
-          59,
-          61,
-          63,
-          84,
-          38,
-          82
+          71,
+          51,
+          55,
+          92,
+          21,
+          89
+        ],
+        "spent": [
+          64,
+          110,
+          92,
+          66,
+          144,
+          60
+        ],
+        "bought": [
+          9,
+          15,
+          13,
+          9,
+          14,
+          8
+        ],
+        "plays": [
+          2,
+          3,
+          3,
+          3,
+          4,
+          2
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 17,
+            "balance": 95,
+            "tiles": 2,
+            "rank": 1,
+            "bought": 3,
+            "spent": 22
+          },
+          {
+            "round": 20,
+            "score": 17,
+            "balance": 81,
+            "tiles": 4,
+            "rank": 3,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 30,
+            "score": 17,
+            "balance": 81,
+            "tiles": 4,
+            "rank": 5,
+            "bought": 5,
+            "spent": 36
+          },
+          {
+            "round": 40,
+            "score": 17,
+            "balance": 75,
+            "tiles": 5,
+            "rank": 5,
+            "bought": 6,
+            "spent": 42
+          },
+          {
+            "round": 50,
+            "score": 17,
+            "balance": 59,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 8,
+            "spent": 58
+          },
+          {
+            "round": 52,
+            "score": 17,
+            "balance": 59,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 8,
+            "spent": 58
+          },
+          {
+            "round": 60,
+            "score": 17,
+            "balance": 59,
+            "tiles": 7,
+            "rank": 6,
+            "bought": 8,
+            "spent": 58
+          },
+          {
+            "round": 68,
+            "score": 35,
+            "balance": 71,
+            "tiles": 3,
+            "rank": 6,
+            "bought": 9,
+            "spent": 64
+          }
         ]
       },
       "hero": {
         "seed": 24,
         "scores": [
-          170,
-          33,
-          36,
-          29,
+          216,
+          31,
           34,
-          40
+          35,
+          48,
+          18
         ],
-        "hero": 170,
+        "hero": 216,
         "win": true,
         "rank": 1,
         "balances": [
-          6,
-          65,
-          78,
-          85,
-          72,
+          0,
+          91,
+          96,
+          101,
+          58,
           100
+        ],
+        "spent": [
+          316,
+          40,
+          38,
+          34,
+          90,
+          18
+        ],
+        "bought": [
+          40,
+          5,
+          6,
+          5,
+          10,
+          2
+        ],
+        "plays": [
+          8,
+          2,
+          2,
+          2,
+          3,
+          1
+        ],
+        "checkpoints": [
+          {
+            "round": 10,
+            "score": 0,
+            "balance": 34,
+            "tiles": 14,
+            "rank": 1,
+            "bought": 9,
+            "spent": 66
+          },
+          {
+            "round": 20,
+            "score": 45,
+            "balance": 25,
+            "tiles": 8,
+            "rank": 1,
+            "bought": 14,
+            "spent": 120
+          },
+          {
+            "round": 30,
+            "score": 138,
+            "balance": 58,
+            "tiles": 4,
+            "rank": 1,
+            "bought": 23,
+            "spent": 180
+          },
+          {
+            "round": 40,
+            "score": 173,
+            "balance": 29,
+            "tiles": 5,
+            "rank": 1,
+            "bought": 30,
+            "spent": 244
+          },
+          {
+            "round": 50,
+            "score": 203,
+            "balance": 37,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 33,
+            "spent": 266
+          },
+          {
+            "round": 52,
+            "score": 207,
+            "balance": 29,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 35,
+            "spent": 278
+          },
+          {
+            "round": 60,
+            "score": 216,
+            "balance": 6,
+            "tiles": 0,
+            "rank": 1,
+            "bought": 39,
+            "spent": 310
+          },
+          {
+            "round": 68,
+            "score": 216,
+            "balance": 0,
+            "tiles": 1,
+            "rank": 1,
+            "bought": 40,
+            "spent": 316
+          }
         ]
       }
     }

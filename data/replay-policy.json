@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-11-08T04:02:45.920Z",
+  "games": [
+    42889,
+    42892,
+    42896,
+    42900,
+    42904
+  ],
+  "policies": [
+    {
+      "policy": "v12c",
+      "lower": {
+        "games": 5,
+        "score": 76.8,
+        "rank": 3.2,
+        "wins": 1,
+        "bought": 12.6,
+        "late": 1.4,
+        "balance": 7,
+        "ties": 1.4
+      },
+      "upper": {
+        "games": 5,
+        "score": 73.6,
+        "rank": 3.6,
+        "wins": 1,
+        "bought": 12.4,
+        "late": 1.8,
+        "balance": 8.2,
+        "ties": 1.6
+      },
+      "expected": {
+        "score": 75.19999999999999,
+        "rank": 3.4000000000000004,
+        "wins": 1,
+        "bought": 12.5,
+        "late": 1.6,
+        "balance": 7.6
+      }
+    },
+    {
+      "policy": "v13a",
+      "lower": {
+        "games": 5,
+        "score": 76.8,
+        "rank": 3.2,
+        "wins": 1,
+        "bought": 12.6,
+        "late": 1.6,
+        "balance": 7.6,
+        "ties": 1.4
+      },
+      "upper": {
+        "games": 5,
+        "score": 73.6,
+        "rank": 3.6,
+        "wins": 1,
+        "bought": 12.4,
+        "late": 1.8,
+        "balance": 8.2,
+        "ties": 1.6
+      },
+      "expected": {
+        "score": 75.19999999999999,
+        "rank": 3.4000000000000004,
+        "wins": 1,
+        "bought": 12.5,
+        "late": 1.7000000000000002,
+        "balance": 7.8999999999999995
+      }
+    },
+    {
+      "policy": "v15",
+      "lower": {
+        "games": 5,
+        "score": 60,
+        "rank": 4.2,
+        "wins": 0,
+        "bought": 10.2,
+        "late": 1.6,
+        "balance": 7.6,
+        "ties": 2.4
+      },
+      "upper": {
+        "games": 5,
+        "score": 59.8,
+        "rank": 4.2,
+        "wins": 0,
+        "bought": 11,
+        "late": 1.8,
+        "balance": 9.2,
+        "ties": 1.4
+      },
+      "expected": {
+        "score": 59.9,
+        "rank": 4.2,
+        "wins": 0,
+        "bought": 10.6,
+        "late": 1.7000000000000002,
+        "balance": 8.399999999999999
+      }
+    }
+  ]
+}

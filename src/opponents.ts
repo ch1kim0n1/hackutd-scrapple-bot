@@ -10,6 +10,19 @@ export interface OpponentProfile {
   medianTopBid: number; medianPrice: number; bidObservations: BidObservation[];
   letterBids: Record<string, { n: number; median: number; p75: number }>;
 }
+export type SimulatedStrategy = 'Human' | 'Cheapskate' | 'ValueBidder' | 'Aggressive';
+
+export function simulatedBid(strategy: SimulatedStrategy, letter: string, balance: number, jitter: number): number {
+  if (strategy === 'Human') return 0;
+  const value = VALUES[letter.charCodeAt(0) - 65];
+  const base = strategy === 'Cheapskate' ? value - 1 : value + (strategy === 'Aggressive' ? ('AEIOU'.includes(letter) ? 4 : 2) : 0);
+  return Math.max(0, Math.min(balance, Math.max(1, base + jitter)));
+}
+
+export function maximumSimulatedBid(strategy: SimulatedStrategy, letter: string, balance: number): number {
+  return simulatedBid(strategy, letter, balance, 2);
+}
+
 export function quantile(values: number[], q: number): number {
   if (!values.length) return 0;
   const sorted = [...values].sort((a, b) => a - b);
@@ -79,7 +92,7 @@ export function buildProfiles(leaders: RankedBot[], history: HistoricalMatch[]):
 // Winning bids are a selection-biased sample of the opponent's bids, not
 // their complete policy. Condition on nearby observable opening states and
 // shrink small samples toward a simple letter-value prior.
-export function predictOpponentBid(profile: OpponentProfile, letter: string, remaining: number, balance: number, rackSize: number): number {
+export function predictOpponentBidQuantile(profile: OpponentProfile, letter: string, remaining: number, balance: number, rackSize: number, q = 0.45): number {
   const face = VALUES[letter.charCodeAt(0) - 65];
   const same = profile.bidObservations.filter(b => b.letter === letter);
   const group = same.length >= 8 ? same : profile.bidObservations.filter(b => VALUES[b.letter.charCodeAt(0) - 65] === face);
@@ -88,5 +101,8 @@ export function predictOpponentBid(profile: OpponentProfile, letter: string, rem
   const nearest = [...group].sort((a, b) => distance(a) - distance(b)).slice(0, 40);
   const prior = 4 + 2 * face;
   const weight = Math.min(0.85, nearest.length / 20);
-  return Math.min(balance, prior * (1 - weight) + quantile(nearest.map(b => b.bid), 0.45) * weight);
+  return Math.min(balance, prior * (1 - weight) + quantile(nearest.map(b => b.bid), q) * weight);
+}
+export function predictOpponentBid(profile: OpponentProfile, letter: string, remaining: number, balance: number, rackSize: number): number {
+  return predictOpponentBidQuantile(profile, letter, remaining, balance, rackSize, 0.45);
 }

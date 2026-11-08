@@ -1,7 +1,7 @@
 import type { Dictionary } from './dictionary.js';
 import { BAG, rackFrom, subtract, VALUES, wordScore, type Rack } from './letters.js';
 import { Strategy, type GameContext, type Policy } from './strategy.js';
-import { predictOpponentBid, type OpponentProfile } from './opponents.js';
+import { predictOpponentBid, simulatedBid, type OpponentProfile, type SimulatedStrategy } from './opponents.js';
 import { Strategy as LegacyStrategy } from './legacy-strategy.js';
 
 export function seeded(seed: number): () => number {
@@ -12,26 +12,31 @@ export function seeded(seed: number): () => number {
     return ((t ^ t >>> 14) >>> 0) / 4294967296;
   };
 }
-type Actor = { rack: Rack; balance: number; score: number; spent: number };
-export function simulate(dictionary: Dictionary, seed: number, hero: boolean, opponents: 'starter' | 'patient' | 'strategic' | 'aggressive' | 'observed' = 'starter', options: { policy?: Partial<Policy>; profiles?: OpponentProfile[]; incumbent?: Partial<Policy>; legacyHero?: boolean } = {}) {
+type Actor = { rack: Rack; balance: number; score: number; spent: number; bought: number; plays: number };
+export function simulate(dictionary: Dictionary, seed: number, hero: boolean, opponents: 'starter' | 'patient' | 'strategic' | 'aggressive' | 'observed' | 'server' = 'starter', options: { policy?: Partial<Policy>; profiles?: OpponentProfile[]; incumbent?: Partial<Policy>; legacyHero?: boolean } = {}) {
   const random = seeded(seed);
   const bag = BAG.flatMap((n, i) => Array.from({ length: n }, () => i));
   for (let i = bag.length - 1; i > 0; i--) {
     const j = Math.floor(random() * (i + 1)); [bag[i], bag[j]] = [bag[j], bag[i]];
   }
-  const actors: Actor[] = Array.from({ length: 6 }, () => ({ rack: new Uint8Array(26), balance: 100, score: 0, spent: 0 }));
+  const actors: Actor[] = Array.from({ length: 6 }, () => ({ rack: new Uint8Array(26), balance: 100, score: 0, spent: 0, bought: 0, plays: 0 }));
   for (const actor of actors) for (let i = 0; i < 5; i++) actor.rack[bag.pop()!]++;
   const totalAuctions = bag.length;
+  const simPool: SimulatedStrategy[] = ['Cheapskate', 'ValueBidder', 'Aggressive', 'ValueBidder', 'Aggressive', 'Cheapskate'];
+  for (let i = simPool.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [simPool[i], simPool[j]] = [simPool[j], simPool[i]]; }
+  const simulatedStrategies: (SimulatedStrategy | undefined)[] = [undefined, ...simPool.slice(0, 5)];
   const strategies = actors.map((_, i) => i === 0 && !options.legacyHero ? new Strategy(dictionary, options.policy) : new LegacyStrategy(dictionary, options.incumbent));
   for (const strategy of strategies) strategy.setProfiles(options.profiles ?? []);
   const profileOf = (i: number) => opponents === 'observed' && i > 0 && i < 4 ? options.profiles?.[i - 1] : undefined;
   const actorId = (i: number) => profileOf(i)?.botId ?? 10000 + i;
-  const opponentContext = (i: number) => actors.flatMap((a, j) => j === i ? [] : [{ botId: actorId(j), balance: a.balance, rackSize: Array.from(a.rack).reduce((s, n) => s + n, 0) }]);
+  const opponentContext = (i: number) => actors.flatMap((a, j) => j === i ? [] : [{ botId: actorId(j), balance: a.balance, rackSize: Array.from(a.rack).reduce((s, n) => s + n, 0),
+    simulatedStrategy: opponents === 'server' ? simulatedStrategies[j] : undefined }]);
   const contextFor = (i: number, remaining: number): GameContext => ({ rack: actors[i].rack, balance: actors[i].balance,
     remaining, players: 6, auctionType: 'Vickrey', opponents: opponentContext(i), round: totalAuctions - remaining, totalAuctions });
-  const checkpoints: { round: number; score: number; balance: number; tiles: number; rank: number }[] = [];
+  const checkpoints: { round: number; score: number; balance: number; tiles: number; rank: number; bought: number; spent: number }[] = [];
   const play = (remaining: number) => {
     for (let i = 0; i < actors.length; i++) {
+      if (opponents === 'server' && i !== 0) continue;
       const actor = actors[i];
       for (let attempt = 0; attempt < 30; attempt++) {
         const playable = [...dictionary.playable(actor.rack)];
@@ -51,7 +56,7 @@ export function simulate(dictionary: Dictionary, seed: number, hero: boolean, op
         const counts = rackFrom(word);
         for (let slot = 0; slot < 26; slot++) if (counts[slot] > actor.rack[slot]) throw new Error('Impossible simulated play');
         actor.rack = subtract(actor.rack, counts);
-        const reward = wordScore(word); actor.balance += reward; actor.score += reward;
+        const reward = wordScore(word); actor.balance += reward; actor.score += reward; actor.plays++;
       }
     }
   };
@@ -61,6 +66,7 @@ export function simulate(dictionary: Dictionary, seed: number, hero: boolean, op
     play(bag.length);
     const bids = actors.map((actor, i) => ({ i, amount: (hero && i === 0) || (opponents === 'strategic' && i > 0) || (opponents === 'observed' && i === 4)
       ? strategies[i].bid(String.fromCharCode(65 + letter), contextFor(i, bag.length)).amount
+      : opponents === 'server' ? simulatedBid(simulatedStrategies[i]!, String.fromCharCode(65 + letter), actor.balance, Math.floor(random() * 5) - 2)
       : profileOf(i) ? Math.max(0, Math.min(actor.balance, Math.round(predictOpponentBid(profileOf(i)!, String.fromCharCode(65 + letter), bag.length, actor.balance, Array.from(actor.rack).reduce((s, n) => s + n, 0)) + Math.floor(random() * 3) - 1)))
       : Math.min(actor.balance, opponents === 'aggressive' || opponents === 'observed'
         ? Math.max(1, Math.floor((4 + VALUES[letter] * 2) * (actor.rack[letter] > 1 ? 0.5 : 1)))
@@ -71,18 +77,27 @@ export function simulate(dictionary: Dictionary, seed: number, hero: boolean, op
     if (bids[0].amount > 0) {
       const winner = actors[bids[0].i];
       const paid = Math.max(1, bids[1].amount);
-      winner.balance -= paid; winner.spent += paid; winner.rack[letter]++;
+      winner.balance -= paid; winner.spent += paid; winner.bought++; winner.rack[letter]++;
       for (const strategy of strategies) strategy.market.observe(String.fromCharCode(65 + letter), paid);
+      if (opponents === 'server' && bids[0].i !== 0) {
+        const word = dictionary.playable(winner.rack).filter(w => w.text.length >= 3)
+          .sort((a, b) => b.text.length - a.text.length || a.text.localeCompare(b.text))[0];
+        if (word) {
+          winner.rack = subtract(winner.rack, word.counts);
+          winner.balance += word.score; winner.score += word.score; winner.plays++;
+        }
+      }
     }
     // The last tile cannot be used by any external client. All other
     // rounds get a reaction before the next one-second deadline.
     if (bag.length) play(bag.length);
     const round = totalAuctions - bag.length;
-    if (round % 10 === 0 || !bag.length) checkpoints.push({ round, score: actors[0].score, balance: actors[0].balance,
-      tiles: Array.from(actors[0].rack).reduce((a, b) => a + b, 0), rank: 1 + actors.filter(a => a.score > actors[0].score).length });
+    if (round % 10 === 0 || round === 52 || !bag.length) checkpoints.push({ round, score: actors[0].score, balance: actors[0].balance,
+      tiles: Array.from(actors[0].rack).reduce((a, b) => a + b, 0), rank: 1 + actors.filter(a => a.score > actors[0].score).length,
+      bought: actors[0].bought, spent: actors[0].spent });
   }
   return { seed, scores: actors.map(a => a.score), hero: actors[0].score,
     win: actors[0].score >= Math.max(...actors.map(a => a.score)),
     rank: 1 + actors.filter(a => a.score > actors[0].score).length,
-    balances: actors.map(a => a.balance), checkpoints };
+    balances: actors.map(a => a.balance), spent: actors.map(a => a.spent), bought: actors.map(a => a.bought), plays: actors.map(a => a.plays), checkpoints };
 }

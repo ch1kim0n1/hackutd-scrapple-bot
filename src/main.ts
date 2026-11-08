@@ -15,10 +15,10 @@ mkdirSync('logs', { recursive: true });
 mkdirSync('.run', { recursive: true });
 mkdirSync('data/learning/self', { recursive: true });
 let activeRevision = BASE_REVISION;
-// A/B: alternate sustainable-v6 and the sustainable-v5 baseline by match id, so both face the same table mix.
-// Set AB=0 to play v6 only.
-const ARMS = process.env.AB === '0' ? [{ revision: 'sustainable-v6', policy: DEFAULT_POLICY }]
-  : [{ revision: 'sustainable-v6', policy: DEFAULT_POLICY }, { revision: 'sustainable-v5', policy: V5_POLICY }];
+// A/B: set AB=1 to alternate sustainable-v12b and the sustainable-v5 baseline by match id.
+// Default runs only the current policy.
+const ARMS = process.env.AB === '1' ? [{ revision: POLICY_VERSION, policy: DEFAULT_POLICY }, { revision: 'sustainable-v5', policy: V5_POLICY }]
+  : [{ revision: POLICY_VERSION, policy: DEFAULT_POLICY }];
 const bootAt = Date.now();
 const policyLineage = new Map<bigint, Set<string>>();
 const log = (event: string, details: Record<string, unknown> = {}) => {
@@ -125,13 +125,24 @@ function context(match: Match): GameContext | null {
     const i = auction.letter.charCodeAt(0) - 65; unseen[i] = Math.max(0, unseen[i] - 1);
   }
   const unseenCount = unseen.reduce((a, b) => a + b, 0);
+  const matchAuctions = [...conn!.db.auction.iter()].filter(a => a.matchId === match.id)
+    .sort((a, b) => Number(a.opensAt.microsSinceUnixEpoch - b.opensAt.microsSinceUnixEpoch));
+  const positions = new Map(matchAuctions.map((auction, index) => [auction.id, index]));
+  const ownSales = [...conn!.db.auctionResult.iter()].filter(sale => sale.matchId === match.id && sale.winnerBotId === BOT_ID);
+  const totalAuctions = match.currentRound + match.bagTotal;
   return { rack, balance: Number(own.balance), remaining: match.bagTotal, players: participants.length,
-    round: match.currentRound, totalAuctions: match.currentRound + match.bagTotal,
+    bought: ownSales.length, spent: ownSales.reduce((sum, sale) => sum + Number(sale.paid), 0),
+    lateBought: ownSales.filter(sale => (positions.get(sale.auctionId) ?? 0) >= totalAuctions - 16).length,
+    round: match.currentRound, totalAuctions,
     activePlayers: match.currentRound < 8 ? participants.length : Math.max(2, 1 + participants.filter(p => p.botId !== BOT_ID && (p.balance !== 100n || p.score > 0n)).length),
     auctionType: match.auctionType.tag, frequencies: unseen.map(n => unseenCount ? n / unseenCount : 0),
-    opponents: participants.filter(p => p.botId !== BOT_ID).map(p => ({ botId: Number(p.botId), balance: Number(p.balance),
-      rackSize: match.startingRackSize + [...conn!.db.auctionResult.iter()].filter(a => a.matchId === match.id && a.winnerBotId === p.botId).length
-        - [...conn!.db.wordPlay.iter()].filter(w => w.matchId === match.id && w.botId === p.botId).reduce((s, w) => s + w.word.length, 0) })) };
+    opponents: participants.filter(p => p.botId !== BOT_ID).map(p => {
+      const bot = conn!.db.bot.id.find(p.botId);
+      return { botId: Number(p.botId), balance: Number(p.balance), score: Number(p.score),
+        simulatedStrategy: bot?.isSimulated ? bot.strategy.tag : undefined,
+        rackSize: match.startingRackSize + [...conn!.db.auctionResult.iter()].filter(a => a.matchId === match.id && a.winnerBotId === p.botId).length
+          - [...conn!.db.wordPlay.iter()].filter(w => w.matchId === match.id && w.botId === p.botId).reduce((s, w) => s + w.word.length, 0) };
+    }) };
 }
 function schedulePump() {
   if (pumpTimer) return;
@@ -257,7 +268,7 @@ function connect() {
         ready = true; log('connected', { bot: String(BOT_ID) }); schedulePump();
       }).onError(ctx => { log('subscription_error', { error: String(ctx.event) }); connection.disconnect(); retryConnect(); })
         .subscribe([
-          `SELECT * FROM bot_credential WHERE bot_id = ${BOT_ID}`,
+          `SELECT * FROM bot_credential WHERE bot_id = ${BOT_ID}`, 'SELECT * FROM bot',
           'SELECT * FROM my_rack', 'SELECT * FROM open_lobbies', 'SELECT * FROM open_lobby_members',
           `SELECT match_state.* FROM match_state JOIN match_participant ON match_state.id = match_participant.match_id WHERE match_participant.bot_id = ${BOT_ID}`,
         ]);

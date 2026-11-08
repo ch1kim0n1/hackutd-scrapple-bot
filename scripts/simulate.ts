@@ -4,7 +4,7 @@ import { simulate } from '../src/simulation.js';
 import { POLICY_VERSION } from '../src/strategy.js';
 const dictionary = loadDictionary();
 const games = Number(process.env.GAMES ?? 12);
-const opposition = process.env.OPPONENTS === 'aggressive' ? 'aggressive' : process.env.OPPONENTS === 'strategic' ? 'strategic' : process.env.OPPONENTS === 'patient' ? 'patient' : 'starter';
+const opposition = process.env.OPPONENTS === 'aggressive' ? 'aggressive' : process.env.OPPONENTS === 'strategic' ? 'strategic' : process.env.OPPONENTS === 'patient' ? 'patient' : process.env.OPPONENTS === 'server' ? 'server' : 'starter';
 const results = [];
 for (let seed = 1; seed <= games; seed++) {
   const baseline = simulate(dictionary, seed, false, opposition);
