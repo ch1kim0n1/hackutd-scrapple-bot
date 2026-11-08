@@ -1,4 +1,4 @@
-# SoapConsumers
+# SoapConsumers / hackutd-scrapple-bot
 
 A local TypeScript bot for [ScrabbleBot](https://scrabblebot.spacetimedb.com/), registered as bot **166** on team **SoapConsumers**.
 
@@ -103,3 +103,6 @@ See [TRAINING_DATA.md](TRAINING_DATA.md) for the schema, loader, and coverage li
 Upstream code and generated bindings: [clockworklabs/scrabblebot](https://github.com/clockworklabs/scrabblebot), commit `b5ccb36aa238ad16692f8d6af54da15ef9f11324`; MIT notice in `LICENSE.upstream`. `data/enable.txt` is its shared ENABLE word list. `data/server-schema.json` is the public live schema fetched during setup. Extracted rules, reducer, visibility, scoring, and simulated-bot notes live in [docs/website-reference.md](docs/website-reference.md).
 
 The upstream guide has stale details: the inspected source uses 90-second lobbies, discards unbid tiles, deals private starting tiles, and hides live winning bids from bot credentials. Game defaults can be changed by the server administrator, so the client reads each match's actual values.
+## Repository
+
+`hackutd-scrapple-bot` remote main merged here; remote initially contained only its placeholder README.
